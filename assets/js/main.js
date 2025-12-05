@@ -200,6 +200,16 @@
       activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
     });
 
+/* 8.1 WhatsApp button scroll */
+    $(window).on('scroll', function () {
+      var scroll = $(window).scrollTop();
+      if (scroll < 300) {
+        $("#whatsappBtn").fadeOut(200);
+      } else {
+        $("#whatsappBtn").fadeIn(200);
+      }
+    });
+
 
 /* 9. data-background */
     $("[data-background]").each(function () {
