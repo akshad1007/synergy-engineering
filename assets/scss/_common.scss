@@ -781,19 +781,19 @@ hr {
 		z-index: 2;
 			h2{
 				color: $heading_color;
-				font-size: 70px;
+				font-size: 2rem;
 				font-weight: 700;
 				line-height: 1.2;
 				text-transform: uppercase;
 				font-family:$font_3;
 
 				@media #{$xs}{
-					font-size: 40px;
+					font-size: 1.5rem;
 					line-height: 1.4;
 					// margin-bottom: 50px;
 				}
 				@media #{$sm}{
-					font-size: 40px;
+					font-size: 1.5rem;
 					line-height: 1.4;
 					// margin-bottom: 50px;
 				}
@@ -830,13 +830,13 @@ hr {
 	&.section-tittle2{
 		.front-text{
 				h2{
-					font-size: 100px;
+					font-size: 2.5rem;
 
 					@media #{$xs}{
-						font-size: 40px;
+						font-size: 1.5rem;
 					}
 					@media #{$sm}{
-						font-size: 40px;
+						font-size: 1.5rem;
 					}
 				}
 			}
@@ -872,9 +872,9 @@ hr {
 	&.section-tittle3{
 		.front-text{
 				h2{
-					font-size: 70px;
+					font-size: 2rem;
 					@media #{$xs}{
-						font-size: 40px;
+						font-size: 1.5rem;
 					}
 				}
 			}
@@ -893,13 +893,13 @@ hr {
 	&.section-tittle4{
 		.front-text{
 				h2{
-					font-size: 70px;
+					font-size: 2rem;
 					color: #fff;
 					@media #{$xs}{
-						font-size: 35px;
+						font-size: 1.25rem;
 					}
 					@media #{$sm}{
-						font-size: 40px;
+						font-size: 1.5rem;
 					}
 				}
 			}
@@ -927,10 +927,10 @@ hr {
 	&.section-tittle6{
 		.front-text{
 				h2{
-					font-size: 70px;
+					font-size: 2rem;
 					color: #fff;
 					@media #{$xs}{
-						font-size: 40px;
+						font-size: 1.5rem;
 					}
 				}
 			}
