@@ -20,6 +20,7 @@
             <link rel="stylesheet" href="assets/css/slick.css">
             <link rel="stylesheet" href="assets/css/nice-select.css">
             <link rel="stylesheet" href="assets/css/style.css">
+            <link rel="stylesheet" href="assets/css/mobile-responsive.css">
    </head>
 
    <body>
@@ -770,7 +771,38 @@
         <script src="./assets/js/main.js"></script>
         
     <script>$('#more-services-btn').click(function() { $('#additional-services').slideDown(); $(this).hide(); });</script>
-    <script>window.addEventListener('load', function() { document.getElementById('preloader').style.display = 'none'; });</script>
+    <script>
+        // Preloader
+        window.addEventListener('load', function() { 
+            var preloader = document.getElementById('preloader-active');
+            if(preloader) preloader.style.display = 'none'; 
+        });
+        
+        // WhatsApp Button - Show on scroll
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('#whatsappBtn').fadeIn();
+            } else {
+                $('#whatsappBtn').fadeOut();
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        $('a[href^="#"]').on('click', function(e) {
+            var target = $(this.getAttribute('href'));
+            if(target.length) {
+                e.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top - 100
+                }, 800);
+            }
+        });
+        
+        // Mobile menu close on click
+        $('.slicknav_nav a').on('click', function() {
+            $('.slicknav_btn').click();
+        });
+    </script>
     
     <!-- WhatsApp Button -->
     <div id="whatsappBtn" style="position: fixed; right: 31px; bottom: 100px; width: 50px; height: 50px; background: #ff5f13; color: #fff; border-radius: 50%; text-align: center; line-height: 48px; font-size: 20px; border: 2px solid transparent; z-index: 1000; cursor: pointer; display: none;">

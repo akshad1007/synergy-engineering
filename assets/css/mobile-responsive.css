@@ -1,0 +1,909 @@
+/* ================================================
+   MOBILE RESPONSIVENESS ENHANCEMENTS
+   Enhanced mobile optimization for Synergy Engineering
+   ================================================ */
+
+/* ==============================================
+   1. BASE MOBILE OPTIMIZATIONS
+   ============================================== */
+
+/* Improved viewport and touch optimization */
+* {
+    -webkit-tap-highlight-color: rgba(255, 95, 19, 0.2);
+    -webkit-touch-callout: none;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==============================================
+   2. HEADER & NAVIGATION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .header-area .header-bottom {
+        padding: 10px 15px !important;
+    }
+    
+    .logo img {
+        max-width: 120px !important;
+    }
+    
+    .header-right-btn {
+        padding: 8px 15px !important;
+        font-size: 12px !important;
+    }
+    
+    /* Mobile menu improvements */
+    .slicknav_menu {
+        background: #191a33 !important;
+        padding: 5px;
+    }
+    
+    .slicknav_nav {
+        clear: both;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .slicknav_nav a {
+        padding: 12px 20px !important;
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .header-top {
+        display: none !important;
+    }
+    
+    .logo {
+        flex: 1;
+    }
+    
+    .logo img {
+        max-width: 100px !important;
+    }
+}
+
+/* ==============================================
+   3. HERO/SLIDER SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .slider-height {
+        min-height: 500px !important;
+    }
+    
+    .hero__caption {
+        padding-top: 50px !important;
+        margin-left: 0 !important;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .hero__caption h1 {
+        font-size: 50px !important;
+        line-height: 1.1 !important;
+    }
+    
+    .stock-text h2 {
+        font-size: 50px !important;
+    }
+    
+    .hero-text1 span,
+    .hero-text2 span {
+        font-size: 14px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .slider-height {
+        min-height: 400px !important;
+    }
+    
+    .hero__caption h1 {
+        font-size: 36px !important;
+    }
+    
+    .stock-text {
+        left: 0 !important;
+        top: 0 !important;
+        position: relative !important;
+    }
+    
+    .stock-text h2 {
+        font-size: 36px !important;
+        position: relative !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .hero-text1 span::before,
+    .hero-text2 span::before {
+        width: 15px !important;
+        left: -20px !important;
+    }
+}
+
+/* ==============================================
+   4. SERVICES SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .services-area1 {
+        padding: 60px 0 !important;
+    }
+    
+    .single-service-cap {
+        margin-bottom: 30px;
+    }
+    
+    .service-cap {
+        padding: 15px 20px !important;
+    }
+    
+    .service-cap h4 a {
+        font-size: 20px !important;
+    }
+    
+    .service-cap p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-tittle .front-text h2 {
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .section-tittle span.back-text {
+        font-size: 40px !important;
+    }
+    
+    #more-services-btn {
+        width: 100%;
+        padding: 15px !important;
+    }
+}
+
+/* ==============================================
+   5. ABOUT SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .support-company-area .support-wrapper {
+        display: block !important;
+    }
+    
+    .support-wrapper .left-content {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin-bottom: 30px;
+    }
+    
+    .support-caption {
+        padding-right: 0 !important;
+    }
+    
+    .support-wrapper .right-content {
+        width: 100% !important;
+        padding-top: 30px !important;
+    }
+    
+    .support-img-cap {
+        position: relative !important;
+        bottom: auto !important;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+    .support-img-cap span {
+        font-size: 40px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .support-caption p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+    
+    .support-img-cap {
+        padding: 20px !important;
+    }
+    
+    .support-img-cap span {
+        font-size: 32px !important;
+    }
+}
+
+/* ==============================================
+   6. PRODUCTS/PROJECT SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .project-area {
+        padding: 60px 0 !important;
+    }
+    
+    .project-heading {
+        margin-bottom: 30px !important;
+    }
+    
+    .properties__button {
+        float: none !important;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .properties__button .genric-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .single-project {
+        margin-bottom: 30px;
+    }
+    
+    .project-cap h4 a {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .single-project .project-img img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .project-cap {
+        padding: 15px !important;
+    }
+    
+    .project-cap h4 a {
+        font-size: 18px !important;
+    }
+}
+
+/* ==============================================
+   7. CONTACT SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .contact-with-area {
+        padding: 80px 0 150px !important;
+    }
+    
+    .team-info {
+        padding: 30px 20px !important;
+    }
+    
+    .section-tittle4 .front-text h2 {
+        font-size: 28px !important;
+    }
+    
+    .white-btn {
+        width: 100%;
+        margin-bottom: 10px !important;
+        padding: 20px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .contact-with-area {
+        padding: 60px 0 120px !important;
+    }
+    
+    .contact-us-caption p {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+/* ==============================================
+   8. STATS/COUNTER SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .count-area {
+        margin-top: 0 !important;
+    }
+    
+    .count-wrapper {
+        padding: 40px 20px !important;
+    }
+    
+    .count-clients .single-counter {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 30px 0 !important;
+    }
+    
+    .count-text {
+        padding-left: 0 !important;
+        padding-top: 10px;
+    }
+    
+    .count-number span {
+        font-size: 40px !important;
+    }
+    
+    .count-text h5 {
+        font-size: 28px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .count-number span {
+        font-size: 36px !important;
+    }
+    
+    .count-text p {
+        font-size: 13px !important;
+    }
+    
+    .count-text h5 {
+        font-size: 24px !important;
+    }
+}
+
+/* ==============================================
+   9. TEAM SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .team-area {
+        padding: 60px 0 !important;
+    }
+    
+    .single-team {
+        margin-bottom: 30px;
+    }
+    
+    .team-caption h3 {
+        font-size: 22px !important;
+    }
+    
+    .team-caption span {
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .team-caption h3 {
+        font-size: 20px !important;
+    }
+}
+
+/* ==============================================
+   10. TESTIMONIAL SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .testimonial-area {
+        padding: 60px 0 !important;
+    }
+    
+    .testimonial-caption {
+        padding: 0 15px;
+    }
+    
+    .testimonial-top-cap p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+    
+    .testimonial-founder {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+    
+    .founder-text {
+        padding-left: 0 !important;
+        border-left: 0 !important;
+        border-top: 2px solid #ff5f13;
+        padding-top: 15px !important;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .testimonial-top-cap svg {
+        width: 50px !important;
+        height: auto !important;
+    }
+    
+    .testimonial-top-cap p {
+        font-size: 14px !important;
+        padding: 0 !important;
+    }
+}
+
+/* ==============================================
+   11. BLOG/NEWS SECTION MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .latest-news-area {
+        padding: 60px 0 !important;
+    }
+    
+    .single-news {
+        margin-bottom: 30px;
+    }
+    
+    .news-caption {
+        padding: 20px !important;
+    }
+    
+    .news-caption h2 a {
+        font-size: 20px !important;
+        padding-right: 0 !important;
+        line-height: 1.4 !important;
+    }
+    
+    .news-img .news-date {
+        padding: 10px 20px !important;
+    }
+    
+    .news-date span {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .news-caption h2 a {
+        font-size: 18px !important;
+    }
+    
+    .david-info li {
+        font-size: 12px !important;
+        margin-right: 8px !important;
+    }
+}
+
+/* ==============================================
+   12. FOOTER MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .footer-area {
+        padding: 60px 0 30px !important;
+    }
+    
+    .single-footer-caption {
+        margin-bottom: 30px !important;
+    }
+    
+    .footer-tittle h4 {
+        font-size: 28px !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .footer-pera .info1 {
+        font-size: 14px !important;
+        padding-right: 0 !important;
+    }
+    
+    .partner-logos {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+    }
+    
+    .partner-logos img {
+        height: 30px !important;
+        max-width: 100px !important;
+    }
+    
+    .footer-copy-right {
+        padding-top: 30px !important;
+        text-align: center;
+    }
+    
+    .footer-copy-right p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .footer-tittle h4 {
+        font-size: 24px !important;
+    }
+    
+    .footer-tittle ul li {
+        font-size: 13px !important;
+    }
+    
+    .contact-social {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .social-icon {
+        margin: 0 8px !important;
+    }
+    
+    .partner-logos {
+        justify-content: center !important;
+    }
+    
+    .partner-logos img {
+        height: 25px !important;
+    }
+}
+
+/* ==============================================
+   13. BUTTONS & CTA MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    .btn,
+    .red-btn2,
+    .white-btn {
+        padding: 18px 30px !important;
+        font-size: 13px !important;
+    }
+    
+    .genric-btn {
+        padding: 0 25px !important;
+        font-size: 13px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .btn,
+    .red-btn2,
+    .white-btn {
+        width: 100%;
+        display: block;
+        text-align: center;
+        padding: 15px 20px !important;
+        font-size: 12px !important;
+    }
+}
+
+/* ==============================================
+   14. WHATSAPP BUTTON MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    #whatsappBtn {
+        right: 20px !important;
+        bottom: 80px !important;
+        width: 50px !important;
+        height: 50px !important;
+        z-index: 9999 !important;
+    }
+    
+    #whatsappBtn i {
+        font-size: 24px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    #whatsappBtn {
+        right: 15px !important;
+        bottom: 70px !important;
+        width: 45px !important;
+        height: 45px !important;
+        line-height: 43px !important;
+    }
+    
+    #whatsappBtn i {
+        font-size: 20px !important;
+    }
+}
+
+/* ==============================================
+   15. SCROLL TO TOP BUTTON MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    #scrollUp {
+        width: 45px !important;
+        height: 45px !important;
+        line-height: 43px !important;
+        right: 20px !important;
+        bottom: 20px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    #scrollUp {
+        width: 40px !important;
+        height: 40px !important;
+        line-height: 38px !important;
+        right: 15px !important;
+        font-size: 18px !important;
+    }
+}
+
+/* ==============================================
+   16. PRELOADER MOBILE
+   ============================================== */
+
+@media (max-width: 575px) {
+    .preloader-circle {
+        width: 70px !important;
+        height: 70px !important;
+    }
+    
+    .preloader-img img {
+        max-width: 40px !important;
+    }
+}
+
+/* ==============================================
+   17. SPACING & PADDING ADJUSTMENTS
+   ============================================== */
+
+@media (max-width: 991px) {
+    .section-padding30 {
+        padding-top: 70px !important;
+        padding-bottom: 70px !important;
+    }
+    
+    .mb-55,
+    .mb-50 {
+        margin-bottom: 30px !important;
+    }
+    
+    .mt-110 {
+        margin-top: 50px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-padding30 {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+    
+    .container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+    
+    .row {
+        margin-left: -10px !important;
+        margin-right: -10px !important;
+    }
+    
+    .col-lg-4,
+    .col-lg-6,
+    .col-md-6,
+    .col-sm-6 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+/* ==============================================
+   18. TEXT & TYPOGRAPHY MOBILE
+   ============================================== */
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: 32px !important;
+    }
+    
+    h2 {
+        font-size: 28px !important;
+    }
+    
+    h3 {
+        font-size: 24px !important;
+    }
+    
+    h4 {
+        font-size: 20px !important;
+    }
+    
+    p {
+        font-size: 15px !important;
+        line-height: 1.6 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    h1 {
+        font-size: 28px !important;
+    }
+    
+    h2 {
+        font-size: 24px !important;
+    }
+    
+    h3 {
+        font-size: 20px !important;
+    }
+    
+    h4 {
+        font-size: 18px !important;
+    }
+    
+    p {
+        font-size: 14px !important;
+    }
+}
+
+/* ==============================================
+   19. TOUCH-FRIENDLY ENHANCEMENTS
+   ============================================== */
+
+@media (max-width: 991px) {
+    /* Increase touch targets */
+    a,
+    button,
+    .btn,
+    .slicknav_btn {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* Better link spacing */
+    nav a,
+    .main-menu a {
+        padding: 12px 15px !important;
+    }
+    
+    /* Improved form elements */
+    input,
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevent zoom on iOS */
+        min-height: 44px !important;
+    }
+}
+
+/* ==============================================
+   20. LANDSCAPE ORIENTATION FIXES
+   ============================================== */
+
+@media (max-width: 991px) and (orientation: landscape) {
+    .slider-height {
+        min-height: 400px !important;
+    }
+    
+    .hero__caption {
+        padding-top: 30px !important;
+    }
+    
+    .hero__caption h1 {
+        font-size: 40px !important;
+    }
+}
+
+/* ==============================================
+   21. SAFE AREA INSETS (iPhone X+)
+   ============================================== */
+
+@media (max-width: 991px) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+    
+    .header-area {
+        padding-top: env(safe-area-inset-top);
+    }
+    
+    .footer-area {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* ==============================================
+   22. ACCESSIBILITY IMPROVEMENTS
+   ============================================== */
+
+@media (max-width: 991px) {
+    /* Focus states */
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus {
+        outline: 2px solid #ff5f13 !important;
+        outline-offset: 2px !important;
+    }
+    
+    /* Skip to main content link */
+    .skip-to-main {
+        position: absolute;
+        left: -9999px;
+        z-index: 999;
+        padding: 10px;
+        background: #ff5f13;
+        color: #fff;
+        text-decoration: none;
+    }
+    
+    .skip-to-main:focus {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+    }
+}
+
+/* ==============================================
+   23. PERFORMANCE OPTIMIZATIONS
+   ============================================== */
+
+@media (max-width: 991px) {
+    /* Reduce animations on mobile */
+    * {
+        -webkit-transition-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+    
+    /* Simplify animations */
+    .hero-overly::before,
+    .overlay::before {
+        animation: none !important;
+    }
+}
+
+/* ==============================================
+   24. TABLET SPECIFIC (768px - 991px)
+   ============================================== */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .slider-height {
+        min-height: 550px !important;
+    }
+    
+    .hero__caption h1 {
+        font-size: 60px !important;
+    }
+    
+    .section-padding30 {
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+    }
+    
+    .count-wrapper {
+        padding: 50px 30px !important;
+    }
+}
+
+/* ==============================================
+   25. PRINT STYLES
+   ============================================== */
+
+@media print {
+    .header-area,
+    .footer-area,
+    #whatsappBtn,
+    #scrollUp,
+    .slicknav_menu {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt !important;
+    }
+    
+    a {
+        text-decoration: underline !important;
+    }
+}
