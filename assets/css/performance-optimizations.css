@@ -1,0 +1,456 @@
+/* ==============================================
+   PERFORMANCE & ACCESSIBILITY OPTIMIZATIONS
+   Created: December 2025
+   Purpose: Improve page load speed, UX, and WCAG 2.1 compliance
+   ============================================== */
+
+/* ==============================================
+   1. LAZY LOADING & IMAGE OPTIMIZATION
+   ============================================== */
+
+/* Lazy load images - prevents layout shift */
+img[loading="lazy"] {
+    min-height: 100px;
+    background: #f5f5f5;
+}
+
+/* Smooth fade-in for lazy loaded images */
+img.lazy-loaded {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Optimize image rendering */
+img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* ==============================================
+   2. ACCESSIBILITY - FOCUS INDICATORS (WCAG 2.1)
+   ============================================== */
+
+/* Enhanced focus states for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+.slicknav_btn:focus {
+    outline: 3px solid #ff5f13 !important;
+    outline-offset: 2px !important;
+    box-shadow: 0 0 0 3px rgba(255, 95, 19, 0.3) !important;
+}
+
+/* Focus visible for modern browsers */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #ff5f13 !important;
+    outline-offset: 2px !important;
+}
+
+/* Remove focus outline when clicked (not keyboard) */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* High contrast focus for buttons */
+.btn:focus,
+.genric-btn:focus,
+.boxed-btn:focus,
+.white-btn:focus {
+    outline: 3px solid #ff5f13 !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 4px rgba(255, 95, 19, 0.2) !important;
+}
+
+/* Navigation focus states */
+.main-menu ul li a:focus {
+    background-color: rgba(255, 95, 19, 0.1);
+    outline: 2px solid #ff5f13;
+    outline-offset: -2px;
+}
+
+/* ==============================================
+   3. SKIP TO MAIN CONTENT (WCAG 2.1)
+   ============================================== */
+
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #ff5f13;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    z-index: 100000;
+    font-weight: bold;
+    border-radius: 0 0 4px 0;
+}
+
+.skip-to-main:focus {
+    top: 0;
+    outline: 3px solid #fff;
+    outline-offset: -3px;
+}
+
+/* ==============================================
+   4. REDUCED MOTION (WCAG 2.1)
+   ============================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .slider-active,
+    .owl-carousel,
+    .slick-slider {
+        animation: none !important;
+    }
+}
+
+/* ==============================================
+   5. PERFORMANCE - CRITICAL CSS LOADING
+   ============================================== */
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+.no-js {
+    opacity: 0;
+}
+
+.js {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+
+/* ==============================================
+   6. SEARCH & FILTER COMPONENTS
+   ============================================== */
+
+/* Product search and filter bar */
+.product-search-filter {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 80px;
+    z-index: 100;
+}
+
+.search-filter-wrapper {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.search-input-wrapper {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 50px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.search-input-wrapper input:focus {
+    border-color: #ff5f13;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 95, 19, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff5f13;
+    pointer-events: none;
+}
+
+/* Filter dropdowns */
+.filter-dropdown {
+    min-width: 180px;
+}
+
+.filter-dropdown select {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 50px;
+    font-size: 15px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-dropdown select:focus {
+    border-color: #ff5f13;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 95, 19, 0.1);
+}
+
+/* Clear filters button */
+.clear-filters-btn {
+    padding: 12px 25px;
+    background: #f5f5f5;
+    border: 2px solid #e5e5e5;
+    border-radius: 50px;
+    color: #333;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.clear-filters-btn:hover {
+    background: #ff5f13;
+    border-color: #ff5f13;
+    color: white;
+}
+
+.clear-filters-btn:focus {
+    outline: 3px solid #ff5f13;
+    outline-offset: 2px;
+}
+
+/* Results count */
+.results-count {
+    padding: 10px 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.results-count strong {
+    color: #ff5f13;
+    font-weight: 600;
+}
+
+/* Mobile search & filter */
+@media (max-width: 991px) {
+    .product-search-filter {
+        position: relative;
+        top: 0;
+        padding: 15px;
+    }
+    
+    .search-filter-wrapper {
+        flex-direction: column;
+    }
+    
+    .search-input-wrapper,
+    .filter-dropdown,
+    .clear-filters-btn {
+        width: 100%;
+        min-width: 100%;
+    }
+    
+    .results-count {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* No results message */
+.no-results-message {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f8f8;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+.no-results-message i {
+    font-size: 48px;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.no-results-message h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.no-results-message p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+/* ==============================================
+   7. LOADING STATES
+   ============================================== */
+
+/* Skeleton loading for images */
+.skeleton-loader {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ==============================================
+   8. IMPROVED CONTRAST (WCAG 2.1 AA)
+   ============================================== */
+
+/* Ensure text has sufficient contrast */
+.text-muted {
+    color: #666 !important;
+}
+
+.text-light {
+    color: #555 !important;
+}
+
+/* Link contrast */
+a {
+    text-decoration-skip-ink: auto;
+}
+
+/* Button text contrast */
+.btn,
+.boxed-btn,
+.white-btn {
+    font-weight: 500;
+}
+
+/* ==============================================
+   9. TOUCH TARGET SIZES (Mobile UX)
+   ============================================== */
+
+/* Ensure minimum 44x44px touch targets on mobile */
+@media (max-width: 991px) {
+    a,
+    button,
+    input[type="submit"],
+    input[type="button"],
+    .btn {
+        min-height: 44px;
+        min-width: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Smaller elements that need touch optimization */
+    .social-links a,
+    .pagination a,
+    .filter-controls button {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+}
+
+/* ==============================================
+   10. PERFORMANCE - WILL-CHANGE OPTIMIZATION
+   ============================================== */
+
+/* Optimize animations for better performance */
+.slider-active,
+.slick-slider,
+#scrollUp,
+#whatsappBtn {
+    will-change: transform;
+}
+
+/* Remove will-change after animation */
+.slider-active.slick-initialized,
+.slick-slider.slick-initialized {
+    will-change: auto;
+}
+
+/* ==============================================
+   11. PRINT STYLES
+   ============================================== */
+
+@media print {
+    /* Hide non-essential elements */
+    header,
+    footer,
+    .slider-area,
+    #scrollUp,
+    #whatsappBtn,
+    .preloader,
+    button,
+    .btn {
+        display: none !important;
+    }
+    
+    /* Optimize for print */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: white;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+    
+    /* Show URLs after links */
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* ==============================================
+   12. HIGH CONTRAST MODE (Accessibility)
+   ============================================== */
+
+@media (prefers-contrast: high) {
+    * {
+        border-color: #000 !important;
+    }
+    
+    .btn,
+    .boxed-btn {
+        border: 2px solid #000 !important;
+    }
+    
+    a:focus,
+    button:focus,
+    input:focus {
+        outline: 4px solid #000 !important;
+        outline-offset: 2px !important;
+    }
+}
