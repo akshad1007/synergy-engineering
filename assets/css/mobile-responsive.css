@@ -910,3 +910,174 @@ img {
         text-decoration: underline !important;
     }
 }
+
+/* ==============================================
+   16. CAREERS PAGE MOBILE FIXES
+   ============================================== */
+
+@media (max-width: 991px) {
+    /* Job Opening Buttons - Larger text for mobile */
+    .contact-with-area .white-btn,
+    section .white-btn {
+        font-size: 15px !important;
+        padding: 18px 20px !important;
+        line-height: 1.4 !important;
+    }
+    
+    /* Current Openings section spacing */
+    .contact-with-area .row .col-lg-6 {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    /* Even larger buttons for small mobile */
+    .contact-with-area .white-btn,
+    section .white-btn {
+        font-size: 16px !important;
+        padding: 20px 15px !important;
+        min-height: 60px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* ==============================================
+   17. PRELOADER MOBILE FIXES
+   ============================================== */
+
+@media (max-width: 575px) {
+    /* Ensure preloader is properly centered on mobile */
+    #preloader-active {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    .preloader {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    .preloader-inner {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    .preloader-circle {
+        width: 80px !important;
+        height: 80px !important;
+    }
+    
+    .preloader-inner img,
+    .preloader-img img {
+        max-width: 50px !important;
+        height: auto !important;
+    }
+}
+
+/* ==============================================
+   18. HERO SECTION MOBILE FIXES
+   ============================================== */
+
+@media (max-width: 575px) {
+    /* Hero button better spacing */
+    .hero__caption .red-btn2 {
+        margin-top: 20px !important;
+        margin-bottom: 30px !important;
+        padding: 15px 25px !important;
+        font-size: 14px !important;
+    }
+    
+    /* Slider text adjustments */
+    .slider-height {
+        min-height: 450px !important;
+    }
+    
+    .hero__caption h1 {
+        font-size: 28px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .hero__caption span {
+        font-size: 14px !important;
+    }
+}
+
+/* ==============================================
+   19. FORM ELEMENTS MOBILE FIXES
+   ============================================== */
+
+@media (max-width: 575px) {
+    /* Better form inputs on mobile */
+    .form-control,
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+        font-size: 16px !important; /* Prevents zoom on iOS */
+        padding: 12px 15px !important;
+    }
+    
+    /* Form buttons */
+    .genric-btn,
+    button[type="submit"] {
+        width: 100% !important;
+        padding: 15px 20px !important;
+        font-size: 16px !important;
+    }
+}
+
+/* ==============================================
+   20. CARDS & PRODUCT ITEMS MOBILE
+   ============================================== */
+
+@media (max-width: 575px) {
+    /* Product cards better spacing */
+    .single-service-cap,
+    .single-project,
+    .properties__card {
+        margin-bottom: 25px !important;
+    }
+    
+    /* Card images */
+    .properties__card .properties__img img,
+    .single-project img {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* ==============================================
+   21. TOUCH-FRIENDLY IMPROVEMENTS
+   ============================================== */
+
+@media (max-width: 991px) {
+    /* Minimum touch target size (44px recommended) */
+    a.btn,
+    .btn,
+    button,
+    .social-icon,
+    .slicknav_btn {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+    
+    /* Social icons in footer */
+    .contact-social a,
+    .footer-social a {
+        width: 44px !important;
+        height: 44px !important;
+        line-height: 44px !important;
+        margin: 5px !important;
+    }
+    
+    /* WhatsApp floating button */
+    #whatsappBtn {
+        width: 55px !important;
+        height: 55px !important;
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+}
