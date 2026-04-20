@@ -151,6 +151,24 @@
 <h1 class="text-4xl md:text-5xl font-extrabold text-primary-container mt-2 tracking-tight">Engineering Specification Form</h1>
 <p class="text-on-surface-variant mt-4 max-w-2xl leading-relaxed">Please provide detailed technical requirements for your project. Our engineering team will review your specifications and provide a comprehensive quotation within 24-48 business hours.</p>
 </div>
+<div class="text-green-600 font-bold p-6 bg-green-50 rounded-lg hidden mb-6 shadow-sm border border-green-200" data-fs-success>
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-green-700 text-3xl">check_circle</span>
+        <div>
+            <p class="text-lg">Thank you! Your quotation request has been received.</p>
+            <p class="text-sm font-normal text-green-700 mt-1">Our engineering team will review your specifications and contact you shortly.</p>
+        </div>
+    </div>
+</div>
+<div class="text-red-600 font-bold p-6 bg-red-50 rounded-lg hidden mb-6 shadow-sm border border-red-200" data-fs-error>
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-red-700 text-3xl">error</span>
+        <div>
+            <p class="text-lg">Oops! There was a problem submitting your form.</p>
+            <p class="text-sm font-normal text-red-700 mt-1">Please ensure all required fields are filled out correctly and try again.</p>
+        </div>
+    </div>
+</div>
 <form id="quote-form-v2" class="space-y-12">
 <!-- Section 1: Organization Details -->
 <section class="bg-surface-container-lowest p-8 md:p-12 shadow-sm rounded-lg">
@@ -267,7 +285,7 @@
 <span class="material-symbols-outlined text-sm">download</span>
                     Download Specification Summary
                 </button>
-<button class="order-1 md:order-2 flex items-center justify-center gap-2 px-12 py-4 bg-secondary text-white font-bold uppercase text-xs tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto rounded" type="submit">
+<button class="order-1 md:order-2 flex items-center justify-center gap-2 px-12 py-4 bg-secondary text-white font-bold uppercase text-xs tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto rounded" type="submit" data-fs-submit-btn>
                     Submit Quotation Request
                     <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </button>
@@ -335,4 +353,9 @@
         }
     });
 </script>
+<script>
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#quote-form-v2', formId: 'xpqkljvr' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body></html>
