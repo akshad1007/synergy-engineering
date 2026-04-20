@@ -161,15 +161,15 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 <div class="space-y-2 lg:col-span-3">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Company Name<span class="text-secondary ml-1">*</span></label>
-<input id="q-company" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="e.g. Industrial Dynamics Ltd" type="text" required>
+<input id="q-company" name="q-company" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="e.g. Industrial Dynamics Ltd" type="text" required>
 </div>
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Contact Person<span class="text-secondary ml-1">*</span></label>
-<input id="q-contact" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="Full legal name" type="text" required>
+<input id="q-contact" name="q-contact" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="Full legal name" type="text" required>
 </div>
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Industry Sector<span class="text-secondary ml-1">*</span></label>
-<select id="q-industry" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container" required>
+<select id="q-industry" name="q-industry" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container" required>
     <option value="">Select Sector</option>
     <option>Power & Utilities</option>
     <option>Oil & Gas</option>
@@ -181,16 +181,16 @@
 </div>
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Email Address<span class="text-secondary ml-1">*</span></label>
-<input id="q-email" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="corporate@email.com" type="email" required>
+<input id="q-email" name="q-email" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="corporate@email.com" type="email" required>
 </div>
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Phone Number<span class="text-secondary ml-1">*</span></label>
-<input id="q-phone" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="+91 00000 00000" type="tel" pattern="[0-9\s\+\-]{10,15}" oninput="this.value = this.value.replace(/[^0-9\s\+\-]/g, '')" title="Please enter a valid phone number (digits only, 10-15 characters)" required>
+<input id="q-phone" name="q-phone" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="+91 00000 00000" type="tel" pattern="[0-9\s\+\-]{10,15}" oninput="this.value = this.value.replace(/[^0-9\s\+\-]/g, '')" title="Please enter a valid phone number (digits only, 10-15 characters)" required>
 </div>
 
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Project Timeline<span class="text-secondary ml-1">*</span></label>
-<select id="q-timeline" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container" required>
+<select id="q-timeline" name="q-timeline" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container" required>
     <option value="">Select Urgency</option>
     <option>Immediate (Urgent)</option>
     <option>1-3 Months (Standard)</option>
@@ -200,12 +200,12 @@
 
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Project Location (State/City)<span class="text-secondary ml-1">*</span></label>
-<input id="q-location" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="e.g. Maharashtra" type="text" required>
+<input id="q-location" name="q-location" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="e.g. Maharashtra" type="text" required>
 </div>
 
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Estimated Quantity<span class="text-secondary ml-1">*</span></label>
-<input id="q-quantity" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="e.g. 5" type="number" min="1" required>
+<input id="q-quantity" name="q-quantity" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="e.g. 5" type="number" min="1" required>
 </div>
 </div>
 </section>
@@ -220,7 +220,7 @@
 <!-- Card: Megger -->
 <label class="relative flex items-start p-6 bg-surface-container-low cursor-pointer hover:bg-surface-container group transition-colors rounded-lg">
 <div class="flex items-center h-5">
-<input class="q-equip-check h-5 w-5 rounded-sm border-gray-300 text-secondary focus:ring-secondary" type="checkbox" value="Megger"/>
+<input class="q-equip-check h-5 w-5 rounded-sm border-gray-300 text-secondary focus:ring-secondary" type="checkbox" value="Megger" name="equipment[]">
 </div>
 <div class="ml-4">
 <span class="block text-lg font-bold text-primary-container">Megger</span>
@@ -230,7 +230,7 @@
 <!-- Card: Brother -->
 <label class="relative flex items-start p-6 bg-surface-container-low cursor-pointer hover:bg-surface-container group transition-colors rounded-lg">
 <div class="flex items-center h-5">
-<input class="q-equip-check h-5 w-5 rounded-sm border-gray-300 text-secondary focus:ring-secondary" type="checkbox" value="Brother"/>
+<input class="q-equip-check h-5 w-5 rounded-sm border-gray-300 text-secondary focus:ring-secondary" type="checkbox" value="Brother" name="equipment[]">
 </div>
 <div class="ml-4">
 <span class="block text-lg font-bold text-primary-container">Brother</span>
@@ -240,7 +240,7 @@
 <!-- Card: EMH -->
 <label class="relative flex items-start p-6 bg-surface-container-low cursor-pointer hover:bg-surface-container group transition-colors rounded-lg">
 <div class="flex items-center h-5">
-<input class="q-equip-check h-5 w-5 rounded-sm border-gray-300 text-secondary focus:ring-secondary" type="checkbox" value="EMH"/>
+<input class="q-equip-check h-5 w-5 rounded-sm border-gray-300 text-secondary focus:ring-secondary" type="checkbox" value="EMH" name="equipment[]">
 </div>
 <div class="ml-4">
 <span class="block text-lg font-bold text-primary-container">EMH</span>
@@ -257,7 +257,7 @@
 </div>
 <div class="space-y-2">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider">Detailed Technical Requirements<span class="text-secondary ml-1">*</span></label>
-<textarea id="q-specs" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="Describe tolerances, environmental conditions, operational parameters, and specific standards (ISO/ANSI) to be adhered to..." rows="6" required></textarea>
+<textarea id="q-specs" name="q-specs" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-secondary/20 p-4 text-primary-container placeholder:opacity-40" placeholder="Describe tolerances, environmental conditions, operational parameters, and specific standards (ISO/ANSI) to be adhered to..." rows="6" required></textarea>
 </div>
 </section>
 

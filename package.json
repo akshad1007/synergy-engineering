@@ -1,0 +1,25 @@
+{
+  "name": "synergy_engg_website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add_blog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshad1007/synergy-engineering.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/akshad1007/synergy-engineering/issues"
+  },
+  "homepage": "https://github.com/akshad1007/synergy-engineering#readme",
+  "dependencies": {
+    "fs-extra": "^11.3.4",
+    "node-fetch": "^3.3.2"
+  }
+}
