@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+    <meta name="description" content="Learn about Synergy Engineering, our mission, certifications, and expertise in electrical testing and industrial reliability."/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Synergy Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "on-primary-container": "#79849b",
+                    "surface-container-low": "#f2f4f7",
+                    "surface-variant": "#e0e3e6",
+                    "on-primary-fixed-variant": "#3c475b",
+                    "secondary-fixed-dim": "#ffb4ab",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#fffbff",
+                    "tertiary-container": "#001d31",
+                    "primary": "#000000",
+                    "on-secondary-fixed-variant": "#93000d",
+                    "on-primary-fixed": "#101c2e",
+                    "tertiary": "#000000",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#de2e2c",
+                    "secondary-fixed": "#ffdad6",
+                    "on-surface": "#191c1e",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#45474c",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e6e8eb",
+                    "primary-fixed-dim": "#bbc7df",
+                    "outline-variant": "#c5c6cd",
+                    "error": "#ba1a1a",
+                    "tertiary-fixed": "#cde5ff",
+                    "primary-fixed": "#d7e3fc",
+                    "primary-container": "#101c2e",
+                    "on-tertiary-container": "#4189c0",
+                    "tertiary-fixed-dim": "#93ccff",
+                    "surface-dim": "#d8dadd",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#004b74",
+                    "background": "#f7f9fc",
+                    "surface-tint": "#535f74",
+                    "surface-bright": "#f7f9fc",
+                    "secondary": "#b90c17",
+                    "surface-container": "#eceef1",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#e0e3e6",
+                    "inverse-on-surface": "#eff1f4",
+                    "on-secondary-fixed": "#410002",
+                    "inverse-primary": "#bbc7df",
+                    "surface": "#f7f9fc",
+                    "on-tertiary-fixed": "#001d31",
+                    "outline": "#75777d",
+                    "on-background": "#191c1e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Montserrat"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Montserrat', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .red-bolt-watermark {
+            position: absolute;
+            opacity: 0.03;
+            z-index: 0;
+            pointer-events: none;
+        }
+    
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-pulse-whatsapp {
+            animation: pulse-whatsapp 2s infinite;
+        }
+    </style>
+</head>
+ overflow-x-hidden>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-[72px] bg-white dark:bg-[#0A1628] border-b-4 border-[#D62828] shadow-lg dark:shadow-none">
+<div class="flex items-center gap-2">
+<a href="index.html"><img alt="Synergy Engineering Logo" class="h-16 md:h-16 w-auto" src="../screenshots/logo_synergy.png"/></a>
+</div>
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="index.html">Home</a>
+<a class="text-[#D62828] border-b-2 border-[#D62828] pb-1 font-semibold transition-colors duration-200 text-sm" href="about.html">About</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="products.html">Products</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="services.html">Services</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="industries.html">Industries</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="blog.html">Blog</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="careers.html">Careers</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-4 text-slate-600 dark:text-slate-400">
+<a class="material-symbols-outlined hover:text-[#D62828] cursor-pointer" data-icon="call" href="tel:+912225805555">call</a>
+<a class="material-symbols-outlined hover:text-[#D62828] cursor-pointer" data-icon="mail" href="mailto:info@synergy-engg.com">mail</a>
+</div>
+<a class="hidden sm:block bg-secondary text-on-secondary px-6 py-2 rounded-md font-headline font-semibold text-sm hover:opacity-90 transition-all scale-95 duration-150 ease-in-out" href="quote.html">
+            Get a Quote
+        </a>
+<button class="xl:hidden flex items-center text-slate-700 dark:text-slate-300" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Mobile Menu (Slide-in) -->
+<div class="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0 pointer-events-none" id="mobile-menu-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0A1628] z-[70] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col" id="mobile-menu">
+<div class="flex justify-between items-center p-6 border-b border-slate-100 dark:border-slate-800">
+<span class="font-extrabold text-[#D62828]">MENU</span>
+<button class="text-slate-500" id="menu-close">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-4 overflow-y-auto">
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="index.html">Home</a>
+<a class="text-lg font-semibold text-secondary" href="about.html">About</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="products.html">Products</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="services.html">Services</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="industries.html">Industries</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="blog.html">Blog</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="careers.html">Careers</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="contact.html">Contact</a>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="tel:+912225805555">
+<span class="material-symbols-outlined">call</span> Call Us
+            </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="mailto:info@synergy-engg.com">
+<span class="material-symbols-outlined">mail</span> Email Us
+            </a>
+<a class="bg-secondary text-white text-center py-3 rounded-md font-bold" href="quote.html">Request Quote</a>
+</div>
+</nav>
+</div>
+<!-- Mobile Menu (Slide-in) -->
+<div class="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0 pointer-events-none" id="mobile-menu-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0A1628] z-[70] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col" id="mobile-menu">
+<div class="flex justify-between items-center p-6 border-b border-slate-100 dark:border-slate-800">
+<span class="font-extrabold text-[#D62828]">MENU</span>
+<button class="text-slate-500" id="menu-close">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-4 overflow-y-auto">
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="index.html">Home</a>
+<a class="text-lg font-semibold text-secondary" href="about.html">About</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="products.html">Products</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="services.html">Services</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="industries.html">Industries</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="blog.html">Blog</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="careers.html">Careers</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="contact.html">Contact</a>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="tel:+912225805555">
+<span class="material-symbols-outlined">call</span> Call Us
+            </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="mailto:info@synergy-engg.com">
+<span class="material-symbols-outlined">mail</span> Email Us
+            </a>
+<a class="bg-secondary text-white text-center py-3 rounded-md font-bold" href="quote.html">Request Quote</a>
+</div>
+</nav>
+</div>
+<main class="pt-[72px]">
+<!-- Hero Section -->
+<section class="relative bg-primary-container text-white py-24 px-8 md:px-16 overflow-hidden">
+<div class="absolute inset-0 z-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="dramatic wide shot of a modern industrial manufacturing facility with clean steel surfaces and cool blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ_tGvEKqaTgxv-BPev2M0-1a0T2rkd1AuWibC_btbcNOioHwxHyi3Wgsa3No2SI44MATNUAntZBlhoGQLwGEebtrTyWDS1s5B64tG_CimmXUDEwSqrOt5VRXr0NGFpSpf2VU-Ek7SM6zqW1kpRC2DOjwWcn4eM_1KPtWDpFKVbxyE-terC2pE4B9WZUg9Z6FVkCvgBPiP182We_j52jOl7LXW5Sdz4D0VqrOTyEGEVgewegmlR07lkg_6gv1eA1WMJig-eJjhprk"/>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto w-full">
+<nav class="flex mb-6 text-sm font-medium tracking-wide text-on-primary-container">
+<a class="hover:text-white cursor-pointer" href="index.html">Home</a>
+<span class="mx-2 text-secondary">&gt;</span>
+<span class="text-white">About Us</span>
+</nav>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-4 leading-none">
+                    About Synergy <span class="text-secondary">Engineering</span>
+</h1>
+<p class="text-xl md:text-2xl text-slate-300 max-w-2xl font-light">
+                    9+ Years of Engineering Excellence Across India. Precise solutions for the nation's most demanding sectors.
+                </p>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+<div class="relative group">
+<div class="absolute -inset-4 bg-surface-container-low rounded-xl z-0 transition-all group-hover:bg-surface-container"></div>
+<img class="relative z-10 w-full aspect-video md:aspect-square object-cover rounded shadow-2xl" data-alt="industrial engineer working on complex machinery with safety equipment in a high-tech workshop environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxVUhUyFMp0QSkXhCG441m7SmdwgxtUmuddkAH56d7KO85kM7d2GQopH3asPfgkAtTU1K6A74iA2-a7PZ4PyEyc_--Qax4frM8NfW4ugxnRi8oIzs4AAcy3lpBdvHWPUoLwTSkJXuuZ7L94-pO4RV35apTTmIxuoN7kgnmlpT5atEXNcUWkSbOGtzjJFHHQUsz7seRhZEBY2ZGU7lOWBRde5Ih8ZAt_Yncxnb1bIuyBmezDr2rEZHBfu0ZeV601odWY7oqLfQvIYE"/>
+</div>
+<div>
+<span class="text-secondary font-bold tracking-widest text-sm mb-4 block uppercase">Our Story</span>
+<h2 class="text-4xl font-extrabold text-primary-container mb-6 leading-tight">From Thane to PAN-India</h2>
+<p class="text-on-surface-variant leading-relaxed mb-8 text-lg">
+                        Synergy Engineering was founded on the principles of technical integrity and industrial innovation. Starting as a specialized consultancy in Thane, we have evolved into a nationwide powerhouse providing end-to-end engineering solutions. Our journey is defined by a relentless pursuit of precision and an unwavering commitment to client success.
+                    </p>
+<!-- Timeline -->
+<div class="space-y-6">
+<div class="flex gap-6">
+<div class="flex flex-col items-center">
+<div class="w-4 h-4 rounded-full bg-secondary"></div>
+<div class="w-px h-full bg-outline-variant opacity-30 mt-2"></div>
+</div>
+<div>
+<span class="font-black text-secondary text-lg">2016</span>
+<p class="text-on-surface font-semibold">Inception in Thane</p>
+<p class="text-sm text-on-surface-variant">Founded with a vision for specialized industrial maintenance.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex flex-col items-center">
+<div class="w-4 h-4 rounded-full bg-primary-container"></div>
+<div class="w-px h-full bg-outline-variant opacity-30 mt-2"></div>
+</div>
+<div>
+<span class="font-black text-primary-container text-lg">2020</span>
+<p class="text-on-surface font-semibold">Service Expansion</p>
+<p class="text-sm text-on-surface-variant">Reached over 10 states with critical infrastructure projects.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex flex-col items-center">
+<div class="w-4 h-4 rounded-full bg-secondary"></div>
+</div>
+<div>
+<span class="font-black text-secondary text-lg">2024</span>
+<p class="text-on-surface font-semibold">Pan-India Authority</p>
+<p class="text-sm text-on-surface-variant">Leading national engineering partner for Tier-1 industrial giants.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission & Vision -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-low">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+<!-- Mission Card -->
+<div class="bg-surface-container-lowest p-12 border-t-8 border-secondary shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6">rocket_launch</span>
+<h3 class="text-3xl font-extrabold text-primary-container mb-4">Our Mission</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        To empower Indian industries through uncompromising engineering quality, innovative problem-solving, and a dedication to operational safety that sets new global benchmarks.
+                    </p>
+</div>
+<!-- Vision Card -->
+<div class="bg-surface-container-lowest p-12 border-t-8 border-primary-container shadow-sm hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-primary-container text-5xl mb-6">visibility</span>
+<h3 class="text-3xl font-extrabold text-primary-container mb-4">Our Vision</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed">
+                        To be the most trusted name in engineering excellence across Asia, bridging the gap between traditional reliability and future-ready technological integration.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Values Section -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto w-full">
+<div class="mb-16 text-center">
+<span class="text-secondary font-bold tracking-widest text-sm mb-4 block uppercase">Our Foundation</span>
+<h2 class="text-4xl font-extrabold text-primary-container">Core Corporate Values</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Precision -->
+<div class="group p-8 bg-surface border border-outline-variant border-opacity-10 hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:text-white">target</span>
+<h4 class="text-xl font-extrabold text-primary-container mb-2 group-hover:text-white">Precision</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-slate-300">Meticulous attention to detail in every calculation and installation.</p>
+</div>
+<!-- Reliability -->
+<div class="group p-8 bg-surface border border-outline-variant border-opacity-10 hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:text-white">verified_user</span>
+<h4 class="text-xl font-extrabold text-primary-container mb-2 group-hover:text-white">Reliability</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-slate-300">Consistently delivering results that stand the test of time and scale.</p>
+</div>
+<!-- Customer First -->
+<div class="group p-8 bg-surface border border-outline-variant border-opacity-10 hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:text-white">handshake</span>
+<h4 class="text-xl font-extrabold text-primary-container mb-2 group-hover:text-white">Customer First</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-slate-300">Aligning our engineering success with our clients' growth goals.</p>
+</div>
+<!-- Innovation -->
+<div class="group p-8 bg-surface border border-outline-variant border-opacity-10 hover:bg-primary-container transition-all duration-300">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:text-white">lightbulb</span>
+<h4 class="text-xl font-extrabold text-primary-container mb-2 group-hover:text-white">Innovation</h4>
+<p class="text-sm text-on-surface-variant group-hover:text-slate-300">Adopting modern methodologies for complex industrial challenges.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Certifications -->
+<section class="py-24 px-8 md:px-16 bg-primary-container relative overflow-hidden">
+<div class="red-bolt-watermark right-0 top-0 w-96 h-96 bg-secondary opacity-5 blur-3xl rounded-full"></div>
+<div class="max-w-7xl mx-auto relative z-10 w-full">
+<div class="mb-16 text-center">
+<h2 class="text-4xl font-extrabold text-white mb-4">Accredited Standards</h2>
+<p class="text-slate-400 max-w-xl mx-auto">We adhere to the highest international quality and safety standards in the engineering industry.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="bg-surface-container-lowest p-10 flex items-center gap-8 rounded-lg shadow-xl border-l-8 border-secondary">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container p-4 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-weight="fill">verified</span>
+</div>
+<div>
+<h4 class="text-2xl font-extrabold text-primary-container mb-1">ISO 9001:2015</h4>
+<p class="text-on-surface-variant font-medium">Quality Management System Certified</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-10 flex items-center gap-8 rounded-lg shadow-xl border-l-8 border-secondary">
+<div class="w-24 h-24 flex-shrink-0 bg-surface-container p-4 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-weight="fill">account_balance</span>
+</div>
+<div>
+<h4 class="text-2xl font-extrabold text-primary-container mb-1">NABL Accreditation</h4>
+<p class="text-on-surface-variant font-medium">National Accreditation Board for Testing and Calibration</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="py-24 px-8 md:px-16 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto w-full">
+<div class="mb-16">
+<span class="text-secondary font-bold tracking-widest text-sm mb-4 block uppercase">The Architects</span>
+<h2 class="text-4xl font-extrabold text-primary-container">Leadership &amp; Expertise</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Team Member 1 -->
+<div class="text-center group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-secondary rounded-full scale-0 group-hover:scale-105 transition-transform duration-300"></div>
+<img class="relative z-10 w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg" data-alt="portrait of a professional male engineering executive in a formal suit looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPpLGYQudY_-NA3WlUQ9fu0O5eamcISfvppzc6GOxPFmdYtsStuOk_dPG5rlPJlkkBH4wnM-WV2osV_esooUw1vuPSYL7W0s7t1cDKDfoc4uFgMHl9CRNrZWNT1Xz4GGgbH5x-PJYRkIIHQZFt2529W_NQMKgEB21ZVIUZtaKJsIyJ0iIae-brJxJgpgo-840-ZC38YNY4x14NY8oKNQD-N2vrvpqNLVRFS4-vzWrgZPmWTiBVXGpc4IjB6FAQjObcDLb9Gew9III"/>
+</div>
+<h4 class="text-xl font-extrabold text-primary-container">Rajesh Khanna</h4>
+<p class="text-secondary font-bold text-sm tracking-wide uppercase">Managing Director</p>
+<p class="text-xs text-on-surface-variant mt-2">Executive Leadership</p>
+</div>
+<!-- Team Member 2 -->
+<div class="text-center group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-secondary rounded-full scale-0 group-hover:scale-105 transition-transform duration-300"></div>
+<img class="relative z-10 w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg" data-alt="portrait of a professional female engineer with a friendly expression in a modern office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6IYmXRJMYrseDOFBlAvNhDRLLmtP7kFYUhDtqlDILumh1iRNTXYRx6Wz5UH8FLrhNyugKQdE7mH84vgKOlFm64KAqFntCsQnJI9yf5g9IibBmZnqihfzkiTsuce-cDYdL0qYqchIeq0H78n_3pJgqaOmRpV41zoTiBjVAd00MYMed3XOs0JlT4DpekmsvSy2AFHzkdbKftOwVfk8IYcVeE6-3am0q5VOQyDMJMQPdbG9Zg8lYx4hLuMWsvORVGE7n9hObpWoh0g8"/>
+</div>
+<h4 class="text-xl font-extrabold text-primary-container">Ananya Sharma</h4>
+<p class="text-secondary font-bold text-sm tracking-wide uppercase">Operations Head</p>
+<p class="text-xs text-on-surface-variant mt-2">Strategic Planning</p>
+</div>
+<!-- Team Member 3 -->
+<div class="text-center group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-secondary rounded-full scale-0 group-hover:scale-105 transition-transform duration-300"></div>
+<img class="relative z-10 w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg" data-alt="portrait of a mature professional man with glasses in a technical environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMmF_y7E5p67KCUZdUZtU7iAauBSWjxkNdN2vl-MVFpF-oQsf3zuZwUVYw2moCO7mPBkwJONKPvrqdz3qSgbsH1K4KjvFj_HYX_YFCf5JHv6tGZ0FucDjAQGjasEnBM3qtV4BnZYssh3P4Jpl_KBubm2UCbREWggNth6tFvUb8wSq4AIl8jOurMTNWsQ4jfFv1Pg5eXr4PNHahxKxAPb9hCaPMpXDS3BPRNufvNjD4TvMvbnzkuxW_M9kLZbq2aBcUrRcF0Izo-Sg"/>
+</div>
+<h4 class="text-xl font-extrabold text-primary-container">Vikram Singh</h4>
+<p class="text-secondary font-bold text-sm tracking-wide uppercase">Technical Director</p>
+<p class="text-xs text-on-surface-variant mt-2">Engineering Design</p>
+</div>
+<!-- Team Member 4 -->
+<div class="text-center group">
+<div class="relative mb-6 inline-block">
+<div class="absolute inset-0 bg-secondary rounded-full scale-0 group-hover:scale-105 transition-transform duration-300"></div>
+<img class="relative z-10 w-48 h-48 rounded-full object-cover border-4 border-white shadow-lg" data-alt="professional woman in corporate attire smiling confidently" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxwQQwFB4eOoarbGPIFUe8qCVx_fSE0fUnGq6vsimddT_cgDpO2N4ASck3S5dtHusjRAUMIRGgQrxDNekebZcv8PpopVcrTxNuHM7aceckOQTSMW6yb1cyQdkmnOBeqAVYHOdGdi_87KRqwlyQ-gzEXDlCCYnCKdsTYQbmLg3YiZd4r3ojLVTal51rKrP-hNszNmf8y9zxBlkFimhKT_0AJOc01HA8MG9cBo7q0AfysTcgCPyy8Z_0D6uS26cDMo5H6Oo-f0I70Zw"/>
+</div>
+<h4 class="text-xl font-extrabold text-primary-container">Priya Mehta</h4>
+<p class="text-secondary font-bold text-sm tracking-wide uppercase">Quality Assurance</p>
+<p class="text-xs text-on-surface-variant mt-2">Standards Compliance</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="py-20 px-8 md:px-16 bg-primary-container relative">
+<div class="max-w-5xl mx-auto text-center relative z-10 w-full">
+<h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight">Ready to Engineer Your Next Success?</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="bg-secondary text-on-secondary px-10 py-4 rounded-md font-extrabold text-lg uppercase tracking-wider hover:brightness-110 shadow-lg active:scale-95 transition-all text-center" href="contact.html">Start a Project</a>
+<a class="border-2 border-secondary border-opacity-30 text-white px-10 py-4 rounded-md font-extrabold text-lg uppercase tracking-wider hover:bg-secondary hover:border-secondary transition-all active:scale-95 text-center" href="contact.html">Contact Sales</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 md:py-16 px-4 md:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 bg-[#101c2e] dark:bg-[#0A1628]">
+<div class="space-y-4">
+<a href="index.html"><img alt="Synergy Engineering Logo" class="h-16 md:h-16 w-auto" src="../screenshots/logo_synergy.png"/></a>
+<p class="text-slate-400 text-sm leading-relaxed max-w-xs">PAN-India authorized distributor of electrical testing & measurement solutions. ISO 9001:2015 | NABL-Accredited | Since 2016.</p>
+<div class="flex gap-4 pt-4">
+<a href="https://linkedin.com/company/synergy-engineering" target="_blank" rel="noopener noreferrer" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">social_leaderboard</a>
+<a href="https://synergy-engg.com" target="_blank" rel="noopener noreferrer" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">language</a>
+<a href="mailto:info@synergy-engg.com" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">mail</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="about.html">About Us</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="products.html">Product Catalog</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="services.html">Service Center</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="industries.html">Industries</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="blog.html">Blog</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Global Partners</h4>
+<ul class="space-y-3">
+<li><a class="text-white font-bold text-sm hover:text-secondary" href="products.html?brand=megger">Megger</a></li>
+<li><a class="text-slate-400 text-sm hover:text-secondary" href="products.html?brand=emh">EMH Measurement</a></li>
+<li><a class="text-slate-400 text-sm hover:text-secondary" href="products.html?brand=brother">Brother Industrial</a></li>
+</ul></div>
+<div class="col-span-1 border-t border-slate-700/50 mt-12 pt-8 text-center text-slate-500 text-sm sm:col-span-2 lg:col-span-4">
+    &copy; 2026 Synergy Engineering. All rights reserved.
+</div>
+</footer>
+
+
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-black/20 hover:scale-110 transition-transform duration-200 animate-pulse-whatsapp" href="https://wa.me/912225805555" target="_blank" rel="noopener noreferrer">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if(mobileMenu) mobileMenu.classList.remove('translate-x-full');
+            if(mobileMenuOverlay) mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeMenu() {
+            if(mobileMenu) mobileMenu.classList.add('translate-x-full');
+            if(mobileMenuOverlay) mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        if(menuToggle) menuToggle.addEventListener('click', openMenu);
+        if(menuClose) menuClose.addEventListener('click', closeMenu);
+        if(mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+    });
+</script>
+
+</body></html>

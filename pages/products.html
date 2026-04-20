@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+    <meta name="description" content="Browse Synergy Engineering products from Megger, EMH, and Brother for testing, diagnostics, and industrial performance."/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Products | Synergy Engineering</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#79849b",
+                        "surface-container-low": "#f2f4f7",
+                        "surface-variant": "#e0e3e6",
+                        "on-primary-fixed-variant": "#3c475b",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-container": "#001d31",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#93000d",
+                        "on-primary-fixed": "#101c2e",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#de2e2c",
+                        "secondary-fixed": "#ffdad6",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#45474c",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8eb",
+                        "primary-fixed-dim": "#bbc7df",
+                        "outline-variant": "#c5c6cd",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary-fixed": "#d7e3fc",
+                        "primary-container": "#101c2e",
+                        "on-tertiary-container": "#4189c0",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "surface-dim": "#d8dadd",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "background": "#f7f9fc",
+                        "surface-tint": "#535f74",
+                        "surface-bright": "#f7f9fc",
+                        "secondary": "#b90c17",
+                        "surface-container": "#eceef1",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e6",
+                        "inverse-on-surface": "#eff1f4",
+                        "on-secondary-fixed": "#410002",
+                        "inverse-primary": "#bbc7df",
+                        "surface": "#f7f9fc",
+                        "on-tertiary-fixed": "#001d31",
+                        "outline": "#75777d",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Montserrat", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #000000 0%, #101c2e 100%);
+        }
+        .filter-tab.active {
+            background-color: #b90c17;
+            color: white;
+            border-color: #b90c17;
+        }
+        [data-brand] {
+            transition: all 0.3s ease-in-out;
+        }
+        .hidden-product {
+            display: none !important;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-pulse-green {
+            animation: pulse-green 2s infinite;
+        }
+    
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-pulse-whatsapp {
+            animation: pulse-whatsapp 2s infinite;
+        }
+    </style>
+</head>
+ overflow-x-hidden>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-[72px] bg-white dark:bg-[#0A1628] border-b-4 border-[#D62828] shadow-lg dark:shadow-none">
+<div class="flex items-center gap-2">
+<a href="index.html"><img alt="Synergy Engineering Logo" class="h-16 md:h-16 w-auto" src="../screenshots/logo_synergy.png"/></a>
+</div>
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="index.html">Home</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="about.html">About</a>
+<a class="text-[#D62828] border-b-2 border-[#D62828] pb-1 font-semibold transition-colors duration-200 text-sm" href="products.html">Products</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="services.html">Services</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="industries.html">Industries</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="blog.html">Blog</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="careers.html">Careers</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-4 text-slate-600 dark:text-slate-400">
+<a class="material-symbols-outlined hover:text-[#D62828] cursor-pointer" data-icon="call" href="tel:+912225805555">call</a>
+<a class="material-symbols-outlined hover:text-[#D62828] cursor-pointer" data-icon="mail" href="mailto:info@synergy-engg.com">mail</a>
+</div>
+<a class="hidden sm:block bg-secondary text-on-secondary px-6 py-2 rounded-md font-headline font-semibold text-sm hover:opacity-90 transition-all scale-95 duration-150 ease-in-out" href="quote.html">
+            Get a Quote
+        </a>
+<button class="xl:hidden flex items-center text-slate-700 dark:text-slate-300" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Mobile Menu (Slide-in) -->
+<div class="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0 pointer-events-none" id="mobile-menu-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0A1628] z-[70] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col" id="mobile-menu">
+<div class="flex justify-between items-center p-6 border-b border-slate-100 dark:border-slate-800">
+<span class="font-extrabold text-[#D62828]">MENU</span>
+<button class="text-slate-500" id="menu-close">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-4 overflow-y-auto">
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="index.html">Home</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="about.html">About</a>
+<a class="text-lg font-semibold text-secondary" href="products.html">Products</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="services.html">Services</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="industries.html">Industries</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="blog.html">Blog</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="careers.html">Careers</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="contact.html">Contact</a>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="tel:+912225805555">
+<span class="material-symbols-outlined">call</span> Call Us
+            </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="mailto:info@synergy-engg.com">
+<span class="material-symbols-outlined">mail</span> Email Us
+            </a>
+<a class="bg-secondary text-white text-center py-3 rounded-md font-bold" href="quote.html">Request Quote</a>
+</div>
+</nav>
+</div>
+<!-- Mobile Menu (Slide-in) -->
+<div class="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0 pointer-events-none" id="mobile-menu-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0A1628] z-[70] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col" id="mobile-menu">
+<div class="flex justify-between items-center p-6 border-b border-slate-100 dark:border-slate-800">
+<span class="font-extrabold text-[#D62828]">MENU</span>
+<button class="text-slate-500" id="menu-close">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-4 overflow-y-auto">
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="index.html">Home</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="about.html">About</a>
+<a class="text-lg font-semibold text-secondary" href="products.html">Products</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="services.html">Services</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="industries.html">Industries</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="blog.html">Blog</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="careers.html">Careers</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="contact.html">Contact</a>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="tel:+912225805555">
+<span class="material-symbols-outlined">call</span> Call Us
+            </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="mailto:info@synergy-engg.com">
+<span class="material-symbols-outlined">mail</span> Email Us
+            </a>
+<a class="bg-secondary text-white text-center py-3 rounded-md font-bold" href="quote.html">Request Quote</a>
+</div>
+</nav>
+</div>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform duration-200 animate-pulse-green flex items-center justify-center group" href="https://wa.me/912225805555" rel="noopener noreferrer" target="_blank">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.139c1.52.907 3.0 1.388 4.603 1.389 5.425 0 9.841-4.417 9.843-9.842.002-5.425-4.414-9.842-9.84-9.842-5.425 0-9.842 4.415-9.843 9.842-.001 1.816.503 3.593 1.458 5.148l-1.012 3.705 3.791-.994zm11.034-7.394c.02.005.456.223.533.259.077.037.127.056.146.089.019.033.019.19-.059.412-.077.221-.451.904-.614 1.055-.164.151-.314.178-.564.053-.251-.125-1.057-.389-2.012-1.241-.743-.663-1.245-1.481-1.391-1.732-.147-.251-.016-.387.11-.512.112-.113.25-.291.375-.436.124-.145.166-.243.25-.405.083-.162.042-.303-.021-.428-.063-.125-.563-1.356-.77-1.854-.202-.483-.406-.417-.564-.425l-.479-.009c-.166 0-.437.063-.666.312-.229.249-.875.855-.875 2.083s.896 2.413.999 2.553c.104.14 1.766 2.697 4.279 3.784.598.259 1.065.414 1.428.529.6.19 1.147.163 1.579.099.48-.071 1.479-.604 1.688-1.188.208-.584.208-1.084.146-1.188-.063-.105-.23-.168-.48-.293z"></path></svg>
+<span class="absolute right-full mr-4 bg-white text-on-surface px-3 py-1 rounded text-xs font-bold whitespace-nowrap shadow-md opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp Support</span>
+</a>
+<!-- Hero Section -->
+<header class="pt-[72px]">
+<div class="relative h-[400px] flex items-center justify-center overflow-hidden hero-gradient">
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArqwIqCPORboZ-a0Qi520StOnWmBbUQvNWY5iL71EpKh33IdvVCS6BeLrQp2GOLlZ_pz_uneRBQ7qwG-CQzGunHce6cDhc2avBGb1ItBnRhYPuJEhjSlktnm3snt2P-ZSJi8d59sPAukv9sVcqq3-m7KB5fpqJ2SeVKy7qA2yy2KJOPPeplE-WMmCQCrKuD7xOEftRwgPUC8f-L5pDmgcIxXWpuP-L4uGJnK_iluVq6soF4-_46JUKVqeCNIOvov9k8xn306D-fYs"/>
+</div>
+<div class="relative z-10 text-center px-6">
+<nav class="flex justify-center mb-6 text-sm font-medium tracking-wide text-slate-300">
+<a class="hover:text-white cursor-pointer" href="index.html">Home</a>
+<span class="mx-2 text-secondary">&gt;</span>
+<span class="text-white">Products</span>
+</nav>
+<h1 class="text-white font-headline font-extrabold text-5xl md:text-6xl tracking-tight mb-4">
+                    Our Products
+                </h1>
+<p class="text-on-primary-container font-medium text-lg md:text-xl max-w-2xl mx-auto">
+                    Authorized Stockist for World-Class Electrical Testing Brands
+                </p>
+</div>
+</div>
+</header>
+<!-- Filter & Content Area -->
+<main class="py-16 px-8 md:px-16 max-w-7xl mx-auto w-full">
+<!-- Filter Tabs -->
+<div class="flex flex-wrap justify-center gap-4 mb-16">
+<button class="filter-tab active px-8 py-2.5 rounded-full font-headline font-bold text-sm transition-all shadow-md flex items-center justify-center border border-transparent" onclick="filterProducts('all')">All</button>
+<button class="filter-tab px-8 py-2.5 rounded-full font-headline font-bold text-sm bg-white text-on-surface-variant hover:bg-surface-container-high transition-all outline-variant/15 outline outline-1 flex items-center justify-center" onclick="filterProducts('megger')">Megger</button>
+<button class="filter-tab px-8 py-2.5 rounded-full font-headline font-bold text-sm bg-white text-on-surface-variant hover:bg-surface-container-high transition-all outline-variant/15 outline outline-1 flex items-center justify-center" onclick="filterProducts('mte')">MTE AG &amp; EMH</button>
+<button class="filter-tab px-8 py-2.5 rounded-full font-headline font-bold text-sm bg-white text-on-surface-variant hover:bg-surface-container-high transition-all outline-variant/15 outline outline-1 flex items-center justify-center" onclick="filterProducts('brother')">Brother</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="product-grid">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="megger">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-secondary-container uppercase tracking-widest bg-secondary-fixed px-2 py-1 rounded">Megger</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">analytics</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="Megger 680-ADX" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPOSoEWJzKMr933Dt9uxxjwAdKhYJgpIlS7AmHi1bjZE3qV_-5Q7rwY2OBdLWII2Hqr-RjXVnr7-zmUGKfYgSA3_sKX7yLftbGeZpR6NWRa9udKzMhsSlKVUyN_V356diI8t0fXhgCj3b_Lyb_Uuy_rC8DisCKAEo_cAARUj9ay7bV9IKs7_LJV7tEAXP8ijip-MpRiky1p7bvBOh_9_j3v7MD9NDAKXbVXqY5uCE-PKZCmSmioaEiEvFFREIDgWIA1Voqz05eodY"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">680-ADX</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Advanced automatic diagnostic insulation tester for high voltage machines.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/680-adx.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="megger">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-secondary-container uppercase tracking-widest bg-secondary-fixed px-2 py-1 rounded">Megger</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">battery_charging_full</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="BITE5" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5ErNwjvdN_m0kwh9DdSPgchdqFM_s5PKg2oRDFzqESF3jDMLmVDJNRzj3oY3bKxKEg67fckeHcMkUphjv0bwfxd43si4YsPEFZz6AZooFaqO1I0k0wApgdRRY7IVskRNCFgdzE1fSQK5b8KpUqM4v3mv7MbQGknchI-vsXC_4Q0IZkP_nu1mF_m6_kMEAm88z6GBd5HLBfvVtn7JH_QADDHmQNZovIovBQY8uXNeuGiA8FFUVc2bcHBdI0-uElvE8fyV1nERMatI"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">BITE5</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Battery impedance tester for measuring lead-acid and NiCd battery performance.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/bite5.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="mte">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-[#004b74] uppercase tracking-widest bg-tertiary-fixed px-2 py-1 rounded">MTE</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">settings_input_component</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4 flex items-center justify-center">
+<img alt="MTE Filters" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzr8XmG1OAuRSdybz_1LUyAOy7K2-Lv9e6Akd58ZyxcVEfJuUGLOTMoHvwJ2cVkQE7PgNRwKZBWYwT7gDU-OyEG-QUmO199yD8atWxdV9o3MLTGoiwnmcRyy1HfS4PoBg_7NFcPnnYVCp8d1j3wRQCGDfbxQ90RaF77LgWDvgBGQNqP2DmjezcBdM9sbCXRY0RDwJqqN0rgFWM5sbn4eGReBtDkWW16yuYxatcylRC4ADbJTzKBD8NB68FE2B3GMZulNLhc0ypLL4"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">Filters</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">High-efficiency harmonic filters for industrial power stabilization and noise reduction.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/mte-filters.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="brother">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-black uppercase tracking-widest bg-slate-200 px-2 py-1 rounded">Brother</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">print</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="Brother PT-E850TKW" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFua1DtjQVzm_j5w7i676Pp25NEuNJtHoYUtBTwV-RSCvpVMvXzI0c-0f-9yk2NXEGQii_GN1q0dQAGt6Z_kcXsuxzoPLA3PUXuDSIf_g1nTsXgUcVwjVn-ON7mjS0NB8jvYpavHS7YPA-kaWQaQu2Ebe9SW6xaViByRMPHq92lEMywn4dfPYaZc8A2TCKX4mdSRbOL49uSlQ4Oqks12eH5h4K2496D6OnQOSW-FIKm2id6KrSP-oF2seycjU2p_VQU3Qy3TAzoDg"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">PT-E850TKW</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Industrial PC connectable labeling system for electrical and network tagging.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/pt-e850tkw.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="megger">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-secondary-container uppercase tracking-widest bg-secondary-fixed px-2 py-1 rounded">Megger</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">electric_bolt</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="Megger BM5200" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCuYfNvmrrcztpnzHD414EMErsbtmmrHZZUPtI2hraNUX2OUfroqsAOUEvP5G6dFFc3HOcMosubGpIHVzIrFTASYKSoWhheFiQxwxWVFW6PCBaEln0vk-VtCEZ9hGxxd9wClWe5jjnkl4BfwiTNoKszqJWflwGhlb8gYlXwrCl5vG0ECLpuywdTdH7X1D1jG93Ju4TTnOwaueqCdmTKlR5Pxok7TqquJNQbODRy6Jn9NpYLOailOecC6bQ7Mml0-jrGm25hgnVkeI"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">BM5200</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Analog/Digital battery powered insulation resistance tester.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/bm5200.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="megger">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-secondary-container uppercase tracking-widest bg-secondary-fixed px-2 py-1 rounded">Megger</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">brightness_high</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="Megger MIT5252" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFxcd0OThruCr2YrWDHQox7BBhRqs6zrwHmP7Wf7SxB9PWqg5Vo07SqiqUrOKzYPwScy9GFh0Z-msg31vLxEH2qWwxkVsrt0sO5ZElrTIlmsbGDj8-FtwsZHO6cKaVUav189kV6FnOYNCTA7N4NsRreWIPzDnRBwCeASiLs9U3xbSzaPLyQzbihrjMdvCFLTMl6kQbeA7vx0XtMX2b3Sqt0YoV7SSCXgXywXcoaq7Ut4VP6Os2AizdUhuzP7jIStVWniOrIfcp7x8"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">MIT5252</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Diagnostic insulation resistance tester for preventative maintenance.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/mit5252.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 7 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="mte">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-[#004b74] uppercase tracking-widest bg-tertiary-fixed px-2 py-1 rounded">MTE</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">bolt</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="MTE Reactors" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSkm51eiEGNL78oddmo3pn-dSY5QfdY2gaEUyucSpoq7r1TzlJxZFtcPHABNUoh9K8txyoy9r88m75OGSWseLO1XE2YKOQJ2zLv6TsTFRkJ8801_4vyxWReY2BsuVNeIKqrH4IKfkVuRLWQmklYYFL6vHET-1GMZdbgIz2JCOwXwINv8n_eFxNIvYjHqlctcM3Kq3YL1QLnrf2-wzcl6ZcP4gjy9LCgDZ-OvV3r6iI1qLKuI9275pOfjyuggnY9-LTM3oN6uwH0mg"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">Reactors</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Input and output reactors for motor protection and peak current limiting.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/mte-reactors.html">
+                    View Details
+                </a>
+</div>
+<!-- Product Card 8 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg group hover:shadow-xl transition-all duration-300 flex flex-col h-full border border-outline-variant/20" data-brand="brother">
+<div class="flex justify-between items-start mb-6">
+<span class="text-[10px] font-bold text-black uppercase tracking-widest bg-slate-200 px-2 py-1 rounded">Brother</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">print_connect</span>
+</div>
+<div class="aspect-square mb-6 bg-surface-container-low rounded-md overflow-hidden p-4">
+<img alt="Brother PT-E560BTVP" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJYqbL5rWrVnI29lXDaLNR3A2pRBOqXCP-aTgHJPn8chyxpZLRseGxPij4c3Ep7pUWPSH-ah39Idmj9qKkkZXhs9xLqCP_VNB4s6_Teprpu7xIgCzIzE6jtgjMqkOnMiO1AtLGkgJBZpup-rxpcYoxgrgdnFQOgOizkOr3wxAtQSMVVQGIL46e_g0SMxySFL0nQ-U9tC-N9uUNljcx5tj4KPyFQ-IhLvHsnalYYEnx2RXXgQTbvDxvU1Hd5Bk-w5fhUy2W8WpLay4"/>
+</div>
+<h3 class="font-headline font-bold text-primary-container text-lg mb-2">PT-E560BTVP</h3>
+<p class="text-on-surface-variant text-sm mb-6 flex-grow">Bluetooth enabled professional industrial label printer with carry case.</p>
+<a class="w-full py-3 border-2 border-secondary text-secondary font-headline font-bold text-xs uppercase tracking-widest rounded hover:bg-secondary hover:text-white transition-all text-center" href="../products/pt-e560btvp.html">
+                    View Details
+                </a>
+</div>
+</div>
+</main>
+<!-- Download CTA Banner -->
+<section class="bg-surface-container py-20 px-8 md:px-16">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 p-12 bg-white rounded-xl shadow-sm border border-outline-variant/20 w-full">
+<div class="text-center md:text-left">
+<h2 class="font-headline font-extrabold text-3xl text-primary-container mb-2">Need our complete product catalogue?</h2>
+<p class="text-on-surface-variant max-w-md">Access our full range of professional electrical testing and measurement solutions in one comprehensive document.</p>
+</div>
+<a class="bg-secondary text-white font-headline font-bold px-10 py-5 rounded-md hover:shadow-lg transition-all flex items-center gap-3" href="contact.html" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined">download</span>
+                Download Catalogue (PDF)
+            </a>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 md:py-16 px-4 md:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 bg-[#101c2e] dark:bg-[#0A1628]">
+<div class="space-y-4">
+<a href="index.html"><img alt="Synergy Engineering Logo" class="h-16 md:h-16 w-auto" src="../screenshots/logo_synergy.png"/></a>
+<p class="text-slate-400 text-sm leading-relaxed max-w-xs">PAN-India authorized distributor of electrical testing & measurement solutions. ISO 9001:2015 | NABL-Accredited | Since 2016.</p>
+<div class="flex gap-4 pt-4">
+<a href="https://linkedin.com/company/synergy-engineering" target="_blank" rel="noopener noreferrer" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">social_leaderboard</a>
+<a href="https://synergy-engg.com" target="_blank" rel="noopener noreferrer" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">language</a>
+<a href="mailto:info@synergy-engg.com" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">mail</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="about.html">About Us</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="products.html">Product Catalog</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="services.html">Service Center</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="industries.html">Industries</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="blog.html">Blog</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Global Partners</h4>
+<ul class="space-y-3">
+<li><a class="text-white font-bold text-sm hover:text-secondary" href="products.html?brand=megger">Megger</a></li>
+<li><a class="text-slate-400 text-sm hover:text-secondary" href="products.html?brand=emh">EMH Measurement</a></li>
+<li><a class="text-slate-400 text-sm hover:text-secondary" href="products.html?brand=brother">Brother Industrial</a></li>
+</ul></div>
+<div class="col-span-1 border-t border-slate-700/50 mt-12 pt-8 text-center text-slate-500 text-sm sm:col-span-2 lg:col-span-4">
+    &copy; 2026 Synergy Engineering. All rights reserved.
+</div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-black/20 hover:scale-110 transition-transform duration-200 animate-pulse-whatsapp" href="https://wa.me/912225805555" target="_blank" rel="noopener noreferrer">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+
+<script>
+        function filterProducts(brand) {
+            const items = document.querySelectorAll('[data-brand]');
+            const tabs = document.querySelectorAll('.filter-tab');
+            
+            // Update active state of tabs
+            tabs.forEach(tab => {
+                if(tab.textContent.toLowerCase().includes(brand) || (brand === 'all' && tab.textContent === 'All')) {
+                    tab.classList.add('active');
+                    tab.classList.remove('bg-white', 'text-on-surface-variant');
+                } else {
+                    tab.classList.remove('active');
+                    tab.classList.add('bg-white', 'text-on-surface-variant');
+                }
+            });
+
+            // Filter products in grid
+            items.forEach(item => {
+                if (brand === 'all' || item.getAttribute('data-brand') === brand) {
+                    item.classList.remove('hidden-product');
+                } else {
+                    item.classList.add('hidden-product');
+                }
+            });
+        }
+    </script>
+
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if(mobileMenu) mobileMenu.classList.remove('translate-x-full');
+            if(mobileMenuOverlay) mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeMenu() {
+            if(mobileMenu) mobileMenu.classList.add('translate-x-full');
+            if(mobileMenuOverlay) mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        if(menuToggle) menuToggle.addEventListener('click', openMenu);
+        if(menuClose) menuClose.addEventListener('click', closeMenu);
+        if(mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+    });
+</script>
+
+</body></html>

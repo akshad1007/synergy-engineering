@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Synergy Engineering delivers precision electrical testing, maintenance, and reliability solutions across India with authorized global partners."/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Synergy Engineering | Precision. Performance. Reliability.</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#79849b",
+                        "surface-container-low": "#f2f4f7",
+                        "surface-variant": "#e0e3e6",
+                        "on-primary-fixed-variant": "#3c475b",
+                        "secondary-fixed-dim": "#ffb4ab",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "tertiary-container": "#001d31",
+                        "primary": "#000000",
+                        "on-secondary-fixed-variant": "#93000d",
+                        "on-primary-fixed": "#101c2e",
+                        "tertiary": "#000000",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#de2e2c",
+                        "secondary-fixed": "#ffdad6",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#45474c",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#e6e8eb",
+                        "primary-fixed-dim": "#bbc7df",
+                        "outline-variant": "#c5c6cd",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#cde5ff",
+                        "primary-fixed": "#d7e3fc",
+                        "primary-container": "#101c2e",
+                        "on-tertiary-container": "#4189c0",
+                        "tertiary-fixed-dim": "#93ccff",
+                        "surface-dim": "#d8dadd",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "background": "#f7f9fc",
+                        "surface-tint": "#535f74",
+                        "surface-bright": "#f7f9fc",
+                        "secondary": "#D62828",
+                        "surface-container": "#eceef1",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e6",
+                        "inverse-on-surface": "#eff1f4",
+                        "on-secondary-fixed": "#410002",
+                        "inverse-primary": "#bbc7df",
+                        "surface": "#f7f9fc",
+                        "on-tertiary-fixed": "#001d31",
+                        "outline": "#75777d",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Montserrat", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ticker-scroll {
+            display: flex;
+            width: fit-content;
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .text-shadow-industrial {
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        #mobile-menu.active {
+            transform: translateX(0);
+        }
+    
+        @keyframes pulse-whatsapp {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .animate-pulse-whatsapp {
+            animation: pulse-whatsapp 2s infinite;
+        }
+    </style>
+</head>
+ overflow-x-hidden>
+
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 md:px-8 h-[72px] bg-white dark:bg-[#0A1628] border-b-4 border-[#D62828] shadow-lg dark:shadow-none">
+<div class="flex items-center gap-2">
+<a href="index.html"><img alt="Synergy Engineering Logo" class="h-16 md:h-16 w-auto" src="../screenshots/logo_synergy.png"/></a>
+</div>
+<nav class="hidden xl:flex items-center gap-6">
+<a class="text-[#D62828] border-b-2 border-[#D62828] pb-1 font-semibold transition-colors duration-200 text-sm" href="index.html">Home</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="about.html">About</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="products.html">Products</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="services.html">Services</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="industries.html">Industries</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="blog.html">Blog</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="careers.html">Careers</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#D62828] transition-colors duration-200 text-sm" href="contact.html">Contact</a>
+</nav>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center gap-4 text-slate-600 dark:text-slate-400">
+<a class="material-symbols-outlined hover:text-[#D62828] cursor-pointer" data-icon="call" href="tel:+912225805555">call</a>
+<a class="material-symbols-outlined hover:text-[#D62828] cursor-pointer" data-icon="mail" href="mailto:info@synergy-engg.com">mail</a>
+</div>
+<a class="hidden sm:block bg-secondary text-on-secondary px-6 py-2 rounded-md font-headline font-semibold text-sm hover:opacity-90 transition-all scale-95 duration-150 ease-in-out" href="quote.html">
+            Get a Quote
+        </a>
+<button class="xl:hidden flex items-center text-slate-700 dark:text-slate-300" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Mobile Menu (Slide-in) -->
+<div class="fixed inset-0 bg-black/50 z-[60] transition-opacity duration-300 opacity-0 pointer-events-none" id="mobile-menu-overlay"></div>
+<div class="fixed top-0 right-0 h-full w-[280px] bg-white dark:bg-[#0A1628] z-[70] translate-x-full transition-transform duration-300 ease-in-out shadow-2xl flex flex-col" id="mobile-menu">
+<div class="flex justify-between items-center p-6 border-b border-slate-100 dark:border-slate-800">
+<span class="font-extrabold text-[#D62828]">MENU</span>
+<button class="text-slate-500" id="menu-close">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col p-6 space-y-4 overflow-y-auto">
+<a class="text-lg font-semibold text-secondary" href="index.html">Home</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="about.html">About</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="products.html">Products</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="services.html">Services</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="industries.html">Industries</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="blog.html">Blog</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="careers.html">Careers</a>
+<a class="text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-secondary" href="contact.html">Contact</a>
+<div class="pt-6 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-4">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="tel:+912225805555">
+<span class="material-symbols-outlined">call</span> Call Us
+            </a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400" href="mailto:info@synergy-engg.com">
+<span class="material-symbols-outlined">mail</span> Email Us
+            </a>
+<a class="bg-secondary text-white text-center py-3 rounded-md font-bold" href="quote.html">Request Quote</a>
+</div>
+</nav>
+</div>
+<!-- HERO SECTION -->
+<section class="relative h-screen w-full flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-[#0A1628] opacity-70 z-10"></div>
+<img alt="dramatic industrial power plant interior with heavy machinery" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC1x2KDPxELWbaCmcm5qcURNiZQOtV0HyBw2OOGxJfDln_B-c8kjs5YHSH-Pkd1Vue8sNYPVxQgN0WJQgziJpgS6ie8Xob2DJ2FshkQkHgbINY4JCRMjwkiR3uiQ7YhpdHG2M6FUW5W0yLELrnWKGCh3gO8vDnC_Q0x68IH-J-9bMjx1oo8gRWD32EqhNC8CLeEg6NYEGRmSWeOrHeUbExblAe9CK7JZqY6EnIffXAckiBZPGECSike80xrzLurJg_O4XkHFYWIyQ"/>
+</div>
+<div class="container mx-auto px-4 md:px-8 relative z-20">
+<div class="max-w-4xl w-full">
+<h1 class="font-headline font-black text-4xl md:text-6xl lg:text-[64px] text-white leading-tight mb-8 text-shadow-industrial tracking-tight">
+                Precision. Performance. Reliability.
+            </h1>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-secondary text-white px-8 md:px-10 py-4 font-headline font-bold text-base md:text-lg rounded-md hover:bg-opacity-90 transition-all text-center inline-block" href="products.html">
+                    Explore Products
+                </a>
+<a class="border-2 border-white text-white px-8 md:px-10 py-4 font-headline font-bold text-base md:text-lg rounded-md hover:bg-white hover:text-[#0A1628] transition-all text-center inline-block" href="quote.html">
+                Request a Quote
+                </a>
+</div>
+</div>
+</div>
+<!-- Ticker -->
+<div class="absolute bottom-0 left-0 w-full bg-white/10 backdrop-blur-md py-4 md:py-6 border-t border-white/20 z-30 overflow-hidden">
+<div class="ticker-scroll overflow-hidden">
+<div class="flex items-center gap-8 md:gap-16 px-8 shrink-0">
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Megger</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">EMH</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Brother</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">ISO 9001:2015</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">NABL Accredited</span>
+</div>
+<div class="flex items-center gap-8 md:gap-16 px-8 shrink-0">
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Megger</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">EMH</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Brother</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">ISO 9001:2015</span>
+<span class="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">NABL Accredited</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BRAND PARTNERS -->
+<section class="py-12 md:py-20 bg-white">
+<div class="container mx-auto px-8 text-center">
+<h2 class="font-headline font-bold text-slate-400 tracking-[0.2em] mb-12 md:mb-16 text-xs md:text-sm uppercase">Authorized Partners &amp; Stockists</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 items-center justify-items-center">
+<a class="flex justify-center grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" href="products.html?brand=megger">
+<img alt="Megger logo" class="h-16 md:h-20 max-w-[200px] w-auto object-contain" src="../screenshots/megger_logo.svg"/>
+</a>
+<a class="flex justify-center grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" href="products.html?brand=emh">
+<img alt="EMH logo" class="h-16 md:h-20 max-w-[200px] w-auto object-contain" src="../screenshots/emh-logo-r2.png"/>
+</a>
+<a class="flex justify-center grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer" href="products.html?brand=brother">
+<img alt="Brother logo" class="h-16 md:h-20 max-w-[200px] w-auto object-contain" src="../screenshots/Brother-Logo.png"/>
+</a>
+</div>
+</div>
+</section>
+<!-- WHO WE ARE -->
+<section class="py-16 md:py-24 bg-surface-container-low" id="about">
+<div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row gap-12 md:gap-16 items-center">
+<div class="w-full md:w-[55%]">
+<span class="text-secondary font-bold tracking-widest text-sm mb-4 block">WHO WE ARE</span>
+<h2 class="font-headline font-extrabold text-3xl md:text-5xl text-primary-container mb-8 leading-tight">Engineering Excellence Since Inception</h2>
+<p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
+                Synergy Engineering is a premier distributor and service provider for high-end electrical test and measurement equipment. We bridge the gap between global technology leaders and local industrial requirements with unparalleled technical expertise.
+            </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-semibold text-primary-container">Authorized distributor for world-leading brands.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-semibold text-primary-container">Comprehensive NABL accredited calibration services.</span>
+</li>
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-semibold text-primary-container">Expert technical support and onsite training.</span>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-[45%] relative">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-secondary z-0"></div>
+<div class="relative z-10 overflow-hidden shadow-2xl">
+<img alt="professional electrical engineer" class="w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh94QyiOcoLBjP5m6IYnESkoB6y20b40ZmD3Kt2elLr2KfU9rkCK77vQXreyLX_43WKkECL4u35oIrWSg14eqm33QUHsoybnSyGwg8d15s6LpaCMJYaq2IKpd9gmV0DH-AAb9YMOLgJRokRDkScFBYxs0SlMFMlNA-s0lCLeeXoWKK8-nKXRkAn85fSP2lqxMHahc05rHjA3vWgZ0oPcijaHCDjTDvOfoRZi1BzraF703ipn-lRCPIYsea-DviiTpCljqyCRy7fmw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- WHAT WE OFFER -->
+<section class="py-16 md:py-24 bg-[#0A1628]" id="services">
+<div class="container mx-auto px-4 md:px-8">
+<div class="text-center mb-12 md:mb-16">
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white mb-4">What We Offer</h2>
+<div class="w-20 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+<!-- Card 1 -->
+<a class="bg-white p-6 md:p-8 rounded-xl border-t-4 border-secondary group hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(185,12,23,0.3)] transition-all duration-300 block" href="services.html#electrical-testing">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="bolt">bolt</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mb-4">Electrical Testing</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Comprehensive testing solutions for transformers, motors, and high-voltage switchgear using industry-standard equipment.</p>
+</a>
+<!-- Card 2 -->
+<a class="bg-white p-6 md:p-8 rounded-xl border-t-4 border-secondary group hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(185,12,23,0.3)] transition-all duration-300 block" href="services.html#equipment-supply">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="settings_input_component">settings_input_component</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mb-4">Equipment Supply</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Direct access to authentic products from Megger, MTE AG, and EMH with manufacturer-backed warranties.</p>
+</a>
+<!-- Card 3 -->
+<a class="bg-white p-6 md:p-8 rounded-xl border-t-4 border-secondary group hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(185,12,23,0.3)] transition-all duration-300 block" href="services.html#calibration">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mb-4">Calibration Services</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">NABL accredited calibration laboratory ensuring your instruments maintain peak precision and compliance.</p>
+</a>
+<!-- Card 4 -->
+<a class="bg-white p-6 md:p-8 rounded-xl border-t-4 border-secondary group hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(185,12,23,0.3)] transition-all duration-300 block" href="services.html#onsite-maintenance">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="construction">construction</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mb-4">Onsite Maintenance</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Preventive maintenance and troubleshooting services conducted by certified factory-trained engineers.</p>
+</a>
+<!-- Card 5 -->
+<a class="bg-white p-6 md:p-8 rounded-xl border-t-4 border-secondary group hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(185,12,23,0.3)] transition-all duration-300 block" href="services.html#training">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="school">school</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mb-4">Technical Training</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Specialized training programs on equipment operation and interpretation of complex diagnostic results.</p>
+</a>
+<!-- Card 6 -->
+<a class="bg-white p-6 md:p-8 rounded-xl border-t-4 border-secondary group hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(185,12,23,0.3)] transition-all duration-300 block" href="services.html#integration">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6 block" data-icon="monitoring">monitoring</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mb-4">System Integration</h3>
+<p class="text-on-surface-variant text-sm leading-relaxed">Custom engineering solutions for integrating measurement systems into existing industrial workflows.</p>
+</a>
+</div>
+</div>
+</section>
+<!-- STATS COUNTER -->
+<section class="bg-[#D62828] py-12 md:py-16">
+<div class="container mx-auto px-4 md:px-8">
+<div class="grid grid-cols-2 md:grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 text-center">
+<div>
+<div class="font-headline font-black text-3xl md:text-5xl text-white mb-2">9+</div>
+<div class="text-white/80 font-bold tracking-wider text-[10px] md:text-sm uppercase">Years Excellence</div>
+</div>
+<div>
+<div class="font-headline font-black text-3xl md:text-5xl text-white mb-2">1000+</div>
+<div class="text-white/80 font-bold tracking-wider text-[10px] md:text-sm uppercase">Global Clients</div>
+</div>
+<div>
+<div class="font-headline font-black text-3xl md:text-5xl text-white mb-2">50+</div>
+<div class="text-white/80 font-bold tracking-wider text-[10px] md:text-sm uppercase">Premium Products</div>
+</div>
+<div>
+<div class="font-headline font-black text-3xl md:text-5xl text-white mb-2">12+</div>
+<div class="text-white/80 font-bold tracking-wider text-[10px] md:text-sm uppercase">Industries Served</div>
+</div>
+</div>
+</div>
+</section>
+<!-- OUR PRODUCTS -->
+<section class="py-16 md:py-24" id="products">
+<div class="container mx-auto px-4 md:px-8">
+<div class="mb-12 md:mb-16">
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-primary-container">Our Products</h2>
+<div class="w-16 h-1 bg-secondary mt-4"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Megger Card -->
+<div class="relative h-[350px] md:h-[450px] overflow-hidden group rounded-lg">
+<img alt="Megger equipment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgwKSP-lB-cbhpacTZ4kWfzm_YEhOqfWu-mkfY1pbrNXjZjd90KrBD9m4_BK6b74YUKGnOrw05R42z-l3d65KLO7XHiMQc2eagEPtjtocRIPJIvR-0mDntBZFwKgspzEXy1_zlg3Hp155v1z3fxw3ZEQMspJUPxMZRPLAf6gB_p6Cb8vQekPBW0KBF05gznmiNFqpkyKt1squW0ZafOtj44ixzLvL-w4pe2QC_DMTOGJMVRsP-Em9mcoQOmS4bh6jY5oxLCVSRIWs"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full">
+<h3 class="font-headline font-black text-2xl md:text-3xl mb-2">Megger</h3>
+<p class="text-white/80 text-xs md:text-sm mb-6">Electrical Test Equipment for Power Systems.</p>
+<a class="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block" href="products.html?brand=megger">Explore Collection</a>
+</div>
+</div>
+<!-- MTE & EMH Card -->
+<div class="relative h-[350px] md:h-[450px] overflow-hidden group rounded-lg">
+<img alt="Advanced monitoring" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcjAD0XGZ6NQn3JuN_MgTlCoBUR7NuyyUF5-cGVIN3Sgx5aP-wn2mH9pTVzNuJhizCGtlLJHwNi_-MS2TdI5GVecmtb0fHX8KGtjuQxyv2B8L0AggWRZLOECL5uP2LrDXF9eKr14Y586WCnlWLOVKqbaKwHfy18qnYOENbHH2LzZVKdvJ8VimoyH0RZfQrt4cYEqLQJkiO1aeBhBKyPaTqbGn8rvqfhKK1DcNvCpw0nX11Xo5y2W8eivA9o0-l_jDwp5VA3fCES0g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full">
+<h3 class="font-headline font-black text-2xl md:text-3xl mb-2">MTE AG &amp; EMH</h3>
+<p class="text-white/80 text-xs md:text-sm mb-6">Precision Meter Testing &amp; Energy Measurement.</p>
+<a class="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block" href="products.html?brand=mte-emh">Explore Collection</a>
+</div>
+</div>
+<!-- Brother Card -->
+<div class="relative h-[350px] md:h-[450px] overflow-hidden group rounded-lg sm:col-span-2 lg:col-span-1">
+<img alt="Brother systems" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQpNjE3O44Zp6E5ydll4DdJVk2PWj6PBOLjnCmQiwlWGE0T7MNCnRmhUci7gkCzUOUFIyhWU01VXTDzbzdH4BUG4XopVISL9eBo2cD9dFyqRmgYYMN2d-yeHNOrQRksMJbmMQ3BaOiT9umKXkR52LBGITocGL0jhRGzsKimF-_3CgmKUEQlG5VHFzH3B8t2WVH1dB_mgB6CbA8uS6ussKYsLp7CkLLvqloW58Bg5Kn4VvVLJ8zcksGPnfJeur8D2TulSG4UpGBeE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90"></div>
+<div class="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full">
+<h3 class="font-headline font-black text-2xl md:text-3xl mb-2">Brother</h3>
+<p class="text-white/80 text-xs md:text-sm mb-6">Industrial Labeling &amp; Identification Systems.</p>
+<a class="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block" href="products.html?brand=brother">Explore Collection</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- INDUSTRIES WE SERVE -->
+<section class="py-16 md:py-24 bg-surface-container" id="industries">
+<div class="container mx-auto px-4 md:px-8 text-center">
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-primary-container mb-12 md:mb-16">Industries We Serve</h2>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 border-t border-l border-outline-variant/30">
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#power-utilities">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="factory">factory</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Power Utilities</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#automotive">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="electric_car">electric_car</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Automotive</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#oil-gas">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="oil_barrel">oil_barrel</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Oil & Gas</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#real-estate">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="apartment">apartment</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Real Estate</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#railways">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="directions_railway">directions_railway</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Railways</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#healthcare">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="medical_services">medical_services</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Healthcare</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#data-centers">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="dns">dns</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Data Centers</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#renewables">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="solar_power">solar_power</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Renewables</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#aerospace">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="rocket_launch">rocket_launch</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Aerospace</h4>
+</a>
+<a class="border-b border-r border-outline-variant/30 py-8 md:py-12 px-4 md:px-6 hover:bg-primary-container group transition-colors duration-300 block" href="industries.html#water-treatment">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4 block group-hover:text-white" data-icon="water_drop">water_drop</span>
+<h4 class="font-headline font-bold text-[10px] md:text-sm text-primary-container group-hover:text-white uppercase tracking-wider">Water Treatment</h4>
+</a>
+</div>
+</div>
+</section>
+<!-- BLOG SECTION -->
+<section class="py-16 md:py-24 bg-white" id="blog">
+<div class="container mx-auto px-4 md:px-8">
+<div class="text-center mb-12 md:mb-16">
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-primary-container mb-4">Latest Insights</h2>
+<div class="w-20 h-1 bg-secondary mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<a class="group cursor-pointer block" href="../blogs/advanced-transformer-testing.html">
+<div class="overflow-hidden rounded-lg mb-6">
+<img alt="Transformer testing" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC1x2KDPxELWbaCmcm5qcURNiZQOtV0HyBw2OOGxJfDln_B-c8kjs5YHSH-Pkd1Vue8sNYPVxQgN0WJQgziJpgS6ie8Xob2DJ2FshkQkHgbINY4JCRMjwkiR3uiQ7YhpdHG2M6FUW5W0yLELrnWKGCh3gO8vDnC_Q0x68IH-J-9bMjx1oo8gRWD32EqhNC8CLeEg6NYEGRmSWeOrHeUbExblAe9CK7JZqY6EnIffXAckiBZPGECSike80xrzLurJg_O4XkHFYWIyQ"/>
+</div>
+<span class="text-secondary font-bold text-xs uppercase tracking-widest">Case Study</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mt-2 mb-4"><a href="../blogs/advanced-transformer-testing.html" class="hover:text-secondary transition-colors">Advanced Transformer Testing in High-Voltage Grids</a></h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">How Synergy Engineering implemented Megger's latest diagnostic tools for a major utility provider.</p>
+</a>
+<a class="group cursor-pointer block" href="../blogs/future-smart-energy.html">
+<div class="overflow-hidden rounded-lg mb-6">
+<img alt="Energy management" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcjAD0XGZ6NQn3JuN_MgTlCoBUR7NuyyUF5-cGVIN3Sgx5aP-wn2mH9pTVzNuJhizCGtlLJHwNi_-MS2TdI5GVecmtb0fHX8KGtjuQxyv2B8L0AggWRZLOECL5uP2LrDXF9eKr14Y586WCnlWLOVKqbaKwHfy18qnYOENbHH2LzZVKdvJ8VimoyH0RZfQrt4cYEqLQJkiO1aeBhBKyPaTqbGn8rvqfhKK1DcNvCpw0nX11Xo5y2W8eivA9o0-l_jDwp5VA3fCES0g"/>
+</div>
+<span class="text-secondary font-bold text-xs uppercase tracking-widest">Industry Trends</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mt-2 mb-4"><a href="../blogs/future-smart-energy.html" class="hover:text-secondary transition-colors">The Future of Smart Energy Measurement</a></h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Exploring the integration of MTE AG solutions in modernized data center energy monitoring.</p>
+</a>
+<a class="group cursor-pointer block sm:col-span-2 lg:col-span-1" href="../blogs/precision-labeling-safety.html">
+<div class="overflow-hidden rounded-lg mb-6">
+<img alt="Labeling systems" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxQpNjE3O44Zp6E5ydll4DdJVk2PWj6PBOLjnCmQiwlWGE0T7MNCnRmhUci7gkCzUOUFIyhWU01VXTDzbzdH4BUG4XopVISL9eBo2cD9dFyqRmgYYMN2d-yeHNOrQRksMJbmMQ3BaOiT9umKXkR52LBGITocGL0jhRGzsKimF-_3CgmKUEQlG5VHFzH3B8t2WVH1dB_mgB6CbA8uS6ussKYsLp7CkLLvqloW58Bg5Kn4VvVLJ8zcksGPnfJeur8D2TulSG4UpGBeE"/>
+</div>
+<span class="text-secondary font-bold text-xs uppercase tracking-widest">Technical Guide</span>
+<h3 class="font-headline font-bold text-xl text-primary-container mt-2 mb-4"><a href="../blogs/precision-labeling-safety.html" class="hover:text-secondary transition-colors">Precision Labeling for Industrial Safety</a></h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">A comprehensive guide to Brother's industrial systems for complex electrical identification.</p>
+</a>
+</div>
+</div>
+</section>
+<!-- CAREERS SECTION -->
+<section class="py-16 md:py-24 bg-surface-container-low" id="careers">
+<div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-12 md:gap-16">
+<div class="w-full md:w-1/2">
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-primary-container mb-6">Join the Synergy Team</h2>
+<p class="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed">
+                We are always looking for passionate engineers and technical experts to join our growing team. Shape the future of electrical testing with us.
+            </p>
+<div class="space-y-4 mb-8">
+<div class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-secondary" data-icon="work">work</span>
+<div>
+<h4 class="font-bold text-primary-container">Application Engineer</h4>
+<p class="text-xs text-slate-500">Full-time • Nationwide</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-slate-100">
+<span class="material-symbols-outlined text-secondary" data-icon="work">work</span>
+<div>
+<h4 class="font-bold text-primary-container">Calibration Technician</h4>
+<p class="text-xs text-slate-500">Full-time • Regional Laboratory</p>
+</div>
+</div>
+</div>
+<a class="bg-secondary text-white px-8 py-3 rounded-md font-bold hover:opacity-90 transition-all text-center block sm:inline-block" href="careers.html">View All Openings</a>
+</div>
+<div class="w-full md:w-1/2">
+<img alt="Engineering team" class="rounded-xl shadow-2xl w-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCh94QyiOcoLBjP5m6IYnESkoB6y20b40ZmD3Kt2elLr2KfU9rkCK77vQXreyLX_43WKkECL4u35oIrWSg14eqm33QUHsoybnSyGwg8d15s6LpaCMJYaq2IKpd9gmV0DH-AAb9YMOLgJRokRDkScFBYxs0SlMFMlNA-s0lCLeeXoWKK8-nKXRkAn85fSP2lqxMHahc05rHjA3vWgZ0oPcijaHCDjTDvOfoRZi1BzraF703ipn-lRCPIYsea-DviiTpCljqyCRy7fmw"/>
+</div>
+</div>
+</section>
+<!-- THE SYNERGY ADVANTAGE -->
+<section class="py-16 md:py-24 bg-white">
+<div class="container mx-auto px-4 md:px-8 text-center">
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-primary-container mb-12 md:mb-16">The Synergy Advantage</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+<div>
+<span class="material-symbols-outlined text-5xl md:text-6xl text-secondary mb-6 block" data-icon="public">public</span>
+<h3 class="font-headline font-bold text-lg text-primary-container mb-4">Global Brands</h3>
+<p class="text-on-surface-variant text-sm">Direct partnerships with the world's most trusted engineering manufacturers.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-5xl md:text-6xl text-secondary mb-6 block" data-icon="verified_user">verified_user</span>
+<h3 class="font-headline font-bold text-lg text-primary-container mb-4">Certified Quality</h3>
+<p class="text-on-surface-variant text-sm">ISO 9001:2015 certified operations with NABL accredited service laboratory.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-5xl md:text-6xl text-secondary mb-6 block" data-icon="support_agent">support_agent</span>
+<h3 class="font-headline font-bold text-lg text-primary-container mb-4">Expert Support</h3>
+<p class="text-on-surface-variant text-sm">Dedicated team of application engineers providing 24/7 technical assistance.</p>
+</div>
+<div>
+<span class="material-symbols-outlined text-5xl md:text-6xl text-secondary mb-6 block" data-icon="local_shipping">local_shipping</span>
+<h3 class="font-headline font-bold text-lg text-primary-container mb-4">Nationwide Reach</h3>
+<p class="text-on-surface-variant text-sm">Strategic logistics network ensuring rapid delivery across the country.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA BANNER -->
+<section class="py-16 md:py-20 bg-[#0A1628] relative overflow-hidden" id="contact">
+<div class="container mx-auto px-4 md:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+<div>
+<h2 class="font-headline font-extrabold text-3xl md:text-4xl text-white leading-tight">Looking for Precision Electrical<br class="hidden md:block"/>Test Solutions?</h2>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<a class="bg-secondary text-white px-8 py-4 font-headline font-bold rounded-md hover:opacity-90 transition-all text-center" href="quote.html">
+                Request a Quote
+            </a>
+<a class="border border-white text-white px-8 py-4 font-headline font-bold rounded-md hover:bg-white hover:text-[#0A1628] transition-all text-center" href="tel:+912225805555">
+                Call Us Now
+            </a>
+</div>
+</div>
+<!-- Decorative Red Bolt Silhouette -->
+<div class="absolute -right-20 -bottom-20 opacity-5 pointer-events-none hidden md:block">
+<span class="material-symbols-outlined text-[400px] text-secondary" data-icon="bolt">bolt</span>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-12 md:py-16 px-4 md:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-8 bg-[#101c2e] dark:bg-[#0A1628]">
+<div class="space-y-4">
+<a href="index.html"><img alt="Synergy Engineering Logo" class="h-16 md:h-16 w-auto" src="../screenshots/logo_synergy.png"/></a>
+<p class="text-slate-400 text-sm leading-relaxed max-w-xs">PAN-India authorized distributor of electrical testing & measurement solutions. ISO 9001:2015 | NABL-Accredited | Since 2016.</p>
+<div class="flex gap-4 pt-4">
+<a href="https://linkedin.com/company/synergy-engineering" target="_blank" rel="noopener noreferrer" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">social_leaderboard</a>
+<a href="https://synergy-engg.com" target="_blank" rel="noopener noreferrer" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">language</a>
+<a href="mailto:info@synergy-engg.com" class="material-symbols-outlined text-slate-400 hover:text-secondary transition-colors block decoration-transparent">mail</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="about.html">About Us</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="products.html">Product Catalog</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="services.html">Service Center</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="industries.html">Industries</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="blog.html">Blog</a></li>
+<li><a class="text-slate-400 hover:text-secondary text-sm transition-all" href="contact.html">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-secondary mb-6 uppercase tracking-widest text-sm">Global Partners</h4>
+<ul class="space-y-3">
+<li><a class="text-white font-bold text-sm hover:text-secondary" href="products.html?brand=megger">Megger</a></li>
+<li><a class="text-slate-400 text-sm hover:text-secondary" href="products.html?brand=emh">EMH Measurement</a></li>
+<li><a class="text-slate-400 text-sm hover:text-secondary" href="products.html?brand=brother">Brother Industrial</a></li>
+</ul></div>
+<div class="col-span-1 border-t border-slate-700/50 mt-12 pt-8 text-center text-slate-500 text-sm sm:col-span-2 lg:col-span-4">
+    &copy; 2026 Synergy Engineering. All rights reserved.
+</div>
+</footer>
+
+
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-black/20 hover:scale-110 transition-transform duration-200 animate-pulse-whatsapp" href="https://wa.me/912225805555" target="_blank" rel="noopener noreferrer">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path></svg>
+</a>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+        function openMenu() {
+            if(mobileMenu) mobileMenu.classList.remove('translate-x-full');
+            if(mobileMenuOverlay) mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+
+        function closeMenu() {
+            if(mobileMenu) mobileMenu.classList.add('translate-x-full');
+            if(mobileMenuOverlay) mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        if(menuToggle) menuToggle.addEventListener('click', openMenu);
+        if(menuClose) menuClose.addEventListener('click', closeMenu);
+        if(mobileMenuOverlay) mobileMenuOverlay.addEventListener('click', closeMenu);
+    });
+</script>
+
+</body></html>

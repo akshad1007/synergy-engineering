@@ -1,0 +1,3 @@
+node_modules/
+strict_audit_report*.json
+.env
