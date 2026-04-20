@@ -1,0 +1,10 @@
+const fs = require('fs');
+let c = fs.readFileSync('pages/quote.html', 'utf8');
+
+c = c.replace(/<form id="quote-form[^"]*" class="space-y-12">/, '<div class="text-green-600 font-bold p-6 bg-green-50 rounded-lg hidden mb-6 shadow-sm border border-green-200" data-fs-success>\n    <div class="flex items-center gap-3">\n        <span class="material-symbols-outlined text-green-700 text-3xl">check_circle</span>\n        <div>\n            <p class="text-lg">Thank you! Your quotation request has been received.</p>\n            <p class="text-sm font-normal text-green-700 mt-1">Our engineering team will review your specifications and contact you shortly.</p>\n        </div>\n    </div>\n</div>\n<div class="text-red-600 font-bold p-6 bg-red-50 rounded-lg hidden mb-6 shadow-sm border border-red-200" data-fs-error>\n    <div class="flex items-center gap-3">\n        <span class="material-symbols-outlined text-red-700 text-3xl">error</span>\n        <div>\n            <p class="text-lg">Oops! There was a problem submitting your form.</p>\n            <p class="text-sm font-normal text-red-700 mt-1">Please ensure all required fields are filled out correctly and try again.</p>\n        </div>\n    </div>\n</div>\n<form id="quote-form-v2" class="space-y-12">');
+
+c = c.replace(/<button class="[^"]*" type="submit">\s*Submit Quotation Request/, '<button class="order-1 md:order-2 flex items-center justify-center gap-2 px-12 py-4 bg-secondary text-white font-bold uppercase text-xs tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto rounded" type="submit" data-fs-submit-btn>\n                    Submit Quotation Request');
+
+c = c.replace(/<\/body>/, '<script>\n  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };\n  formspree(\'initForm\', { formElement: \'#quote-form-v2\', formId: \'xpqkljvr\' });\n</script>\n<script src="https://unpkg.com/@formspree/ajax@1" defer></script>\n</body>');
+
+fs.writeFileSync('pages/quote.html', c);
