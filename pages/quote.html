@@ -151,13 +151,14 @@
 <h1 class="text-4xl md:text-5xl font-extrabold text-primary-container mt-2 tracking-tight">Engineering Specification Form</h1>
 <p class="text-on-surface-variant mt-4 max-w-2xl leading-relaxed">Please provide detailed technical requirements for your project. Our engineering team will review your specifications and provide a comprehensive quotation within 24-48 business hours.</p>
 </div>
-<div class="text-green-600 font-bold p-6 bg-green-50 rounded-lg hidden mb-6 shadow-sm border border-green-200" data-fs-success>
-    <div class="flex items-center gap-3">
-        <span class="material-symbols-outlined text-green-700 text-3xl">check_circle</span>
-        <div>
-            <p class="text-lg">Thank you! Your quotation request has been received.</p>
-            <p class="text-sm font-normal text-green-700 mt-1">Our engineering team will review your specifications and contact you shortly.</p>
+<div class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 hidden backdrop-blur-sm" data-fs-success>
+    <div class="bg-white p-8 md:p-10 rounded-2xl shadow-2xl text-center max-w-lg mx-4 transform transition-all border-t-4 border-green-500">
+        <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 shadow-inner">
+            <span class="material-symbols-outlined text-5xl text-green-600" style="font-variation-settings: 'FILL' 1;">verified</span>
         </div>
+        <h3 class="text-3xl font-black text-gray-900 mb-4 uppercase tracking-tight">Quote Received!</h3>
+        <p class="text-gray-600 text-lg mb-8 leading-relaxed">Thank you for your specification. Our engineers will review it and provide a comprehensive quotation within 24-48 business hours.</p>
+        <button onclick="window.location.reload()" type="button" class="bg-secondary text-white px-8 py-4 rounded-md font-bold tracking-widest hover:brightness-110 active:scale-95 transition-all w-full shadow-lg">OKAY</button>
     </div>
 </div>
 <div class="text-red-600 font-bold p-6 bg-red-50 rounded-lg hidden mb-6 shadow-sm border border-red-200" data-fs-error>
