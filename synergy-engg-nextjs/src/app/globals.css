@@ -187,3 +187,32 @@ html {
   color: #94a3b8;
 }
 
+/* Blueprint Grid Pattern */
+.bg-grid-pattern {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(16, 28, 46, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 28, 46, 0.03) 1px, transparent 1px);
+}
+.dark .bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Interactive Service List Animations */
+.service-row-hover:hover .service-row-img {
+  opacity: 1;
+  transform: scale(1) translate(0);
+}
+.service-row-hover:hover .service-row-arrow {
+  transform: translateX(8px);
+}
+.service-row-hover .service-row-img {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-row-hover .service-row-arrow {
+  transition: transform 0.3s ease;
+}
+
+
