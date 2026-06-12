@@ -26,7 +26,7 @@ export default function MainLayout({ children }) {
       <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
       
       {/* Page Content Container */}
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[108px]">
         {children}
       </main>
 
