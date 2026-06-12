@@ -22,6 +22,7 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection
         title="Precision. Performance. Reliability."
+        subtitle="Authorized Channel Partner for Megger, MTE, Brother, TE Connectivity, Greenlee & KL-ARC. Over 10 years of delivering genuine diagnostic and engineering power solutions across India."
         backgroundImage="/images/img_1.webp"
         height="h-screen"
         ctaButtons={heroCta}
@@ -197,15 +198,16 @@ export default function Home() {
       {/* Our Products Collections */}
       <section className="py-16 md:py-24" id="products">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="mb-12 md:mb-16">
-            <h2 className="font-headline font-extrabold text-3xl md:text-4xl text-primary-container">
-              Our Products
+          <div className="mb-12 md:mb-16 text-center">
+            <span className="text-secondary font-bold tracking-widest text-xs uppercase font-label">Product Portfolio</span>
+            <h2 className="font-headline font-extrabold text-3xl md:text-4xl text-primary-container mt-2">
+              Our Authorized Collections
             </h2>
-            <div className="w-16 h-1 bg-secondary mt-4"></div>
+            <div className="w-16 h-1 bg-secondary mx-auto mt-4"></div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Megger Collection */}
-            <div className="relative h-[350px] md:h-[450px] overflow-hidden group rounded-lg">
+            <div className="relative h-[350px] md:h-[400px] overflow-hidden group rounded-lg">
               <Image
                 alt="Megger equipment"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
@@ -219,7 +221,7 @@ export default function Home() {
                   Electrical Test Equipment for Power Systems.
                 </p>
                 <Link
-                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline"
+                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline active:scale-95 transition-transform"
                   href="/products?brand=megger"
                 >
                   Explore Collection
@@ -228,7 +230,7 @@ export default function Home() {
             </div>
 
             {/* MTE & EMH Collection */}
-            <div className="relative h-[350px] md:h-[450px] overflow-hidden group rounded-lg">
+            <div className="relative h-[350px] md:h-[400px] overflow-hidden group rounded-lg">
               <Image
                 alt="Advanced monitoring"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
@@ -237,13 +239,13 @@ export default function Home() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90 z-10" />
               <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full z-20">
-                <h3 className="font-headline font-black text-2xl md:text-3xl mb-2">MTE AG & EMH</h3>
+                <h3 className="font-headline font-black text-2xl md:text-3xl mb-2">MTE & EMH</h3>
                 <p className="text-white/80 text-xs md:text-sm mb-6 font-body">
                   Precision Meter Testing & Energy Measurement.
                 </p>
                 <Link
-                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline"
-                  href="/products?brand=mte-emh"
+                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline active:scale-95 transition-transform"
+                  href="/products?brand=mte"
                 >
                   Explore Collection
                 </Link>
@@ -251,7 +253,7 @@ export default function Home() {
             </div>
 
             {/* Brother Collection */}
-            <div className="relative h-[350px] md:h-[450px] overflow-hidden group rounded-lg sm:col-span-2 lg:col-span-1">
+            <div className="relative h-[350px] md:h-[400px] overflow-hidden group rounded-lg">
               <Image
                 alt="Brother systems"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
@@ -265,8 +267,77 @@ export default function Home() {
                   Industrial Labeling & Identification Systems.
                 </p>
                 <Link
-                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline"
+                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline active:scale-95 transition-transform"
                   href="/products?brand=brother"
+                >
+                  Explore Collection
+                </Link>
+              </div>
+            </div>
+
+            {/* TE Connectivity Collection */}
+            <div className="relative h-[350px] md:h-[400px] overflow-hidden group rounded-lg">
+              <Image
+                alt="TE Connectivity Cable Accessories"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                src="/images/img_20.webp"
+                fill
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90 z-10" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full z-20">
+                <h3 className="font-headline font-black text-2xl md:text-3xl mb-2">TE Connectivity</h3>
+                <p className="text-white/80 text-xs md:text-sm mb-6 font-body">
+                  Raychem Power Cable Accessories & Joints.
+                </p>
+                <Link
+                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline active:scale-95 transition-transform"
+                  href="/products?brand=te"
+                >
+                  Explore Collection
+                </Link>
+              </div>
+            </div>
+
+            {/* Greenlee Collection */}
+            <div className="relative h-[350px] md:h-[400px] overflow-hidden group rounded-lg">
+              <Image
+                alt="Greenlee Tools"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                src="/images/img_17.webp"
+                fill
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90 z-10" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full z-20">
+                <h3 className="font-headline font-black text-2xl md:text-3xl mb-2">Greenlee</h3>
+                <p className="text-white/80 text-xs md:text-sm mb-6 font-body">
+                  Hydraulic Crimping & Cutting Systems.
+                </p>
+                <Link
+                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline active:scale-95 transition-transform"
+                  href="/products?brand=greenlee"
+                >
+                  Explore Collection
+                </Link>
+              </div>
+            </div>
+
+            {/* KL-ARC Collection */}
+            <div className="relative h-[350px] md:h-[400px] overflow-hidden group rounded-lg">
+              <Image
+                alt="KL-ARC Safety"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[20%] group-hover:grayscale-0"
+                src="/images/img_18.webp"
+                fill
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-90 z-10" />
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 text-white w-full z-20">
+                <h3 className="font-headline font-black text-2xl md:text-3xl mb-2">KL-ARC</h3>
+                <p className="text-white/80 text-xs md:text-sm mb-6 font-body">
+                  Specialized Arc Flash Protection & Gloves.
+                </p>
+                <Link
+                  className="bg-secondary px-6 py-2 rounded-md font-bold text-[10px] md:text-xs uppercase tracking-widest inline-block font-headline active:scale-95 transition-transform"
+                  href="/products?brand=kl-arc"
                 >
                   Explore Collection
                 </Link>
@@ -442,40 +513,40 @@ export default function Home() {
               Join the Synergy Team
             </h2>
             <p className="text-on-surface-variant text-base md:text-lg mb-8 leading-relaxed font-body">
-              We are always looking for passionate engineers and technical experts to join our growing team. Shape the future of electrical testing with us.
+              While we have no active openings at this moment, we are always on the lookout for talented electrical testing engineers and sales professionals to join our talent bank.
             </p>
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-slate-100">
-                <span className="material-symbols-outlined text-secondary shrink-0" data-icon="work">
-                  work
+              <div className="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm border border-slate-100">
+                <span className="material-symbols-outlined text-secondary shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  mail
                 </span>
                 <div>
-                  <h4 className="font-bold text-primary-container font-headline">Application Engineer</h4>
-                  <p className="text-xs text-slate-500 font-body">Full-time • Thane, MH</p>
+                  <h4 className="font-bold text-primary-container font-headline text-base">Submit Your Resume</h4>
+                  <p className="text-sm text-slate-500 font-body mt-1">Send your CV to <strong className="text-secondary">careers@synergy-engg.com</strong> to be considered for future engineering, testing, or sales positions.</p>
                 </div>
               </div>
-              <div className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm border border-slate-100">
-                <span className="material-symbols-outlined text-secondary shrink-0" data-icon="work">
-                  work
+              <div className="flex items-start gap-4 bg-white p-5 rounded-lg shadow-sm border border-slate-100">
+                <span className="material-symbols-outlined text-secondary shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  military_tech
                 </span>
                 <div>
-                  <h4 className="font-bold text-primary-container font-headline">Service Technician</h4>
-                  <p className="text-xs text-slate-500 font-body">Full-time • Thane, MH</p>
+                  <h4 className="font-bold text-primary-container font-headline text-base">Certified Winding & Grid Training</h4>
+                  <p className="text-sm text-slate-500 font-body mt-1">Work alongside experts and get certified on world-leading Megger, MTE, and Brother industrial systems.</p>
                 </div>
               </div>
             </div>
             <Link
-              className="bg-secondary text-white px-8 py-3 rounded-md font-bold hover:opacity-90 transition-all text-center block sm:inline-block font-headline uppercase"
+              className="bg-secondary text-white px-8 py-3 rounded-md font-bold hover:opacity-90 active:scale-95 transition-all text-center block sm:inline-block font-headline uppercase"
               href="/careers"
             >
-              View All Openings
+              Careers Portal
             </Link>
           </div>
-          <div className="w-full md:w-1/2 relative aspect-video md:aspect-auto">
+          <div className="w-full md:w-1/2 relative z-10 overflow-hidden shadow-2xl rounded-md aspect-video md:aspect-auto">
             <Image
               alt="Engineering team"
-              className="rounded-xl shadow-2xl w-full h-auto object-cover"
-              src="/images/img_28.webp"
+              className="w-full h-auto object-cover"
+              src="/images/img_21.webp"
               width={500}
               height={350}
             />

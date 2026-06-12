@@ -93,6 +93,8 @@ export default function HeroSection({
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">MTE AG</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Brother</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">TE Connectivity</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Greenlee</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">KL-ARC</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">ISO 9001:2015</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">NABL Accredited</span>
             </div>
@@ -101,6 +103,8 @@ export default function HeroSection({
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">MTE AG</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Brother</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">TE Connectivity</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Greenlee</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">KL-ARC</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">ISO 9001:2015</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">NABL Accredited</span>
             </div>

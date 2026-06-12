@@ -32,14 +32,14 @@ export default function BrandPartners() {
       height: 80,
     },
     {
-      brand: 'te',
+      brand: 'greenlee',
       alt: 'Greenlee logo',
-      logo: '/screenshots/greenlee_logo.png',
+      logo: '/screenshots/Greenlee_logo.png',
       width: 200,
       height: 80,
     },
     {
-      brand: 'te',
+      brand: 'kl-arc',
       alt: 'KL-ARC logo',
       logo: '/screenshots/kl_arc_logo.png',
       width: 200,

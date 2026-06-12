@@ -12,8 +12,14 @@ export default function ProductCard({ id, name, brand, desc, image }) {
         return { text: 'MTE / EMH', bg: 'bg-tertiary-fixed text-[#004b74]' };
       case 'brother':
         return { text: 'Brother', bg: 'bg-slate-200 text-black' };
+      case 'te':
+        return { text: 'TE Connectivity', bg: 'bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-300' };
+      case 'greenlee':
+        return { text: 'Greenlee', bg: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300' };
+      case 'kl-arc':
+        return { text: 'KL-ARC', bg: 'bg-rose-100 text-rose-800 dark:bg-rose-950/40 dark:text-rose-300' };
       default:
-        return { text: b, bg: 'bg-slate-100 text-slate-700' };
+        return { text: b.toUpperCase(), bg: 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300' };
     }
   };
 

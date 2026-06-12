@@ -40,14 +40,14 @@ function ProductsListContent() {
   const getTabClass = (brand) => {
     const isActive = activeBrand === brand || (brand === 'mte' && activeBrand === 'mte-emh');
     return isActive
-      ? 'bg-secondary text-white border-secondary px-8 py-2.5 rounded-full font-headline font-bold text-sm transition-all shadow-md flex items-center justify-center border'
-      : 'px-8 py-2.5 rounded-full font-headline font-bold text-sm bg-white text-on-surface-variant hover:bg-surface-container-high transition-all border border-slate-200 flex items-center justify-center';
+      ? 'bg-secondary text-white border-secondary px-6 sm:px-8 py-2.5 rounded-full font-headline font-bold text-sm transition-all shadow-md flex items-center justify-center border'
+      : 'px-6 sm:px-8 py-2.5 rounded-full font-headline font-bold text-sm bg-white text-on-surface-variant hover:bg-surface-container-high transition-all border border-slate-200 flex items-center justify-center';
   };
 
   return (
     <main className="py-16 px-4 sm:px-8 md:px-16 max-w-7xl mx-auto w-full">
       {/* Filter Tabs */}
-      <div className="flex flex-wrap justify-center gap-4 mb-8">
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8">
         <button className={getTabClass('all')} onClick={() => filterProducts('all')}>
           All
         </button>
@@ -55,13 +55,19 @@ function ProductsListContent() {
           Megger
         </button>
         <button className={getTabClass('mte')} onClick={() => filterProducts('mte')}>
-          MTE AG & EMH
+          MTE & EMH
         </button>
         <button className={getTabClass('brother')} onClick={() => filterProducts('brother')}>
           Brother
         </button>
         <button className={getTabClass('te')} onClick={() => filterProducts('te')}>
           TE Connectivity
+        </button>
+        <button className={getTabClass('greenlee')} onClick={() => filterProducts('greenlee')}>
+          Greenlee
+        </button>
+        <button className={getTabClass('kl-arc')} onClick={() => filterProducts('kl-arc')}>
+          KL-ARC
         </button>
       </div>
 
