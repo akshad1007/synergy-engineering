@@ -903,5 +903,197 @@ export const products = [
     "pt-e560btvp",
     "pt-e850tkw"
   ]
+},
+{
+  "id": "mea-1000",
+  "name": "Megger MEA 1000",
+  "title": "Megger MEA 1000 Power Quality Analyzer",
+  "brand": "megger",
+  "desc": "High-performance Class A power quality analyzer for electrical substation diagnostics and compliance reporting.",
+  "image": "/images/img_12.webp",
+  "keySpecs": [
+    "Class A compliance (IEC 61000-4-30 Edition 3)",
+    "High frequency transient recording up to 4 MHz",
+    "Measures harmonics, inter-harmonics, flicker, and unbalance",
+    "Robust hardware with IP65 weather-proof rating"
+  ],
+  "overview": {
+    "title": "Power Quality Analysis and Substation Diagnostics",
+    "paragraphs": [
+      "The Megger MEA 1000 is a portable power quality analyzer designed to record and diagnose voltage dips, swells, interruptions, and high-frequency disturbances in electrical grids.",
+      "It provides electric utilities and heavy industries with the precision data required to audit power quality compliance, resolve grid harmonics issues, and investigate equipment failures."
+    ]
+  },
+  "specs": {
+    "Compliance Standard": "IEC 61000-4-30 Class A",
+    "Sampling Rate": "4 MHz transients / 20.48 kHz continuous",
+    "Channels": "4 Voltage + 4 Current",
+    "Communication": "Ethernet / Wi-Fi / USB",
+    "Enclosure": "IP65 rugged field case"
+  },
+  "downloads": [
+    { "name": "Technical Datasheet", "type": "pdf", "path": "/contact" }
+  ],
+  "related": ["checkmeter-genx", "mft-x1"]
+},
+{
+  "id": "hydrocal-1011",
+  "name": "HYDROCAL 1011 genX",
+  "title": "HYDROCAL 1011 genX Online DGA Monitor",
+  "brand": "megger",
+  "desc": "Online Dissolved Gas Analysis (DGA) system for multi-gas and moisture in transformer oil monitoring.",
+  "image": "/images/img_13.webp",
+  "keySpecs": [
+    "Monitors up to 11 key fault gases and moisture in transformer oil",
+    "Near-infrared photoacoustic spectroscopy (PAS) technology",
+    "Integrates with SCADA systems via Modbus/DNP3 protocols",
+    "Maintenance-free design with no carrier gas requirement"
+  ],
+  "overview": {
+    "title": "Continuous Dissolved Gas Analysis for Critical Transformers",
+    "paragraphs": [
+      "The HYDROCAL 1011 genX is a permanent online DGA monitoring system that analyzes key fault gases dissolved in transformer oil. By tracking trends in gases like Acetylene, Hydrogen, and Carbon Monoxide, it flags early winding insulation breakdown and thermal faults.",
+      "With both fixed and portable (genX P) models, it offers utilities a reliable solution to avoid catastrophic transformer failures and optimize asset lifespans."
+    ]
+  },
+  "specs": {
+    "Monitored Gases": "H2, CO, CO2, CH4, C2H2, C2H4, C2H6, O2, N2, H2O",
+    "Measurement Technology": "Photoacoustic Spectroscopy (PAS)",
+    "Oil Connection": "Two 1/2-inch NPT ball valves",
+    "Protocol Support": "Modbus RTU/TCP, DNP3, IEC 61850",
+    "Operating Temp": "-40°C to +55°C"
+  },
+  "downloads": [
+    { "name": "Technical Catalog", "type": "pdf", "path": "/contact" }
+  ],
+  "related": ["zvcm-1001", "680-adx"]
+},
+{
+  "id": "zvcm-1001",
+  "name": "HYDROCAL ZVCM-1001",
+  "title": "HYDROCAL ZVCM-1001 Bushing Monitor",
+  "brand": "megger",
+  "desc": "Continuous online bushing insulation diagnostics and leakage current monitoring system.",
+  "image": "/images/img_14.webp",
+  "keySpecs": [
+    "Simultaneous monitoring of up to 6 bushings (HV and LV windings)",
+    "Measures leakage current amplitude and phase shift",
+    "Tracks bushing capacitance (C1) and dissipation factor (tan delta)",
+    "Early warning alarms for insulation breakdown"
+  ],
+  "overview": {
+    "title": "Prevent Bushing Failures with Real-Time Leakage Diagnostics",
+    "paragraphs": [
+      "The ZVCM-1001 is a specialized bushing monitor designed to track the health of high-voltage transformer bushings. Since bushing explosions account for over 30% of transformer fires, continuous monitoring of insulation integrity is critical.",
+      "By measuring the leakage current and capacitance changes in real time, the ZVCM-1001 flags insulation moisture ingress and electrical degradation long before standard routine tests."
+    ]
+  },
+  "specs": {
+    "Monitored Bushings": "Up to 6 channels",
+    "Capacitance Range": "50 pF to 2000 pF",
+    "Resolution": "0.01% capacitance change / 0.001% dissipation factor",
+    "Input Current": "2 mA to 200 mA AC",
+    "Data Communication": "RS485 / Ethernet"
+  },
+  "downloads": [
+    { "name": "Product Specs", "type": "pdf", "path": "/contact" }
+  ],
+  "related": ["hydrocal-1011", "680-adx"]
+},
+{
+  "id": "pws-3-3",
+  "name": "MTE PWS 3.3 genX",
+  "title": "MTE PWS 3.3 genX Portable Working Standard",
+  "brand": "emh",
+  "desc": "High-accuracy three-phase portable working standard for electricity meter verification.",
+  "image": "/images/img_16.webp",
+  "keySpecs": [
+    "Precision measurement class of 0.05% or 0.02%",
+    "Wide measuring range from 1 mA to 12 A (direct)",
+    "Integrated error calculator with optical scan head interface",
+    "Vectors, harmonics, and oscilloscope display modes"
+  ],
+  "overview": {
+    "title": "Precision Calibration in the Field",
+    "paragraphs": [
+      "The MTE PWS 3.3 genX combines a high-precision electrical standard and meter error calculator into a rugged portable package. It allows calibration laboratories and power utilities to verify energy meters directly at customer sites.",
+      "Featuring the iconic genX touchscreen interface, it offers quick navigation, automatic test sequence programming, and secure digital data storage for audit reports."
+    ]
+  },
+  "specs": {
+    "Measurement Accuracy": "±0.05% / ±0.02% class",
+    "Current Measurement": "1 mA to 12 A direct / up to 3000 A with clamps",
+    "Voltage Measurement": "30 V to 520 V AC",
+    "Harmonics Analysis": "Up to 32nd order",
+    "Auxiliary Power": "85 V to 265 V AC, 47 Hz to 63 Hz"
+  },
+  "downloads": [
+    { "name": "Datasheet", "type": "pdf", "path": "/contact" }
+  ],
+  "related": ["checkmeter-genx", "mte-filters"]
+},
+{
+  "id": "ek354",
+  "name": "Greenlee EK354",
+  "title": "Greenlee EK354 Battery Powered Hydraulic Crimping Tool",
+  "brand": "te",
+  "desc": "Lithium-ion battery powered dieless hydraulic crimping tool for electrical cabling.",
+  "image": "/images/img_17.webp",
+  "keySpecs": [
+    "Dieless crimping head with 3.4-ton (31 kN) crimping force",
+    "Lightweight, ergonomic design with one-key trigger operation",
+    "Bluetooth connectivity for tracking tool cycles and pressure logs",
+    "UL classified with various copper and aluminum lugs"
+  ],
+  "overview": {
+    "title": "Smart Hydraulic Crimping for Power Cables",
+    "paragraphs": [
+      "The Greenlee EK354 is a battery-powered hydraulic crimping tool designed for termination work on power distribution cables. Its dieless design eliminates the need to carry separate crimping dies, speeding up substation installations.",
+      "Equipped with real-time pressure monitoring and Bluetooth logging, it ensures every crimp is executed with full design force, reducing grid connection failure risks."
+    ]
+  },
+  "specs": {
+    "Crimping Force": "3.4 Tons / 31 kN",
+    "Crimping Capacity": "8 AWG to 350 kcmil Copper/Aluminum",
+    "Head Rotation": "350 degrees",
+    "Battery Type": "18V Lithium-Ion (Makita platform)",
+    "Weight": "2.4 kg (with battery)"
+  },
+  "downloads": [
+    { "name": "Technical Manual", "type": "pdf", "path": "/contact" }
+  ],
+  "related": ["te-accessories", "mft-x1"]
+},
+{
+  "id": "kl-arc",
+  "name": "KL-ARC Protection Suit",
+  "title": "KL-ARC Specialized Arc Flash Protection Suit",
+  "brand": "te",
+  "desc": "High-performance electrical arc flash personal protective equipment (PPE) certified up to 40 cal/cm².",
+  "image": "/images/img_18.webp",
+  "keySpecs": [
+    "Certified ATPV rating of 40 cal/cm² (NFPA 70E Category 4)",
+    "Includes arc-rated hood, coat, bib overalls, and safety gloves",
+    "Constructed from lightweight, inherently flame-resistant fabrics",
+    "Meets ASTM F1506 and NFPA 70E safety standards"
+  ],
+  "overview": {
+    "title": "Uncompromising Safety for High-Voltage Switchgear Operators",
+    "paragraphs": [
+      "The KL-ARC protective suit is a critical safety shield for engineers and substation operators performing live electrical switching or diagnostics. Arc flash incidents can exceed temperatures of 19,000°C; certified protection is non-negotiable.",
+      "Designed for comfort and mobility during heavy fieldwork, this suit prevents serious thermal injuries while ensuring full compliance with international electrical safety codes."
+    ]
+  },
+  "specs": {
+    "Protection Level": "Category 4 (ATPV 40 cal/cm²)",
+    "Certifications": "NFPA 70E / ASTM F1506 / EN ISO 11612",
+    "Fabric Material": "Aramid blend inherently flame-resistant",
+    "Components Included": "Hood with fan system, Coat, Bib Overalls, Gloves, Kit Bag",
+    "Sizes Available": "S, M, L, XL, XXL"
+  },
+  "downloads": [
+    { "name": "Safety Catalog", "type": "pdf", "path": "/contact" }
+  ],
+  "related": ["te-accessories", "mft-x1"]
 }
 ];

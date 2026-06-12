@@ -17,12 +17,36 @@ export default function ProductDetail({ params }) {
 
   const [activeImage, setActiveImage] = useState('');
   const [activeTab, setActiveTab] = useState('overview');
+  const [isInCart, setIsInCart] = useState(false);
 
   useEffect(() => {
     if (product) {
       setActiveImage(product.image);
+      try {
+        const cart = JSON.parse(localStorage.getItem('synergy-quote-items') || '[]');
+        setIsInCart(cart.includes(product.id));
+      } catch {
+        setIsInCart(false);
+      }
     }
   }, [product]);
+
+  const toggleCart = () => {
+    try {
+      const cart = JSON.parse(localStorage.getItem('synergy-quote-items') || '[]');
+      let newCart;
+      if (isInCart) {
+        newCart = cart.filter(id => id !== product.id);
+      } else {
+        newCart = [...cart, product.id];
+      }
+      localStorage.setItem('synergy-quote-items', JSON.stringify(newCart));
+      setIsInCart(!isInCart);
+      window.dispatchEvent(new Event('quote-updated'));
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   if (!product) {
     return notFound();
@@ -125,19 +149,25 @@ export default function ProductDetail({ params }) {
 
             {/* Actions */}
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
+              <button
+                onClick={toggleCart}
+                className={`px-10 py-4 rounded-md font-bold text-lg shadow-lg flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 cursor-pointer ${
+                  isInCart 
+                    ? 'bg-primary-container text-white shadow-primary-container/20 hover:brightness-110' 
+                    : 'bg-secondary text-white shadow-secondary/20 hover:brightness-110'
+                }`}
+              >
+                {isInCart ? 'Remove from Quote' : 'Add to Quote Request'}
+                <span className="material-symbols-outlined select-none">
+                  {isInCart ? 'remove_shopping_cart' : 'add_shopping_cart'}
+                </span>
+              </button>
               <Link
                 href="/quote"
-                className="bg-secondary text-white px-10 py-4 rounded-md font-bold text-lg hover:brightness-110 shadow-lg shadow-secondary/20 flex items-center justify-center gap-2 font-headline uppercase min-h-[48px]"
+                className="border-2 border-primary-container/10 text-primary-container px-10 py-4 rounded-md font-bold text-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 text-center"
               >
-                Enquire Now
+                Configure RFQ
                 <span className="material-symbols-outlined select-none">arrow_forward</span>
-              </Link>
-              <Link
-                href="/contact"
-                className="border-2 border-primary-container/10 text-primary-container px-10 py-4 rounded-md font-bold text-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 font-headline uppercase min-h-[48px]"
-              >
-                <span className="material-symbols-outlined select-none">download</span>
-                Datasheet
               </Link>
             </div>
           </div>

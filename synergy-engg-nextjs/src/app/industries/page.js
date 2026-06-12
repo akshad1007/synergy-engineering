@@ -20,7 +20,7 @@ export default function Industries() {
       />
 
       {/* Intro Paragraph */}
-      <section className="bg-surface-container-lowest py-24 px-8 relative">
+      <section className="bg-surface-container-lowest py-24 px-4 sm:px-8 relative">
         <div className="max-w-4xl mx-auto text-center w-full">
           <p className="text-2xl md:text-3xl font-body text-on-surface leading-relaxed font-light">
             Synergy Engineering provides <span className="font-bold text-primary">precision-engineered solutions</span> across a diverse global landscape. Our sector-specific expertise ensures that whether we are powering a city or advancing research, we deliver reliability that meets the highest industrial tolerances.
@@ -29,7 +29,7 @@ export default function Industries() {
       </section>
 
       {/* Industries Grid */}
-      <section className="bg-surface py-20 px-8 relative overflow-hidden">
+      <section className="bg-surface py-20 px-4 sm:px-8 relative overflow-hidden">
         {/* Decorative Bolt Motif */}
         <div className="absolute top-1/4 right-0 w-96 h-96 opacity-[0.03] pointer-events-none z-0">
           <span className="material-symbols-outlined text-[400px] text-secondary select-none">
@@ -43,7 +43,7 @@ export default function Industries() {
               <div
                 key={ind.id}
                 id={ind.id}
-                className="group flex flex-col md:flex-row bg-surface-container-lowest overflow-hidden transition-all duration-300 hover:shadow-xl border-l-4 border-secondary rounded-r-md"
+                className="group flex flex-col md:flex-row bg-surface-container-lowest overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 border-l-4 border-secondary rounded-r-md"
               >
                 <div className="md:w-1/2 p-10 flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
@@ -61,7 +61,7 @@ export default function Industries() {
                     {ind.description}
                   </p>
                   <Link
-                    className="inline-flex items-center text-secondary font-bold uppercase tracking-widest text-xs group-hover:gap-3 transition-all font-headline"
+                    className="inline-flex items-center text-secondary font-bold uppercase tracking-widest text-xs group-hover:gap-3 transition-all font-headline active:scale-95"
                     href="/contact"
                   >
                     View Solutions
@@ -70,7 +70,7 @@ export default function Industries() {
                     </span>
                   </Link>
                 </div>
-                <div className="md:w-1/2 p-10 bg-surface-container-low flex flex-col justify-center border-t md:border-t-0 md:border-l border-outline-variant/10">
+                <div className="md:w-1/2 p-10 bg-gradient-to-br from-surface-container-low to-surface-container flex flex-col justify-center border-t md:border-t-0 md:border-l border-outline-variant/10">
                   <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-2 font-headline">
                     Primary Equipment
                   </span>
@@ -85,20 +85,20 @@ export default function Industries() {
       </section>
 
       {/* CTA Banner */}
-      <section className="bg-primary-container py-20 px-8 relative overflow-hidden">
+      <section className="bg-primary-container py-20 px-4 sm:px-8 relative overflow-hidden">
         <div className="container mx-auto max-w-5xl text-center relative z-10 w-full">
           <h2 className="text-3xl md:text-5xl font-headline font-extrabold text-white mb-8 tracking-tight">
             Ready to Engineer the Future of Your Industry?
           </h2>
           <div className="flex flex-col md:flex-row justify-center gap-4">
             <Link
-              className="bg-secondary text-white px-10 py-4 rounded-md font-headline font-bold uppercase tracking-widest hover:scale-105 transition-all duration-200 inline-block min-h-[48px]"
+              className="bg-secondary text-white px-10 py-4 rounded-md font-headline font-bold uppercase tracking-widest hover:scale-105 transition-all duration-200 active:scale-95 inline-block min-h-[48px]"
               href="/contact"
             >
               Speak With an Expert
             </Link>
             <Link
-              className="bg-transparent border border-white/20 text-white px-10 py-4 rounded-md font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-all duration-200 inline-block min-h-[48px]"
+              className="bg-transparent border border-white/20 text-white px-10 py-4 rounded-md font-headline font-bold uppercase tracking-widest hover:bg-white/5 transition-all duration-200 active:scale-95 inline-block min-h-[48px]"
               href="/products"
             >
               View Product Catalog

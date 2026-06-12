@@ -34,6 +34,11 @@ export default function BlogPostDetail({ params }) {
     .filter((b) => b.slug !== post.slug)
     .slice(0, 3);
 
+  // Get related articles from same category
+  const relatedArticles = blogs
+    .filter((b) => b.slug !== post.slug && b.category === post.category)
+    .slice(0, 2);
+
   // Get all unique categories for sidebar
   const uniqueCategories = Array.from(new Set(blogs.map((b) => b.category)));
 
@@ -117,6 +122,33 @@ export default function BlogPostDetail({ params }) {
                 </span>
               </div>
             </div>
+
+            {/* Related Articles */}
+            {relatedArticles.length > 0 && (
+              <div className="mt-16 pt-8 border-t border-surface-container-high">
+                <h3 className="text-2xl font-extrabold text-primary-container mb-8 font-headline">Related Articles</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {relatedArticles.map((related) => (
+                    <Link key={related.slug} href={`/blog/${related.slug}`} className="group block bg-surface-container-low rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                      <div className="relative h-40 overflow-hidden">
+                        <Image
+                          alt={related.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover group-hover:scale-105 transition-transform duration-500"
+                          src={related.image || '/images/img_20.webp'}
+                        />
+                      </div>
+                      <div className="p-4">
+                        <span className="text-secondary text-[10px] font-bold uppercase tracking-widest font-label">{related.category}</span>
+                        <h4 className="font-headline font-bold text-primary-container mt-1 group-hover:text-secondary transition-colors line-clamp-2">{related.title}</h4>
+                        <p className="text-xs text-outline mt-2 font-body">{related.date}</p>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Comments Section */}
             <CommentSystem slug={post.slug} />

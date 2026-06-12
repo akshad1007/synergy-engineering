@@ -8,6 +8,7 @@ import Image from 'next/image';
 export default function Header({ onMenuToggle }) {
   const pathname = usePathname();
   const [theme, setTheme] = useState('light');
+  const [quoteCount, setQuoteCount] = useState(0);
 
   useEffect(() => {
     // Detect theme on mount
@@ -20,6 +21,21 @@ export default function Header({ onMenuToggle }) {
       setTheme('light');
       document.documentElement.classList.remove('dark');
     }
+
+    // Listen for quote cart changes
+    const updateQuoteCount = () => {
+      try {
+        const items = JSON.parse(localStorage.getItem('synergy-quote-items') || '[]');
+        setQuoteCount(items.length);
+      } catch { setQuoteCount(0); }
+    };
+    updateQuoteCount();
+    window.addEventListener('storage', updateQuoteCount);
+    window.addEventListener('quote-updated', updateQuoteCount);
+    return () => {
+      window.removeEventListener('storage', updateQuoteCount);
+      window.removeEventListener('quote-updated', updateQuoteCount);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -112,10 +128,15 @@ export default function Header({ onMenuToggle }) {
           </a>
         </div>
         <Link
-          className="hidden sm:block bg-secondary text-on-secondary px-6 py-2 rounded-md font-headline font-semibold text-sm hover:opacity-90 transition-all scale-95 duration-150 ease-in-out"
+          className="hidden sm:flex items-center gap-2 bg-secondary text-on-secondary px-6 py-2 rounded-md font-headline font-semibold text-sm hover:opacity-90 active:scale-95 transition-all duration-150 ease-in-out relative"
           href="/quote"
         >
           Get a Quote
+          {quoteCount > 0 && (
+            <span className="absolute -top-2 -right-2 bg-white text-secondary text-[10px] font-black w-5 h-5 rounded-full flex items-center justify-center shadow-md quote-badge-pulse">
+              {quoteCount}
+            </span>
+          )}
         </Link>
         <button
           className="xl:hidden flex items-center text-slate-700 dark:text-slate-300 cursor-pointer"

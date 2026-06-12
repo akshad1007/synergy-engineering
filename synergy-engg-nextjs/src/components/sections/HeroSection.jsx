@@ -90,15 +90,17 @@ export default function HeroSection({
           <div className="ticker-scroll">
             <div className="flex items-center gap-8 md:gap-16 px-8 shrink-0">
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Megger</span>
-              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">EMH</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">MTE AG</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Brother</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">TE Connectivity</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">ISO 9001:2015</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">NABL Accredited</span>
             </div>
             <div className="flex items-center gap-8 md:gap-16 px-8 shrink-0" aria-hidden="true">
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Megger</span>
-              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">EMH</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">MTE AG</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">Brother</span>
+              <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">TE Connectivity</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">ISO 9001:2015</span>
               <span className="text-white font-headline font-bold tracking-widest text-lg md:text-xl opacity-80 uppercase">NABL Accredited</span>
             </div>

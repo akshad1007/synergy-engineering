@@ -49,6 +49,14 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8 lg:gap-16">
           {/* Contact Form (Left 60%) */}
           <div className="lg:col-span-6">
+            {/* Response Time Trust Badge */}
+            <div className="flex items-center gap-3 mb-6 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg px-5 py-3">
+              <span className="material-symbols-outlined text-green-600 dark:text-green-400 text-2xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
+              <div>
+                <p className="text-sm font-bold text-green-800 dark:text-green-300 font-headline">Typical Response Time: Under 2 Hours</p>
+                <p className="text-xs text-green-600 dark:text-green-500 font-body">Our engineering desk is ready to assist your team during business hours.</p>
+              </div>
+            </div>
             <ContactForm />
           </div>
 
@@ -155,7 +163,7 @@ export default function Contact() {
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <a
             className="bg-white p-4 shadow-2xl rounded-full animate-bounce pointer-events-auto flex items-center justify-center min-w-[56px] min-h-[56px]"
-            href="https://www.google.com/maps/search/?api=1&query=Wagle+Industrial+Estate+Thane"
+            href="https://www.google.com/maps/search/?api=1&query=Bhumi+World+Industrial+Park+Thane"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="View on Google Maps"

@@ -265,6 +265,45 @@ export default function QuotePrint() {
             </div>
           </section>
 
+          {/* Selected Product Models Table */}
+          {quoteData.products && quoteData.products.length > 0 && (
+            <section className="mb-12">
+              <h3 className="font-headline font-bold text-[10px] uppercase tracking-widest text-secondary mb-4">
+                Selected Product Models
+              </h3>
+              <div className="overflow-hidden border-t-2 border-primary-container">
+                <table className="w-full text-left table-fixed font-body">
+                  <thead>
+                    <tr className="bg-slate-50 border-b border-slate-100">
+                      <th className="p-4 text-[10px] font-headline font-bold uppercase tracking-widest text-slate-700 w-1/3">
+                        Model / Name
+                      </th>
+                      <th className="p-4 text-[10px] font-headline font-bold uppercase tracking-widest text-slate-700 w-1/3">
+                        Brand
+                      </th>
+                      <th className="p-4 text-[10px] font-headline font-bold uppercase tracking-widest text-slate-700 w-1/3 text-right">
+                        Requested Quantity
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {quoteData.products.map((p) => (
+                      <tr key={p.id}>
+                        <td className="p-4 text-xs font-bold text-slate-900">{p.name}</td>
+                        <td className="p-4 text-xs font-mono text-slate-600 capitalize">
+                          {p.brand}
+                        </td>
+                        <td className="p-4 text-[10px] text-secondary font-black tracking-widest text-right">
+                          1 UNIT
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          )}
+
           {/* Project Requirements Summary */}
           <section className="flex flex-col mb-12 flex-grow">
             <h3 className="font-headline font-bold text-[10px] uppercase tracking-widest text-secondary mb-4">

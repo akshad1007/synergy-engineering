@@ -94,6 +94,46 @@ export default function Careers() {
         </div>
       </section>
 
+      {/* Why Synergy? — Benefits & Perks */}
+      <section className="py-20 bg-gradient-to-br from-[#0A1628] to-[#162840] text-white relative overflow-hidden">
+        <div className="absolute right-[-5%] top-[10%] opacity-[0.04] pointer-events-none select-none z-0">
+          <span className="material-symbols-outlined text-[20rem] text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>
+            workspace_premium
+          </span>
+        </div>
+        <div className="container mx-auto px-4 sm:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <span className="text-secondary font-bold tracking-widest text-xs uppercase font-label">Benefits & Perks</span>
+            <h2 className="font-headline text-4xl font-extrabold tracking-tight mt-2">
+              Why Synergy?
+            </h2>
+            <div className="w-16 h-1 bg-secondary mx-auto mt-4"></div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+              <span className="material-symbols-outlined text-secondary text-3xl mb-4 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
+              <h4 className="font-headline font-bold text-lg mb-2">Megger & MTE Training</h4>
+              <p className="text-slate-400 text-sm font-body leading-relaxed">Hands-on certification training on world-class Megger and MTE testing equipment used in power grids globally.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+              <span className="material-symbols-outlined text-secondary text-3xl mb-4 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>bolt</span>
+              <h4 className="font-headline font-bold text-lg mb-2">High-Voltage Exposure</h4>
+              <p className="text-slate-400 text-sm font-body leading-relaxed">Work on live projects across power substations, transformer testing, and cable fault diagnostics across India.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+              <span className="material-symbols-outlined text-secondary text-3xl mb-4 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
+              <h4 className="font-headline font-bold text-lg mb-2">ISO-Certified Environment</h4>
+              <p className="text-slate-400 text-sm font-body leading-relaxed">Work in an ISO 9001:2015 certified organization with NABL accredited laboratories and strict safety protocols.</p>
+            </div>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-lg hover:bg-white/10 transition-all duration-300 group">
+              <span className="material-symbols-outlined text-secondary text-3xl mb-4 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>flight_takeoff</span>
+              <h4 className="font-headline font-bold text-lg mb-2">PAN-India Travel</h4>
+              <p className="text-slate-400 text-sm font-body leading-relaxed">Travel to industrial sites across 10+ states, work with Tier-1 clients like Tata Power, Adani, and MSEDCL.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Open Positions Section */}
       <section className="py-24 bg-surface-container">
         <div className="container mx-auto px-8">

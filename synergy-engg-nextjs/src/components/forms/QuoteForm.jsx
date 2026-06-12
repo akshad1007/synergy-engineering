@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import SuccessModal from './SuccessModal';
+import { products } from '@/data/products';
 
 export default function QuoteForm() {
   const [formData, setFormData] = useState({
@@ -17,9 +19,50 @@ export default function QuoteForm() {
     specs: ''
   });
 
+  const [cartItems, setCartItems] = useState([]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+
+  // Load and sync cart from local storage
+  useEffect(() => {
+    const loadCart = () => {
+      try {
+        const itemIds = JSON.parse(localStorage.getItem('synergy-quote-items') || '[]');
+        const resolved = products.filter(p => itemIds.includes(p.id));
+        setCartItems(resolved);
+        
+        // Auto-select corresponding equipment brand categories based on cart contents
+        const brands = new Set(formData.equipment);
+        resolved.forEach(item => {
+          if (item.brand === 'megger') brands.add('Megger');
+          if (item.brand === 'brother') brands.add('Brother');
+          if (item.brand === 'emh' || item.brand === 'mte') brands.add('EMH');
+        });
+        setFormData(prev => ({ ...prev, equipment: Array.from(brands) }));
+      } catch {
+        setCartItems([]);
+      }
+    };
+    loadCart();
+    window.addEventListener('storage', loadCart);
+    window.addEventListener('quote-updated', loadCart);
+    return () => {
+      window.removeEventListener('storage', loadCart);
+      window.removeEventListener('quote-updated', loadCart);
+    };
+  }, []);
+
+  const handleRemoveFromCart = (productId) => {
+    try {
+      const itemIds = JSON.parse(localStorage.getItem('synergy-quote-items') || '[]');
+      const newIds = itemIds.filter(id => id !== productId);
+      localStorage.setItem('synergy-quote-items', JSON.stringify(newIds));
+      window.dispatchEvent(new Event('quote-updated'));
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -51,6 +94,7 @@ export default function QuoteForm() {
       quantity: formData.quantity || 'N/A',
       specs: formData.specs || 'No technical scope provided.',
       equipment: formData.equipment,
+      products: cartItems.map(p => ({ id: p.id, name: p.name, brand: p.brand })),
       date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
       refId: 'SE-2026-' + Math.floor(Math.random() * 10000).toString().padStart(4, '0') + '-QT'
     };
@@ -75,6 +119,7 @@ export default function QuoteForm() {
       'q-location': formData.location,
       'q-quantity': formData.quantity,
       'equipment': formData.equipment,
+      'products': cartItems.map(p => p.name).join(', '),
       'q-specs': formData.specs
     };
 
@@ -90,6 +135,9 @@ export default function QuoteForm() {
 
       if (response.ok) {
         setIsSuccess(true);
+        // Clear cart on success
+        localStorage.setItem('synergy-quote-items', '[]');
+        window.dispatchEvent(new Event('quote-updated'));
         setFormData({
           company: '',
           contact: '',
@@ -121,6 +169,55 @@ export default function QuoteForm() {
           <div>
             <p className="text-lg">Oops! There was a problem submitting your form.</p>
             <p className="text-sm font-normal text-red-700 mt-1">{errorMessage}</p>
+          </div>
+        </div>
+      )}
+
+      {/* Cart Items List */}
+      {cartItems.length === 0 ? (
+        <div className="bg-surface-container-low p-8 border border-dashed border-outline-variant/30 rounded-lg text-center mb-8">
+          <span className="material-symbols-outlined text-4xl text-outline mb-2 select-none">
+            shopping_cart_checkout
+          </span>
+          <p className="text-sm font-semibold text-primary-container mb-2 font-headline">Your product selection list is empty</p>
+          <p className="text-xs text-on-surface-variant max-w-md mx-auto mb-4 font-body leading-relaxed">
+            You can still request a custom EPC project or site service quotation using the form below, or browse our products to add specific testing equipment.
+          </p>
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 text-secondary font-headline font-bold text-xs uppercase tracking-widest hover:gap-3 transition-all active:scale-95"
+          >
+            Browse Product Catalog
+            <span className="material-symbols-outlined text-sm">arrow_forward</span>
+          </Link>
+        </div>
+      ) : (
+        <div className="bg-surface-container-lowest p-8 shadow-sm rounded-lg mb-8 border border-slate-200/50">
+          <div className="flex items-center gap-3 mb-6">
+            <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>
+              list_alt
+            </span>
+            <h2 className="text-xl font-bold text-primary-container uppercase tracking-tight font-headline">
+              Selected Equipment for Quote ({cartItems.length})
+            </h2>
+          </div>
+          <div className="divide-y divide-slate-100 max-h-60 overflow-y-auto pr-2">
+            {cartItems.map((item) => (
+              <div key={item.id} className="py-3 flex justify-between items-center gap-4">
+                <div>
+                  <p className="font-bold text-sm text-primary-container font-headline">{item.name}</p>
+                  <p className="text-[10px] text-slate-400 uppercase tracking-wider font-label font-bold capitalize">{item.brand}</p>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => handleRemoveFromCart(item.id)}
+                  className="text-red-500 hover:text-red-700 transition-colors flex items-center justify-center p-2 rounded-full hover:bg-red-50 cursor-pointer"
+                  aria-label={`Remove ${item.name}`}
+                >
+                  <span className="material-symbols-outlined text-lg">delete</span>
+                </button>
+              </div>
+            ))}
           </div>
         </div>
       )}
@@ -367,7 +464,7 @@ export default function QuoteForm() {
           <button
             onClick={handleDownloadSummary}
             type="button"
-            className="order-2 md:order-1 flex items-center justify-center gap-2 px-8 py-4 text-secondary font-bold uppercase text-xs tracking-widest border-2 border-secondary hover:bg-secondary hover:text-white transition-all w-full md:w-auto rounded font-headline min-h-[48px]"
+            className="order-2 md:order-1 flex items-center justify-center gap-2 px-8 py-4 text-secondary font-bold uppercase text-xs tracking-widest border-2 border-secondary hover:bg-secondary hover:text-white transition-all w-full md:w-auto rounded font-headline min-h-[48px] cursor-pointer"
           >
             <span className="material-symbols-outlined text-sm">download</span>
             Download Specification Summary
@@ -375,7 +472,7 @@ export default function QuoteForm() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="order-1 md:order-2 flex items-center justify-center gap-2 px-12 py-4 bg-secondary text-white font-bold uppercase text-xs tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto rounded font-headline min-h-[48px] disabled:opacity-50"
+            className="order-1 md:order-2 flex items-center justify-center gap-2 px-12 py-4 bg-secondary text-white font-bold uppercase text-xs tracking-widest shadow-xl hover:brightness-110 active:scale-95 transition-all w-full md:w-auto rounded font-headline min-h-[48px] disabled:opacity-50 cursor-pointer"
           >
             {isSubmitting ? 'SUBMITTING...' : 'Submit Quotation Request'}
             <span className="material-symbols-outlined text-sm">arrow_forward</span>

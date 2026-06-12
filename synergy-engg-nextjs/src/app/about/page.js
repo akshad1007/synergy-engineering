@@ -83,7 +83,7 @@ export default function About() {
 
       {/* Mission & Vision */}
       <section className="py-24 px-4 sm:px-8 md:px-16 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
           {/* Mission Card */}
           <div className="bg-surface-container-lowest p-12 border-t-8 border-secondary shadow-sm hover:shadow-md transition-shadow rounded-md">
             <span className="material-symbols-outlined text-secondary text-5xl mb-6 select-none">
@@ -93,7 +93,7 @@ export default function About() {
               Our Mission
             </h3>
             <p className="text-on-surface-variant text-lg leading-relaxed font-body">
-              To empower Indian industries through uncompromising engineering quality, innovative problem-solving, and a dedication to operational safety that sets new global benchmarks.
+              To empower industries with world-class electrical testing, diagnostic, and industrial printing solutions — backed by genuine products, responsive service, and application-based technical expertise tailored to the specific needs of utilities, industries, and infrastructure projects.
             </p>
           </div>
           {/* Vision Card */}
@@ -105,7 +105,19 @@ export default function About() {
               Our Vision
             </h3>
             <p className="text-on-surface-variant text-lg leading-relaxed font-body">
-              To be the most trusted name in engineering excellence across Asia, bridging the gap between traditional reliability and future-ready technological integration.
+              To be the most trusted engineering partner across India, building long-term relationships with customers, suppliers, employees, and all stakeholders by fostering trust, accountability, and professional growth.
+            </p>
+          </div>
+          {/* Goal Card */}
+          <div className="bg-surface-container-lowest p-12 border-t-8 border-secondary shadow-sm hover:shadow-md transition-shadow rounded-md">
+            <span className="material-symbols-outlined text-secondary text-5xl mb-6 select-none">
+              flag
+            </span>
+            <h3 className="text-3xl font-extrabold text-primary-container mb-4 font-headline">
+              Our Goal
+            </h3>
+            <p className="text-on-surface-variant text-lg leading-relaxed font-body">
+              To build long-term relationships by delivering reliable electrical solutions, timely support, and consistent service quality that exceed customer expectations and earn lasting trust.
             </p>
           </div>
         </div>
