@@ -11,7 +11,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const role = careers.find((c) => c.slug === params.slug);
+  const resolvedParams = await params;
+  const role = careers.find((c) => c.slug === resolvedParams.slug);
   if (!role) return {};
 
   return {
@@ -20,8 +21,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function CareerDetail({ params }) {
-  const role = careers.find((c) => c.slug === params.slug);
+export default async function CareerDetail({ params }) {
+  const resolvedParams = await params;
+  const role = careers.find((c) => c.slug === resolvedParams.slug);
 
   if (!role) {
     notFound();

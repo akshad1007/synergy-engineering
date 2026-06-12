@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import CommentSystem from '@/components/forms/CommentSystem';
-import NewsletterForm from '@/components/forms/NewsletterForm';
 import { blogs } from '@/data/blogs';
 
 export async function generateStaticParams() {
@@ -13,7 +12,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const post = blogs.find((b) => b.slug === params.slug);
+  const resolvedParams = await params;
+  const post = blogs.find((b) => b.slug === resolvedParams.slug);
   if (!post) return {};
 
   return {
@@ -22,8 +22,9 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPostDetail({ params }) {
-  const post = blogs.find((b) => b.slug === params.slug);
+export default async function BlogPostDetail({ params }) {
+  const resolvedParams = await params;
+  const post = blogs.find((b) => b.slug === resolvedParams.slug);
 
   if (!post) {
     notFound();
@@ -45,7 +46,7 @@ export default function BlogPostDetail({ params }) {
   return (
     <div className="flex flex-col w-full relative bg-background">
       {/* Hero Section */}
-      <section className="relative h-[450px] md:h-[614px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             alt={post.title}
@@ -55,81 +56,85 @@ export default function BlogPostDetail({ params }) {
             className="object-cover"
             src={post.image || '/images/img_20.webp'}
           />
-          <div className="absolute inset-0 bg-primary-container/75 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-[#0A1628]/85 backdrop-blur-[1px]"></div>
         </div>
-        <div className="relative z-10 max-w-4xl px-8 text-center w-full">
-          <span className="inline-block bg-secondary text-white text-xs font-bold px-3 py-1 rounded-sm mb-6 tracking-widest uppercase font-headline">
+        
+        <div className="relative z-10 max-w-4xl px-4 text-center w-full space-y-4">
+          <span className="inline-block bg-[#D62828] text-white text-[10px] font-headline font-black px-3 py-1 uppercase tracking-widest rounded shadow-sm">
             {post.category}
           </span>
-          <nav className="flex justify-center mb-6 text-sm font-medium tracking-wide text-slate-300 font-body">
-            <Link className="hover:text-white transition-colors" href="/">
-              Home
-            </Link>
-            <span className="mx-2 text-secondary">&gt;</span>
-            <Link className="hover:text-white transition-colors" href="/blog">
-              Blog
-            </Link>
-            <span className="mx-2 text-secondary">&gt;</span>
-            <span className="text-white truncate max-w-[200px] md:max-w-none inline-block">
+          
+          <nav className="flex justify-center items-center space-x-1.5 text-xs font-headline font-bold text-slate-400">
+            <Link className="hover:text-white transition-colors" href="/">Home</Link>
+            <span className="material-symbols-outlined text-[10px] select-none text-slate-650">chevron_right</span>
+            <Link className="hover:text-white transition-colors" href="/blog">Blog</Link>
+            <span className="material-symbols-outlined text-[10px] select-none text-slate-650">chevron_right</span>
+            <span className="text-white truncate max-w-[200px] md:max-w-none inline-block font-black">
               {post.title}
             </span>
           </nav>
-          <h1 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight mb-6 font-headline">
+
+          <h1 className="text-white text-2xl sm:text-3xl md:text-5xl font-headline font-black leading-tight max-w-3xl mx-auto">
             {post.title}
           </h1>
-          <div className="flex items-center justify-center space-x-4 text-slate-300 font-medium font-body text-sm">
-            <span>Published {post.date}</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+
+          <div className="flex items-center justify-center space-x-4 text-slate-400 font-headline font-bold text-[11px] uppercase tracking-wider pt-2">
+            <span className="flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-xs text-[#D62828]">calendar_today</span>
+              {post.date}
+            </span>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#D62828]"></span>
             <span>By Engineering Dept.</span>
           </div>
         </div>
       </section>
 
       {/* Article Content & Sidebar */}
-      <section className="max-w-7xl mx-auto px-8 py-20 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 py-20 w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          
           {/* Main Content */}
-          <article className="lg:col-span-8 bg-surface-container-lowest p-6 md:p-12 shadow-sm rounded-lg border border-slate-200/40">
+          <article className="lg:col-span-8 bg-white dark:bg-slate-900 p-6 sm:p-10 md:p-12 shadow-sm rounded-2xl border border-slate-200/60 dark:border-slate-800">
             <div 
-              className="prose prose-slate max-w-none font-body text-slate-800"
+              className="prose prose-slate dark:prose-invert max-w-none font-body text-slate-700 dark:text-slate-300 text-sm sm:text-base leading-relaxed"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
 
             {/* Post Footer / Share */}
-            <div className="mt-16 pt-8 border-t border-surface-container-high flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div className="flex items-center space-x-4 font-body">
-                <span className="font-bold text-primary-container uppercase text-xs tracking-widest font-headline">
+            <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div className="flex items-center space-x-4">
+                <span className="font-headline font-black text-[10px] text-slate-400 uppercase tracking-widest">
                   Share this post:
                 </span>
                 <div className="flex space-x-2">
-                  <button className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-secondary hover:text-white transition-all text-slate-500 hover:border-secondary">
-                    <span className="material-symbols-outlined text-[20px] select-none">share</span>
+                  <button className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-[#D62828] hover:text-white transition-all text-slate-500 hover:border-[#D62828] cursor-pointer">
+                    <span className="material-symbols-outlined text-base select-none">share</span>
                   </button>
-                  <button className="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all text-slate-500 hover:border-[#0077b5]">
-                    <span className="material-symbols-outlined text-[20px] select-none">link</span>
+                  <button className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center hover:bg-[#0077b5] hover:text-white transition-all text-slate-500 hover:border-[#0077b5] cursor-pointer">
+                    <span className="material-symbols-outlined text-base select-none">link</span>
                   </button>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2 font-body">
-                <span className="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs font-semibold rounded-sm">
+              <div className="flex flex-wrap gap-2 font-headline font-bold text-[9px] uppercase tracking-wider">
+                <span className="px-3 py-1 bg-slate-50 dark:bg-slate-950 text-slate-550 dark:text-slate-400 rounded border border-slate-200/30">
                   High-Voltage
                 </span>
-                <span className="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs font-semibold rounded-sm">
-                  NDT
+                <span className="px-3 py-1 bg-slate-50 dark:bg-slate-950 text-slate-550 dark:text-slate-400 rounded border border-slate-200/30">
+                  NDT Testing
                 </span>
-                <span className="px-3 py-1 bg-surface-container-low text-on-surface-variant text-xs font-semibold rounded-sm">
-                  Industrial IoT
+                <span className="px-3 py-1 bg-slate-50 dark:bg-slate-950 text-slate-550 dark:text-slate-400 rounded border border-slate-200/30">
+                  Diagnostics
                 </span>
               </div>
             </div>
 
-            {/* Related Articles */}
+            {/* Related Articles (Hidden if none) */}
             {relatedArticles.length > 0 && (
-              <div className="mt-16 pt-8 border-t border-surface-container-high">
-                <h3 className="text-2xl font-extrabold text-primary-container mb-8 font-headline">Related Articles</h3>
+              <div className="mt-16 pt-8 border-t border-slate-200 dark:border-slate-800">
+                <h3 className="text-xl font-headline font-black text-primary-container mb-8">Related Articles</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {relatedArticles.map((related) => (
-                    <Link key={related.slug} href={`/blog/${related.slug}`} className="group block bg-surface-container-low rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                    <Link key={related.slug} href={`/blog/${related.slug}`} className="group block bg-slate-50 dark:bg-slate-950 rounded-xl overflow-hidden hover:shadow-md border border-slate-200/40 dark:border-slate-850/60 transition-all">
                       <div className="relative h-40 overflow-hidden">
                         <Image
                           alt={related.title}
@@ -139,10 +144,10 @@ export default function BlogPostDetail({ params }) {
                           src={related.image || '/images/img_20.webp'}
                         />
                       </div>
-                      <div className="p-4">
-                        <span className="text-secondary text-[10px] font-bold uppercase tracking-widest font-label">{related.category}</span>
+                      <div className="p-5">
+                        <span className="text-secondary text-[9px] font-headline font-black uppercase tracking-widest">{related.category}</span>
                         <h4 className="font-headline font-bold text-primary-container mt-1 group-hover:text-secondary transition-colors line-clamp-2">{related.title}</h4>
-                        <p className="text-xs text-outline mt-2 font-body">{related.date}</p>
+                        <p className="text-[10px] text-slate-400 mt-2 font-body">{related.date}</p>
                       </div>
                     </Link>
                   ))}
@@ -155,85 +160,71 @@ export default function BlogPostDetail({ params }) {
           </article>
 
           {/* Sidebar */}
-          <aside className="lg:col-span-4 space-y-12">
+          <aside className="lg:col-span-4 space-y-10">
             {/* Search Redirect Widget */}
-            <div className="bg-surface-container-lowest p-6 shadow-sm rounded-lg border border-slate-200/40">
-              <h4 className="text-lg font-extrabold text-primary-container mb-4 font-headline">
-                Search Resources
+            <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+              <h4 className="text-sm font-headline font-black text-primary-container uppercase tracking-wider mb-4">
+                Search Insights
               </h4>
               <form action="/blog" method="GET" className="relative">
                 <input
                   name="q"
-                  className="w-full bg-surface-container p-3 pl-10 rounded-md border-none focus:ring-1 focus:ring-secondary focus:border-secondary text-sm font-body text-slate-900 outline-none"
+                  className="w-full bg-slate-50 dark:bg-slate-950 p-3 pl-10 rounded border border-slate-200 dark:border-slate-850 text-xs font-body text-slate-900 dark:text-slate-200 outline-none focus:border-[#D62828] focus:ring-1 focus:ring-[#D62828] transition-all"
                   placeholder="Engineering keywords..."
                   type="text"
                 />
                 <button 
                   type="submit" 
-                  className="absolute left-3 top-1/2 -translate-y-1/2 text-outline hover:text-secondary transition-colors"
+                  className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#D62828] transition-colors cursor-pointer"
                 >
-                  <span className="material-symbols-outlined text-lg select-none">search</span>
+                  <span className="material-symbols-outlined text-base select-none">search</span>
                 </button>
               </form>
             </div>
 
-            {/* Recent Posts */}
-            <div className="bg-surface-container-lowest p-6 shadow-sm rounded-lg border border-slate-200/40">
-              <h4 className="text-lg font-extrabold text-primary-container mb-6 font-headline">
-                Recent Articles
-              </h4>
-              <div className="space-y-6 font-body">
-                {recentArticles.map((recent) => (
-                  <Link key={recent.slug} className="group block" href={`/blog/${recent.slug}`}>
-                    <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-1 font-label">
-                      {recent.category}
-                    </p>
-                    <h5 className="font-bold text-primary-container leading-snug group-hover:text-secondary transition-colors font-headline">
-                      {recent.title}
-                    </h5>
-                    <p className="text-xs text-outline mt-2">{recent.date}</p>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Stay Updated Newsletter */}
-            <div className="bg-primary-container p-8 shadow-xl rounded-lg relative overflow-hidden">
-              <div className="relative z-10">
-                <h4 className="text-xl font-extrabold text-white mb-2 font-headline">
-                  Technical Digest
+            {/* Recent Posts (Hidden if none) */}
+            {recentArticles.length > 0 && (
+              <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm">
+                <h4 className="text-sm font-headline font-black text-primary-container uppercase tracking-wider mb-6">
+                  Recent Insights
                 </h4>
-                <p className="text-slate-400 text-sm mb-6 font-body">
-                  Get our quarterly whitepapers and engineering insights delivered to your inbox.
-                </p>
-                <NewsletterForm />
+                <div className="space-y-6 font-body">
+                  {recentArticles.map((recent) => (
+                    <Link key={recent.slug} className="group block" href={`/blog/${recent.slug}`}>
+                      <p className="text-[9px] font-headline font-black text-secondary uppercase tracking-widest mb-1.5">
+                        {recent.category}
+                      </p>
+                      <h5 className="font-bold text-primary-container text-sm leading-snug group-hover:text-secondary transition-colors font-headline">
+                        {recent.title}
+                      </h5>
+                      <p className="text-[10px] text-slate-400 mt-2">{recent.date}</p>
+                    </Link>
+                  ))}
+                </div>
               </div>
-              {/* Watermark Logo Motif */}
-              <div className="absolute -right-10 -bottom-10 opacity-5 pointer-events-none select-none text-white">
-                <span className="material-symbols-outlined text-[200px]" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  bolt
-                </span>
-              </div>
-            </div>
+            )}
 
-            {/* Core Competencies */}
-            <div className="bg-surface-container-lowest p-6 shadow-sm rounded-lg border border-slate-200/40 font-body">
-              <h4 className="text-lg font-extrabold text-primary-container mb-4 font-headline">
-                Core Competencies
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {uniqueCategories.map((cat) => (
-                  <Link
-                    key={cat}
-                    className="px-4 py-2 bg-surface hover:bg-surface-container-high transition-colors text-xs font-bold text-primary-container uppercase rounded font-label"
-                    href={`/blog?category=${encodeURIComponent(cat)}`}
-                  >
-                    {cat}
-                  </Link>
-                ))}
+            {/* Core Competencies (Only shown if categories exist) */}
+            {uniqueCategories.length > 0 && (
+              <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/60 dark:border-slate-800 shadow-sm font-headline">
+                <h4 className="text-sm font-black text-primary-container uppercase tracking-wider mb-4">
+                  Categories
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {uniqueCategories.map((cat) => (
+                    <Link
+                      key={cat}
+                      className="px-3.5 py-1.5 bg-slate-50 dark:bg-slate-950 hover:bg-[#D62828] hover:text-white transition-colors text-[10px] font-bold text-primary-container uppercase rounded border border-slate-200/30 cursor-pointer"
+                      href={`/blog?category=${encodeURIComponent(cat)}`}
+                    >
+                      {cat}
+                    </Link>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </aside>
+          
         </div>
       </section>
     </div>
