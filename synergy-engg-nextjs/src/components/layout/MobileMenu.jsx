@@ -1,10 +1,28 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function MobileMenu({ isOpen, onClose }) {
   const pathname = usePathname();
+  const [quoteCount, setQuoteCount] = useState(0);
+
+  useEffect(() => {
+    const updateQuoteCount = () => {
+      try {
+        const items = JSON.parse(localStorage.getItem('synergy-quote-items') || '[]');
+        setQuoteCount(items.length);
+      } catch { setQuoteCount(0); }
+    };
+    updateQuoteCount();
+    window.addEventListener('storage', updateQuoteCount);
+    window.addEventListener('quote-updated', updateQuoteCount);
+    return () => {
+      window.removeEventListener('storage', updateQuoteCount);
+      window.removeEventListener('quote-updated', updateQuoteCount);
+    };
+  }, []);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -77,11 +95,16 @@ export default function MobileMenu({ isOpen, onClose }) {
               <span className="material-symbols-outlined">mail</span> Email Us
             </a>
             <Link
-              className="bg-secondary text-white text-center py-3 rounded-md font-bold hover:opacity-90 transition-opacity"
+              className="bg-secondary text-white text-center py-3 rounded-md font-bold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 relative"
               href="/quote"
               onClick={onClose}
             >
               Request Quote
+              {quoteCount > 0 && (
+                <span className="bg-white text-secondary text-[10px] font-black px-2 py-0.5 rounded-full shadow-sm quote-badge-pulse">
+                  {quoteCount}
+                </span>
+              )}
             </Link>
           </div>
         </nav>
