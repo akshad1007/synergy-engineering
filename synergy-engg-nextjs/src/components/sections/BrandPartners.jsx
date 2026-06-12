@@ -31,6 +31,20 @@ export default function BrandPartners() {
       width: 200,
       height: 80,
     },
+    {
+      brand: 'te',
+      alt: 'Greenlee logo',
+      logo: '/screenshots/greenlee_logo.png',
+      width: 200,
+      height: 80,
+    },
+    {
+      brand: 'te',
+      alt: 'KL-ARC logo',
+      logo: '/screenshots/kl_arc_logo.png',
+      width: 200,
+      height: 80,
+    },
   ];
 
   return (
@@ -39,16 +53,16 @@ export default function BrandPartners() {
         <h2 className="font-headline font-bold text-slate-400 tracking-[0.2em] mb-12 md:mb-16 text-xs md:text-sm uppercase">
           Authorized Partners &amp; Stockists
         </h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
-          {partners.map((partner) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-12 items-center justify-items-center">
+          {partners.map((partner, index) => (
             <Link
-              key={partner.brand}
+              key={partner.brand + '-' + index}
               href={`/products?brand=${partner.brand}`}
               className="flex justify-center opacity-75 grayscale-[20%] hover:opacity-100 hover:grayscale-0 transition-all duration-300 cursor-pointer"
             >
               <Image
                 alt={partner.alt}
-                className="h-16 md:h-20 max-w-[200px] w-auto object-contain"
+                className="h-12 md:h-16 max-w-[160px] w-auto object-contain"
                 src={partner.logo}
                 width={partner.width}
                 height={partner.height}

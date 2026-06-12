@@ -148,26 +148,39 @@ export default function ProductDetail({ params }) {
             </div>
 
             {/* Actions */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
+            <div className="pt-4 flex flex-col md:flex-row gap-4">
               <button
                 onClick={toggleCart}
-                className={`px-10 py-4 rounded-md font-bold text-lg shadow-lg flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 cursor-pointer ${
+                className={`flex-1 px-6 py-4 rounded-md font-bold text-base shadow-lg flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 cursor-pointer ${
                   isInCart 
                     ? 'bg-primary-container text-white shadow-primary-container/20 hover:brightness-110' 
                     : 'bg-secondary text-white shadow-secondary/20 hover:brightness-110'
                 }`}
               >
                 {isInCart ? 'Remove from Quote' : 'Add to Quote Request'}
-                <span className="material-symbols-outlined select-none">
+                <span className="material-symbols-outlined select-none text-xl">
                   {isInCart ? 'remove_shopping_cart' : 'add_shopping_cart'}
                 </span>
               </button>
+
+              {product.officialUrl && (
+                <a
+                  href={product.officialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 border-2 border-secondary text-secondary hover:bg-secondary hover:text-white px-6 py-4 rounded-md font-bold text-base flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 text-center"
+                >
+                  Official Page
+                  <span className="material-symbols-outlined select-none text-xl">open_in_new</span>
+                </a>
+              )}
+
               <Link
                 href="/quote"
-                className="border-2 border-primary-container/10 text-primary-container px-10 py-4 rounded-md font-bold text-lg hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 text-center"
+                className="flex-1 border-2 border-primary-container/10 text-primary-container px-6 py-4 rounded-md font-bold text-base hover:bg-surface-container-low transition-colors flex items-center justify-center gap-2 font-headline uppercase min-h-[48px] active:scale-95 transition-all duration-150 text-center"
               >
                 Configure RFQ
-                <span className="material-symbols-outlined select-none">arrow_forward</span>
+                <span className="material-symbols-outlined select-none text-xl">arrow_forward</span>
               </Link>
             </div>
           </div>

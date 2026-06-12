@@ -152,18 +152,20 @@ export default function Careers() {
               </span>
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {careers.map((role) => (
-              <CareerCard
-                key={role.slug}
-                id={role.id}
-                slug={role.slug}
-                title={role.title}
-                location={role.location}
-                type={role.type}
-                icon={role.icon}
-              />
-            ))}
+          <div className="text-center py-16 bg-surface-container-lowest rounded-xl border border-outline-variant/20 shadow-sm max-w-3xl mx-auto">
+            <span className="material-symbols-outlined text-5xl text-outline mb-4 select-none">
+              work_off
+            </span>
+            <h3 className="text-xl font-bold font-headline text-primary-container mb-2">No Active Job Openings</h3>
+            <p className="text-on-surface-variant max-w-md mx-auto mb-6 text-sm font-body leading-relaxed">
+              We are not posting any job openings at this time. However, we are always on the lookout for talented engineering and technical professionals. Feel free to submit your resume for future considerations.
+            </p>
+            <Link
+              className="bg-secondary text-white px-8 py-3 rounded font-headline font-bold uppercase text-xs tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-md inline-block"
+              href="/contact"
+            >
+              Drop Your Resume
+            </Link>
           </div>
         </div>
       </section>
