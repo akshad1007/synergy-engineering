@@ -53,7 +53,7 @@ export default function Industries() {
         breadcrumbs={breadcrumbs}
       />
 
-      {/* Intro Paragraph (Redesigned with custom Tangerine script font & quote highlights) */}
+      {/* Intro Paragraph (Redesigned with custom Imperial Script font) */}
       <section className="py-24 px-4 sm:px-8 bg-gradient-to-r from-slate-50 via-slate-100/40 to-slate-50 dark:from-slate-900/30 dark:via-slate-900/50 dark:to-slate-900/30 relative border-b border-slate-200/40 dark:border-slate-800/40">
         <div className="max-w-4xl mx-auto text-center w-full relative space-y-6">
           <div className="flex justify-center mb-2">
@@ -62,8 +62,8 @@ export default function Industries() {
             </span>
           </div>
           
-          <p className="text-3xl sm:text-4xl md:text-5xl font-tangerine font-bold text-slate-800 dark:text-slate-200 leading-normal tracking-wide px-4">
-            Synergy Engineering provides <span className="font-headline font-black text-primary-container text-lg sm:text-2xl not-italic tracking-normal bg-gradient-to-r from-[#D62828]/10 to-transparent px-2 rounded border-l-2 border-[#D62828]">precision-engineered solutions</span> across a diverse global landscape. Our sector-specific expertise ensures that whether we are powering a city or advancing research, we deliver reliability that meets the highest industrial tolerances.
+          <p className="text-3xl sm:text-4xl md:text-5xl font-imperial text-slate-800 dark:text-slate-200 leading-normal tracking-wide px-4">
+            Synergy Engineering provides <strong className="font-bold text-slate-950 dark:text-white">precision-engineered solutions</strong> across a diverse global landscape. Our sector-specific expertise ensures that whether we are powering a city or advancing research, we deliver reliability that meets the highest industrial tolerances.
           </p>
 
           <div className="pt-2 flex flex-col items-center">
