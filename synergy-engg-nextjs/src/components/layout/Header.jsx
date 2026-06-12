@@ -82,40 +82,15 @@ export default function Header({ onMenuToggle }) {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 flex flex-col transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'shadow-lg bg-white/95 dark:bg-[#0A1628]/95 backdrop-blur-md translate-y-0' 
-        : 'bg-white dark:bg-[#0A1628]'
+        ? 'shadow-lg bg-white/95 dark:bg-[#0A1628]/95 backdrop-blur-md h-[72px]' 
+        : 'bg-white dark:bg-[#0A1628] h-[96px]'
     }`}>
-      {/* Top Utility Bar */}
-      <div className={`w-full bg-[#101c2e] dark:bg-[#060F1A] text-slate-350 text-xs px-4 md:px-8 flex items-center justify-between transition-all duration-300 border-b border-slate-800/10 ${
-        isScrolled ? 'h-0 opacity-0 overflow-hidden pointer-events-none' : 'h-9 opacity-100'
-      }`}>
-        <div className="flex items-center gap-2 font-medium font-body text-[10px] sm:text-xs">
-          <span className="material-symbols-outlined text-sm text-[#D62828] select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-            verified_user
-          </span>
-          <span>ISO 9001:2015 &amp; NABL Accredited Calibration Support Partner</span>
-        </div>
-        <div className="flex items-center gap-5 text-[10px] sm:text-xs font-headline font-bold">
-          <a href="tel:+919970341477" className="hover:text-[#D62828] transition-colors flex items-center gap-1.5">
-            <span className="material-symbols-outlined text-[14px]">call</span>
-            +91 99703 41477
-          </a>
-          <span className="text-slate-700 hidden sm:inline">|</span>
-          <a href="mailto:info@synergy-engg.com" className="hover:text-[#D62828] transition-colors flex items-center gap-1.5">
-            <span className="material-symbols-outlined text-[14px]">mail</span>
-            info@synergy-engg.com
-          </a>
-        </div>
-      </div>
-
-      {/* Main Navigation Bar */}
-      <div className={`w-full px-4 md:px-8 flex justify-between items-center transition-all duration-300 border-b-4 border-[#D62828] ${
-        isScrolled ? 'h-[72px]' : 'h-[96px]'
-      }`}>
+      {/* Main Navigation Bar (Clean Single Row) */}
+      <div className="w-full h-full px-4 md:px-8 flex justify-between items-center border-b-4 border-[#D62828]">
         
-        {/* Logo Container (Significantly Bigger Logo) */}
+        {/* Logo Container (Bigger, Clean Logo) */}
         <div className="flex items-center">
           <Link href="/" className="group block focus:outline-none transition-transform duration-200 active:scale-95">
             <Image
@@ -131,7 +106,7 @@ export default function Header({ onMenuToggle }) {
           </Link>
         </div>
 
-        {/* Desktop Links (Spacious B2B Nav Links) */}
+        {/* Desktop Links */}
         <nav className="hidden xl:flex items-center gap-8">
           {navLinks.map((link) => {
             const active = isActive(link.href);
@@ -183,7 +158,7 @@ export default function Header({ onMenuToggle }) {
 
           {/* Mobile Menu Toggle Button */}
           <button
-            className="xl:hidden flex items-center text-slate-700 dark:text-slate-350 cursor-pointer p-1"
+            className="xl:hidden flex items-center text-slate-700 dark:text-slate-355 cursor-pointer p-1"
             id="menu-toggle"
             onClick={onMenuToggle}
             aria-label="Toggle mobile menu"
