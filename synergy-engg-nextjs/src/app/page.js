@@ -6,6 +6,13 @@ import Image from 'next/image';
 import BrandPartners from '@/components/sections/BrandPartners';
 import ContactForm from '@/components/forms/ContactForm';
 import { blogs } from '@/data/blogs';
+import {
+  FadeInView,
+  StaggerContainer,
+  StaggerItem,
+  CountUp,
+  AnimatedAccordion,
+} from '@/components/motion/MotionWrapper';
 
 export default function Home() {
   // Get first 3 blogs for the homepage
@@ -145,104 +152,99 @@ export default function Home() {
 
   return (
     <div className="flex flex-col w-full bg-background min-h-screen">
-      {/* 1. Split Hero Section */}
-      <section className="relative pt-24 pb-16 px-4 sm:px-8 md:px-16 bg-[#0A1628] bg-grid-pattern text-white overflow-hidden border-b-4 border-[#D62828]">
-        {/* Abstract Accent shapes */}
-        <div className="absolute right-0 bottom-0 w-[40%] h-[60%] bg-[#D62828] opacity-[0.03] blur-[120px] pointer-events-none rounded-full" />
-        <div className="absolute left-10 top-20 w-[300px] h-[300px] bg-sky-500 opacity-[0.02] blur-[100px] pointer-events-none rounded-full" />
+
+      {/* ═══════════════════════════════════════════════════════════
+          1. SPLIT HERO SECTION
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="relative min-h-[90vh] pt-24 pb-16 px-4 sm:px-8 md:px-16 bg-[#0A1628] bg-grid-pattern text-white overflow-hidden">
+        {/* Animated accent blobs */}
+        <div className="animate-blob-drift absolute right-0 bottom-0 w-[40%] h-[60%] bg-[#D62828] opacity-[0.03] blur-[120px] pointer-events-none rounded-full" />
+        <div className="animate-blob-drift absolute left-10 top-20 w-[300px] h-[300px] bg-sky-500 opacity-[0.02] blur-[100px] pointer-events-none rounded-full" style={{ animationDelay: '-3s' }} />
 
         <div className="max-w-7xl mx-auto w-full relative z-10">
           {/* Top Title/Desc Split Row */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-12">
             <div className="lg:col-span-8 space-y-6">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D62828]/10 border border-[#D62828]/35 text-[#D62828] font-bold text-[10px] sm:text-xs uppercase tracking-widest font-headline select-none">
-                <span className="w-2 h-2 rounded-full bg-[#D62828] animate-pulse"></span>
-                Authorized Channel Partner
-              </span>
-              <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1.05] text-white">
-                REVOLUTIONIZING <br />
-                <span className="text-[#D62828]">POWER</span> FOR A <br />
-                BRIGHTER TOMORROW!
-              </h1>
+              <FadeInView delay={0.1}>
+                <span className="animate-badge-glow inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#D62828]/10 border border-[#D62828]/35 text-[#D62828] font-bold text-[10px] sm:text-xs uppercase tracking-widest font-headline select-none">
+                  <span className="w-2 h-2 rounded-full bg-[#D62828] animate-pulse"></span>
+                  Authorized Channel Partner
+                </span>
+              </FadeInView>
+              <FadeInView delay={0.25}>
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black font-headline tracking-tighter leading-[1.05] text-white">
+                  REVOLUTIONIZING <br />
+                  <span className="text-[#D62828]">POWER</span> FOR A <br />
+                  BRIGHTER TOMORROW!
+                </h1>
+              </FadeInView>
             </div>
             
             <div className="lg:col-span-4 space-y-6 lg:pt-14">
-              <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed font-body">
-                Over 10 years of delivering genuine diagnostic testing, calibration services, and industrial printing systems to utilities and grids across India.
-              </p>
+              <FadeInView delay={0.4} direction="right">
+                <p className="text-slate-300 text-sm sm:text-base md:text-lg leading-relaxed font-body">
+                  Over 10 years of delivering genuine diagnostic testing, calibration services, and industrial printing systems to utilities and grids across India.
+                </p>
+              </FadeInView>
               
-              <div className="flex flex-col sm:flex-row gap-4 lg:flex-col xl:flex-row">
-                <Link
-                  className="bg-[#D62828] text-white font-headline font-bold text-xs uppercase tracking-widest px-8 py-4 rounded hover:bg-[#de2e2c] active:scale-95 transition-all text-center flex items-center justify-center gap-3 shadow-lg shadow-[#D62828]/15"
-                  href="/quote"
-                >
-                  Request a Quote
-                  <span className="material-symbols-outlined text-sm select-none">arrow_forward</span>
-                </Link>
-                <Link
-                  className="border border-slate-700 hover:border-white hover:bg-white/5 text-white font-headline font-bold text-xs uppercase tracking-widest px-8 py-4 rounded active:scale-95 transition-all text-center block"
-                  href="/products"
-                >
-                  Explore Products
-                </Link>
-              </div>
+              <FadeInView delay={0.55} direction="right">
+                <div className="flex flex-col sm:flex-row gap-4 lg:flex-col xl:flex-row">
+                  <Link
+                    className="group bg-[#D62828] text-white font-headline font-bold text-xs uppercase tracking-widest px-8 py-4 rounded hover:bg-[#de2e2c] active:scale-95 transition-all text-center flex items-center justify-center gap-3 shadow-lg shadow-[#D62828]/15"
+                    href="/quote"
+                  >
+                    Request a Quote
+                    <span className="material-symbols-outlined text-sm select-none group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+                  </Link>
+                  <Link
+                    className="border border-slate-700 hover:border-white hover:bg-white/5 text-white font-headline font-bold text-xs uppercase tracking-widest px-8 py-4 rounded active:scale-95 transition-all text-center block"
+                    href="/products"
+                  >
+                    Explore Products
+                  </Link>
+                </div>
+              </FadeInView>
             </div>
           </div>
 
-          {/* Bottom Hero Cards Row - Horizontally Scrollable on Mobile */}
-          <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:overflow-visible lg:snap-none border-t border-slate-800 scrollbar-thin">
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-6 rounded-lg hover:border-[#D62828]/40 transition-all duration-300 group min-w-[280px] sm:min-w-0 snap-start shrink-0">
-              <span className="text-[10px] font-bold text-[#D62828] tracking-widest uppercase block mb-1">Brand Portfolio</span>
-              <h3 className="font-headline font-black text-lg text-white group-hover:text-[#D62828] transition-colors mb-2">Megger Instruments</h3>
-              <p className="text-slate-400 text-xs font-body mb-4 line-clamp-2">High-voltage automatic testing, diagnostics, and insulation monitoring systems.</p>
-              <Link href="/products?brand=megger" className="inline-flex items-center text-xs font-bold text-white group-hover:text-[#D62828] transition-colors uppercase font-headline">
-                View catalog
-                <span className="material-symbols-outlined text-xs ml-1 select-none">arrow_forward</span>
-              </Link>
-            </div>
-
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-6 rounded-lg hover:border-[#D62828]/40 transition-all duration-300 group min-w-[280px] sm:min-w-0 snap-start shrink-0">
-              <span className="text-[10px] font-bold text-[#D62828] tracking-widest uppercase block mb-1">Brand Portfolio</span>
-              <h3 className="font-headline font-black text-lg text-white group-hover:text-[#D62828] transition-colors mb-2">MTE AG Standards</h3>
-              <p className="text-slate-400 text-xs font-body mb-4 line-clamp-2">Precision three-phase calibration standard meters and power quality systems.</p>
-              <Link href="/products?brand=mte" className="inline-flex items-center text-xs font-bold text-white group-hover:text-[#D62828] transition-colors uppercase font-headline">
-                View catalog
-                <span className="material-symbols-outlined text-xs ml-1 select-none">arrow_forward</span>
-              </Link>
-            </div>
-
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-6 rounded-lg hover:border-[#D62828]/40 transition-all duration-300 group min-w-[280px] sm:min-w-0 snap-start shrink-0">
-              <span className="text-[10px] font-bold text-[#D62828] tracking-widest uppercase block mb-1">Brand Portfolio</span>
-              <h3 className="font-headline font-black text-lg text-white group-hover:text-[#D62828] transition-colors mb-2">Brother Labeling</h3>
-              <p className="text-slate-400 text-xs font-body mb-4 line-clamp-2">Heavy-duty industrial thermal labeling and barcode printers for plants.</p>
-              <Link href="/products?brand=brother" className="inline-flex items-center text-xs font-bold text-white group-hover:text-[#D62828] transition-colors uppercase font-headline">
-                View catalog
-                <span className="material-symbols-outlined text-xs ml-1 select-none">arrow_forward</span>
-              </Link>
-            </div>
-
-            <div className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-6 rounded-lg hover:border-[#D62828]/40 transition-all duration-300 group min-w-[280px] sm:min-w-0 snap-start shrink-0">
-              <span className="text-[10px] font-bold text-[#D62828] tracking-widest uppercase block mb-1">Brand Portfolio</span>
-              <h3 className="font-headline font-black text-lg text-white group-hover:text-[#D62828] transition-colors mb-2">TE Connectivity</h3>
-              <p className="text-slate-400 text-xs font-body mb-4 line-clamp-2">Raychem power cable shrink joints, terminations, and switchgear adapters.</p>
-              <Link href="/products?brand=te" className="inline-flex items-center text-xs font-bold text-white group-hover:text-[#D62828] transition-colors uppercase font-headline">
-                View catalog
-                <span className="material-symbols-outlined text-xs ml-1 select-none">arrow_forward</span>
-              </Link>
-            </div>
-          </div>
+          {/* Bottom Hero Cards Row */}
+          <StaggerContainer stagger={0.1} delay={0.3} className="flex overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:overflow-visible lg:snap-none border-t border-slate-800 scrollbar-thin">
+            {[
+              { title: 'Megger Instruments', desc: 'High-voltage automatic testing, diagnostics, and insulation monitoring systems.', link: '/products?brand=megger' },
+              { title: 'MTE AG Standards', desc: 'Precision three-phase calibration standard meters and power quality systems.', link: '/products?brand=mte' },
+              { title: 'Brother Labeling', desc: 'Heavy-duty industrial thermal labeling and barcode printers for plants.', link: '/products?brand=brother' },
+              { title: 'TE Connectivity', desc: 'Raychem power cable shrink joints, terminations, and switchgear adapters.', link: '/products?brand=te' },
+            ].map((card, idx) => (
+              <StaggerItem key={idx} className="bg-slate-900/40 backdrop-blur-sm border border-slate-800/80 p-6 rounded-lg hover:border-[#D62828]/40 transition-all duration-300 group min-w-[280px] sm:min-w-0 snap-start shrink-0">
+                <span className="text-[10px] font-bold text-[#D62828] tracking-widest uppercase block mb-1">Brand Portfolio</span>
+                <h3 className="font-headline font-black text-lg text-white group-hover:text-[#D62828] transition-colors mb-2">{card.title}</h3>
+                <p className="text-slate-400 text-xs font-body mb-4 line-clamp-2">{card.desc}</p>
+                <Link href={card.link} className="inline-flex items-center text-xs font-bold text-white group-hover:text-[#D62828] transition-colors uppercase font-headline">
+                  View catalog
+                  <span className="material-symbols-outlined text-xs ml-1 select-none group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
+                </Link>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
+
+        {/* Bottom gradient fade into next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F8F9FA] to-transparent pointer-events-none" />
       </section>
 
-      {/* 2. Marquee Brand Ticker */}
+      {/* ═══════════════════════════════════════════════════════════
+          2. BRAND PARTNERS — Associates Strip + Customer Marquee
+          ═══════════════════════════════════════════════════════════ */}
       <BrandPartners />
 
-      {/* 3. Who We Are Section */}
+      {/* ═══════════════════════════════════════════════════════════
+          3. WHO WE ARE SECTION
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-white bg-grid-pattern relative" id="about">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 flex flex-col lg:flex-row gap-16 items-center">
           
-          {/* Left Text */}
-          <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
+          {/* Left Text — slides in from left */}
+          <FadeInView direction="left" className="w-full lg:w-1/2 space-y-6 md:space-y-8">
             <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
               01 / COMPANY OVERVIEW
             </span>
@@ -252,40 +254,40 @@ export default function Home() {
             <p className="text-on-surface-variant text-sm sm:text-base md:text-lg leading-relaxed font-body">
               Synergy Engineering is a premier channel distributor and service provider for high-voltage testing instruments. We bridge the gap between global engineering manufacturers and Indian power grids with NABL accredited calibration and field technicians.
             </p>
-            <ul className="space-y-4">
+            <StaggerContainer stagger={0.12} as="ul" className="space-y-4">
               {[
                 "Authorized channel partner for globally leading power brands.",
                 "In-house NABL ISO/IEC 17025 accredited calibration lab.",
                 "Pan-India onsite commissioning and engineer testing squads."
               ].map((text, idx) => (
-                <li key={idx} className="flex items-start gap-3 md:gap-4">
+                <StaggerItem key={idx} direction="scale" as="li" className="flex items-start gap-3 md:gap-4">
                   <span className="material-symbols-outlined text-[#D62828] text-xl md:text-2xl shrink-0 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
                     check_circle
                   </span>
                   <span className="font-bold text-primary-container font-body text-sm md:text-base mt-0.5">
                     {text}
                   </span>
-                </li>
+                </StaggerItem>
               ))}
-            </ul>
+            </StaggerContainer>
             <div className="pt-2">
               <Link
-                className="inline-flex items-center gap-2 bg-primary-container text-white font-headline font-bold text-xs uppercase tracking-widest px-8 py-4 rounded hover:bg-slate-800 active:scale-95 transition-all"
+                className="group inline-flex items-center gap-2 bg-primary-container text-white font-headline font-bold text-xs uppercase tracking-widest px-8 py-4 rounded hover:bg-slate-800 active:scale-95 transition-all"
                 href="/about"
               >
                 Learn More About Us
-                <span className="material-symbols-outlined text-sm select-none">arrow_forward</span>
+                <span className="material-symbols-outlined text-sm select-none group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
               </Link>
             </div>
-          </div>
+          </FadeInView>
 
-          {/* Right Image Stack with overlaps */}
-          <div className="w-full lg:w-1/2 relative flex justify-center pb-8 lg:pb-0">
+          {/* Right Image Stack — slides in from right */}
+          <FadeInView direction="right" delay={0.15} className="w-full lg:w-1/2 relative flex justify-center pb-8 lg:pb-0">
             <div className="absolute -top-4 -left-4 w-[90%] h-full border-2 border-slate-100 rounded-lg -z-10"></div>
-            <div className="relative rounded-lg overflow-hidden shadow-2xl w-[90%] aspect-[4/3] md:aspect-video lg:aspect-[4/3] bg-slate-100">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl w-[90%] aspect-[4/3] md:aspect-video lg:aspect-[4/3] bg-slate-100 group">
               <Image
                 alt="Electrical testing diagnostics"
-                className="object-cover"
+                className="object-cover group-hover:scale-[1.05] transition-transform duration-[6000ms] ease-out"
                 src="/images/img_28.webp"
                 fill
                 sizes="(max-width: 1024px) 90vw, 45vw"
@@ -293,20 +295,22 @@ export default function Home() {
               />
             </div>
             
-            {/* Float Overlay Card */}
-            <div className="absolute -bottom-6 right-2 sm:bottom-6 sm:right-6 md:right-10 bg-primary-container text-white p-4 sm:p-6 rounded-lg shadow-xl max-w-[180px] sm:max-w-[240px] border border-slate-800">
+            {/* NABL Float Overlay Card */}
+            <div className="animate-nabl-float absolute -bottom-6 right-2 sm:bottom-6 sm:right-6 md:right-10 bg-primary-container text-white p-4 sm:p-6 rounded-lg shadow-xl max-w-[180px] sm:max-w-[240px] border border-slate-800">
               <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl mb-3 select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
                 verified
               </span>
               <h4 className="font-headline font-bold text-sm sm:text-lg mb-1 leading-tight">NABL Certified</h4>
               <p className="text-slate-400 text-[10px] sm:text-xs font-body">Our services and equipment meet ISO/IEC 17025 calibration compliance guidelines.</p>
             </div>
-          </div>
+          </FadeInView>
 
         </div>
       </section>
 
-      {/* 4. Asymmetrical Product Grid ("Our Projects" Style) */}
+      {/* ═══════════════════════════════════════════════════════════
+          4. ASYMMETRICAL PRODUCT GRID
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-slate-50 relative overflow-hidden" id="products">
         {/* Big background outline header */}
         <div className="absolute top-10 left-10 text-[6rem] sm:text-[10rem] md:text-[14rem] font-headline font-black text-slate-100 select-none pointer-events-none uppercase tracking-tighter leading-none">
@@ -314,7 +318,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative z-10">
-          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <FadeInView className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
             <div>
               <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
                 02 / HIGH-VOLTAGE CATALOG
@@ -331,16 +335,18 @@ export default function Home() {
                 View All 87 Products
               </Link>
             </div>
-          </div>
+          </FadeInView>
 
-          {/* Asymmetrical Grid layout - Optimized with grid-flow-row-dense & responsive heights */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max grid-flow-row-dense">
+          {/* Asymmetrical Grid */}
+          <StaggerContainer stagger={0.08} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-max grid-flow-row-dense">
             {featuredSolutions.map((item) => {
               const isTall = item.id === 'baker-adx' || item.id === 'pws-3-3';
+              const isWide = item.id === 'baker-adx' || item.id === 'ek354';
               return (
-                <div
+                <StaggerItem
                   key={item.id}
                   className={`relative overflow-hidden rounded-lg border border-slate-200 group bg-white ${item.colSpan}`}
+                  duration={isWide ? 0.7 : 0.5}
                 >
                   <div className={`relative ${isTall ? 'h-[280px] sm:h-[360px] lg:h-[500px]' : 'h-[200px] sm:h-[240px]'} w-full bg-slate-100 overflow-hidden`}>
                     <Image
@@ -350,8 +356,8 @@ export default function Home() {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
-                    {/* Glassmorphic Brand/Tag overlay */}
-                    <div className="absolute top-4 left-4 z-20 flex gap-2">
+                    {/* Brand/Tag overlay — fade in on hover */}
+                    <div className="absolute top-4 left-4 z-20 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                       <span className="px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest rounded bg-primary-container text-white shadow-md">
                         {item.brand}
                       </span>
@@ -372,24 +378,26 @@ export default function Home() {
                     <div className="pt-2">
                       <Link
                         href={`/products/${item.id}`}
-                        className="inline-flex items-center text-xs font-bold text-primary-container hover:text-[#D62828] transition-colors uppercase font-headline tracking-wider"
+                        className="group/link inline-flex items-center text-xs font-bold text-primary-container hover:text-[#D62828] transition-colors uppercase font-headline tracking-wider bg-[length:0_2px] hover:bg-[length:100%_2px] bg-gradient-to-r from-[#D62828] to-[#D62828] bg-no-repeat bg-left-bottom pb-0.5"
                       >
                         Specifications
                         <span className="material-symbols-outlined text-xs ml-1 select-none">arrow_forward</span>
                       </Link>
                     </div>
                   </div>
-                </div>
+                </StaggerItem>
               );
             })}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* 5. Horizontal Services List */}
+      {/* ═══════════════════════════════════════════════════════════
+          5. HORIZONTAL SERVICES LIST
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-white relative" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
-          <div className="mb-16 text-center">
+          <FadeInView className="mb-16 text-center">
             <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
               03 / WHAT WE DO
             </span>
@@ -397,16 +405,16 @@ export default function Home() {
               Our Professional Services
             </h2>
             <div className="w-16 h-1.5 bg-[#D62828] mx-auto mt-4"></div>
-          </div>
+          </FadeInView>
 
-          {/* Service Horizontal rows list */}
-          <div className="border-t border-slate-200 divide-y divide-slate-200">
+          {/* Service rows */}
+          <StaggerContainer stagger={0.06} className="border-t border-slate-200 divide-y divide-slate-200">
             {customServices.map((service, index) => (
-              <div
+              <StaggerItem
                 key={index}
                 className="service-row-hover py-8 md:py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 hover:bg-slate-50/50 px-4 transition-all duration-300 relative group overflow-hidden"
               >
-                {/* Left section: Number + Title */}
+                {/* Left: Number + Title */}
                 <div className="flex items-center gap-6 md:w-1/3">
                   <span className="font-headline font-black text-slate-300 text-3xl md:text-4xl leading-none">
                     {service.num}
@@ -416,16 +424,15 @@ export default function Home() {
                   </h3>
                 </div>
 
-                {/* Middle section: Description */}
+                {/* Middle: Description */}
                 <div className="md:w-5/12">
                   <p className="text-on-surface-variant text-sm font-body leading-relaxed">
                     {service.desc}
                   </p>
                 </div>
 
-                {/* Right section: Hover image + Link Arrow */}
+                {/* Right: Hover image + Link Arrow */}
                 <div className="flex items-center justify-between w-full md:w-auto gap-8 md:justify-end">
-                  {/* Micro Image Preview on hover */}
                   <div className="service-row-img opacity-0 scale-95 translate-x-4 w-24 h-16 rounded overflow-hidden relative shadow-md hidden sm:block">
                     <Image
                       alt={service.title}
@@ -435,7 +442,6 @@ export default function Home() {
                       sizes="96px"
                     />
                   </div>
-
                   <Link
                     href={service.link}
                     className="service-row-arrow flex items-center justify-center w-10 h-10 rounded-full border border-slate-300 text-slate-400 group-hover:border-[#D62828] group-hover:text-[#D62828] group-hover:bg-[#D62828]/5 transition-all duration-300"
@@ -443,60 +449,75 @@ export default function Home() {
                     <span className="material-symbols-outlined text-lg select-none">arrow_forward</span>
                   </Link>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* 6. Synergy Advantage Stats Banner - Cleaner layout without gridlines for mobile */}
+      {/* ═══════════════════════════════════════════════════════════
+          6. STATS BANNER — CountUp Animation
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-[#0A1628] to-[#142846] text-white relative overflow-hidden border-t-4 border-b-4 border-[#D62828]">
-        {/* Background mesh element */}
         <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-[#D62828] opacity-[0.04] blur-[100px] pointer-events-none rounded-full" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 text-center">
+          <StaggerContainer stagger={0.12} className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 text-center">
             
-            <div className="space-y-2">
-              <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                workspace_premium
-              </span>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight">10+ Years</h3>
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  workspace_premium
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
+                <CountUp target={10} suffix="+" className="tabular-nums" /> Years
+              </h3>
               <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Substation Audits</p>
-            </div>
+            </StaggerItem>
 
-            <div className="space-y-2">
-              <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                electric_bolt
-              </span>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight">87+ Models</h3>
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  electric_bolt
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
+                <CountUp target={87} suffix="+" className="tabular-nums" /> Models
+              </h3>
               <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Standard Products</p>
-            </div>
+            </StaggerItem>
 
-            <div className="space-y-2">
-              <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                lab_research
-              </span>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight">ISO 17025</h3>
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  lab_research
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">ISO 17025</h3>
               <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">NABL Calibration</p>
-            </div>
+            </StaggerItem>
 
-            <div className="space-y-2">
-              <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                support_agent
-              </span>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white font-black leading-tight">24/7 Care</h3>
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  support_agent
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">24/7 Care</h3>
               <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Onsite Commissioning</p>
-            </div>
+            </StaggerItem>
 
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* 7. Quote Process Cards (Replacing SaaS Pricing) */}
+      {/* ═══════════════════════════════════════════════════════════
+          7. QUOTE PROCESS — 3-Step Cards
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-slate-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
-          <div className="mb-16 text-center max-w-2xl mx-auto">
+          <FadeInView className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
               04 / FAST RFQ SYSTEM
             </span>
@@ -506,27 +527,28 @@ export default function Home() {
             <p className="text-on-surface-variant font-body text-sm mt-4 leading-relaxed">
               We have integrated a robust local storage Quote Cart directly on our website. You can stage multiple items and request technical quotes at once.
             </p>
-          </div>
+          </FadeInView>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white border border-slate-200 p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl hover:border-[#D62828]/30 transition-all duration-300">
+          <StaggerContainer stagger={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <StaggerItem className="bg-white border border-slate-200 p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl hover:border-[#D62828]/30 transition-all duration-300">
               <div className="space-y-6">
                 <span className="text-4xl font-headline font-black text-[#D62828]">01</span>
                 <h3 className="font-headline font-black text-xl text-primary-container">Stage Equipment</h3>
                 <p className="text-on-surface-variant text-sm font-body leading-relaxed">
-                  Browse our 87+ high-voltage products across Megger, MTE, Brother, and TE Connectivity. Click <strong>"Add to Quote Request"</strong> on any product detail page.
+                  Browse our 87+ high-voltage products across Megger, MTE, Brother, and TE Connectivity. Click <strong>&quot;Add to Quote Request&quot;</strong> on any product detail page.
                 </p>
               </div>
               <div className="pt-8 border-t border-slate-100 mt-8">
-                <Link href="/products" className="text-xs font-bold text-[#D62828] hover:underline uppercase font-headline tracking-wider flex items-center">
+                <Link href="/products" className="group text-xs font-bold text-[#D62828] hover:underline uppercase font-headline tracking-wider flex items-center">
                   Go to products catalog
-                  <span className="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                  <span className="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
                 </Link>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-white border-2 border-primary-container p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl relative shadow-md">
-              {/* Highlight Tag */}
+            {/* Step 2 — Elevated/highlighted */}
+            <StaggerItem className="bg-white border-2 border-primary-container p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl relative shadow-lg scale-[1.02]">
               <span className="absolute -top-3.5 left-8 bg-[#D62828] text-white font-headline font-bold text-[9px] uppercase tracking-widest px-3 py-1 rounded">
                 Highly Efficient
               </span>
@@ -538,14 +560,15 @@ export default function Home() {
                 </p>
               </div>
               <div className="pt-8 border-t border-slate-100 mt-8">
-                <Link href="/quote" className="text-xs font-bold text-primary-container hover:underline uppercase font-headline tracking-wider flex items-center">
+                <Link href="/quote" className="group text-xs font-bold text-primary-container hover:underline uppercase font-headline tracking-wider flex items-center">
                   Review active cart
-                  <span className="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                  <span className="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
                 </Link>
               </div>
-            </div>
+            </StaggerItem>
 
-            <div className="bg-white border border-slate-200 p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl hover:border-[#D62828]/30 transition-all duration-300">
+            {/* Step 3 */}
+            <StaggerItem className="bg-white border border-slate-200 p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl hover:border-[#D62828]/30 transition-all duration-300">
               <div className="space-y-6">
                 <span className="text-4xl font-headline font-black text-[#D62828]">03</span>
                 <h3 className="font-headline font-black text-xl text-primary-container">Receive Quote</h3>
@@ -554,22 +577,24 @@ export default function Home() {
                 </p>
               </div>
               <div className="pt-8 border-t border-slate-100 mt-8">
-                <Link href="/contact" className="text-xs font-bold text-[#D62828] hover:underline uppercase font-headline tracking-wider flex items-center">
+                <Link href="/contact" className="group text-xs font-bold text-[#D62828] hover:underline uppercase font-headline tracking-wider flex items-center">
                   Connect with support
-                  <span className="material-symbols-outlined text-xs ml-1">arrow_forward</span>
+                  <span className="material-symbols-outlined text-xs ml-1 group-hover:translate-x-1 transition-transform duration-200">arrow_forward</span>
                 </Link>
               </div>
-            </div>
-          </div>
+            </StaggerItem>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* 8. FAQ Accordion & Testimonial Section */}
+      {/* ═══════════════════════════════════════════════════════════
+          8. FAQ ACCORDION & TESTIMONIAL
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           
           {/* FAQ Accordion (Left 7 Columns) */}
-          <div className="lg:col-span-7 space-y-6 md:space-y-8">
+          <FadeInView direction="left" className="lg:col-span-7 space-y-6 md:space-y-8">
             <div>
               <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
                 05 / SUPPORT DESK
@@ -591,25 +616,18 @@ export default function Home() {
                       keyboard_arrow_down
                     </span>
                   </button>
-                  <div
-                    className="transition-all duration-300 ease-in-out"
-                    style={{
-                      maxHeight: openFaq === idx ? '300px' : '0px',
-                      opacity: openFaq === idx ? 1 : 0,
-                      visibility: openFaq === idx ? 'visible' : 'hidden'
-                    }}
-                  >
+                  <AnimatedAccordion isOpen={openFaq === idx}>
                     <div className="p-4 sm:p-6 pt-0 text-on-surface-variant font-body text-sm leading-relaxed border-t border-slate-100">
                       {faq.answer}
                     </div>
-                  </div>
+                  </AnimatedAccordion>
                 </div>
               ))}
             </div>
-          </div>
+          </FadeInView>
 
           {/* Testimonial Panel (Right 5 Columns) */}
-          <div className="lg:col-span-5 space-y-6 md:space-y-8">
+          <FadeInView direction="right" delay={0.15} className="lg:col-span-5 space-y-6 md:space-y-8">
             <div>
               <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
                 06 / CLIENT STORIES
@@ -620,18 +638,20 @@ export default function Home() {
             </div>
             
             <div className="bg-slate-50 border border-slate-200 p-8 rounded-lg relative overflow-hidden">
-              {/* Quote marks in background */}
-              <div className="absolute right-4 bottom-2 text-slate-200/50 font-headline font-black text-[12rem] leading-none pointer-events-none select-none">
-                ”
+              {/* Quote watermark — large, very subtle */}
+              <div className="absolute right-4 bottom-2 text-slate-200/[0.05] font-headline font-black text-[200px] leading-none pointer-events-none select-none">
+                &ldquo;
               </div>
               <div className="space-y-6 relative z-10">
-                <div className="flex gap-1 text-[#D62828]">
+                <StaggerContainer stagger={0.05} className="flex gap-1 text-[#D62828]">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="material-symbols-outlined text-lg select-none" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                    <StaggerItem key={i} direction="scale">
+                      <span className="material-symbols-outlined text-lg select-none" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                    </StaggerItem>
                   ))}
-                </div>
+                </StaggerContainer>
                 <p className="text-on-surface-variant text-sm font-body leading-relaxed italic">
-                  "Synergy Engineering provided our grid utility with Baker ADX analyzers and onsite certification courses. Their technical support response time is phenomenal — typical calibrations were cleared within 48 hours."
+                  &ldquo;Synergy Engineering provided our grid utility with Baker ADX analyzers and onsite certification courses. Their technical support response time is phenomenal — typical calibrations were cleared within 48 hours.&rdquo;
                 </p>
                 <div className="border-t border-slate-200 pt-4 flex items-center gap-4">
                   <div className="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white font-headline font-bold text-xs select-none">
@@ -644,15 +664,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeInView>
 
         </div>
       </section>
 
-      {/* 9. Blog / Insights Grid Section */}
-      <section className="py-16 md:py-28 bg-slate-50 relative animate-fade-in-up" id="blog">
+      {/* ═══════════════════════════════════════════════════════════
+          9. BLOG / INSIGHTS GRID
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 md:py-28 bg-slate-50 relative" id="blog">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
-          <div className="mb-12 text-center">
+          <FadeInView className="mb-12 text-center">
             <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
               07 / LATEST INSIGHTS
             </span>
@@ -660,11 +682,11 @@ export default function Home() {
               From Our Engineering Desk
             </h2>
             <div className="w-16 h-1.5 bg-[#D62828] mx-auto mt-4"></div>
-          </div>
+          </FadeInView>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <StaggerContainer stagger={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredBlogs.map((post) => (
-              <div key={post.slug} className="group cursor-pointer bg-white rounded-lg overflow-hidden border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+              <StaggerItem key={post.slug} className="group cursor-pointer bg-white rounded-lg overflow-hidden border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
                 <div className="relative aspect-video w-full bg-slate-100 overflow-hidden">
                   <Image
                     alt={post.title}
@@ -690,25 +712,26 @@ export default function Home() {
                   </div>
                   <div className="pt-4 border-t border-slate-100 mt-6 flex justify-between items-center">
                     <span className="text-slate-400 text-[10px] font-body">{post.date}</span>
-                    <Link href={`/blog/${post.slug}`} className="text-xs font-bold text-primary-container hover:text-[#D62828] transition-colors uppercase font-headline tracking-wider flex items-center">
+                    <Link href={`/blog/${post.slug}`} className="group/link text-xs font-bold text-primary-container hover:text-[#D62828] transition-colors uppercase font-headline tracking-wider flex items-center">
                       Read
-                      <span className="material-symbols-outlined text-xs ml-1 select-none">arrow_forward</span>
+                      <span className="material-symbols-outlined text-xs ml-1 select-none group-hover/link:translate-x-1 transition-transform duration-200">arrow_forward</span>
                     </Link>
                   </div>
                 </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
-      {/* 10. Split Contact Inquiry Section */}
+      {/* ═══════════════════════════════════════════════════════════
+          10. SPLIT CONTACT INQUIRY SECTION
+          ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-white relative" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
           
-          {/* Left Side: Solid Info Column */}
-          <div className="lg:col-span-5 relative rounded-lg overflow-hidden flex flex-col justify-between p-6 sm:p-8 md:p-12 text-white bg-[#0A1628] bg-grid-pattern border-b-4 border-[#D62828] shadow-xl">
-            {/* Mesh Overlay */}
+          {/* Left Side: Info Column */}
+          <FadeInView direction="left" className="lg:col-span-5 relative rounded-lg overflow-hidden flex flex-col justify-between p-6 sm:p-8 md:p-12 text-white bg-[#0A1628] bg-grid-pattern border-b-4 border-[#D62828] shadow-xl">
             <div className="absolute inset-0 bg-gradient-to-br from-[#0A1628]/95 to-[#142846]/95 -z-10" />
             <div className="absolute right-0 bottom-0 w-[200px] h-[200px] bg-[#D62828] opacity-[0.05] blur-[80px] pointer-events-none rounded-full" />
             
@@ -747,14 +770,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </FadeInView>
 
           {/* Right Side: Inquiry Form */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-6 sm:p-8 md:p-12 rounded-lg shadow-sm">
+          <FadeInView direction="right" delay={0.15} className="lg:col-span-7 bg-slate-50 border border-slate-200 p-6 sm:p-8 md:p-12 rounded-lg shadow-sm">
             <h3 className="font-headline font-black text-2xl text-primary-container mb-2">Submit RFQ Request</h3>
             <p className="text-slate-500 text-sm font-body mb-8">Fill in your requirements below and we will route it to the appropriate application specialist.</p>
             <ContactForm />
-          </div>
+          </FadeInView>
 
         </div>
       </section>

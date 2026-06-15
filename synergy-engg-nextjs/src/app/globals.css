@@ -152,40 +152,76 @@ html {
   animation: badge-pulse 0.4s ease-in-out;
 }
 
-/* Dark mode scrollbar */
-.dark ::-webkit-scrollbar-track {
-  background: #0A1628;
+/* ─── Blob Drift (Hero accent shapes) ─── */
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(15px, -10px); }
+  50% { transform: translate(-10px, 15px); }
+  75% { transform: translate(10px, 10px); }
 }
-.dark ::-webkit-scrollbar-thumb {
-  background: #2a3a52;
-}
-.dark ::-webkit-scrollbar-thumb:hover {
-  background: #3a4f6e;
-}
-
-/* Dark mode form inputs */
-.dark input,
-.dark textarea,
-.dark select {
-  background-color: #1a2a40 !important;
-  color: #e2e8f0 !important;
-  border-color: #2a3a52 !important;
-}
-.dark input::placeholder,
-.dark textarea::placeholder {
-  color: #64748b !important;
+.animate-blob-drift {
+  animation: blob-drift 8s ease-in-out infinite;
 }
 
-/* Prose dark mode */
-.dark .prose {
-  color: #cbd5e1;
+/* ─── Badge Glow (Hero badge pulse) ─── */
+@keyframes badge-glow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); }
 }
-.dark .prose h2, .dark .prose h3, .dark .prose h4 {
-  color: #e2e8f0;
+.animate-badge-glow {
+  animation: badge-glow 2s ease-in-out infinite;
 }
-.dark .prose blockquote {
-  border-left-color: #D62828;
-  color: #94a3b8;
+
+/* ─── NABL Float (floating badge) ─── */
+@keyframes nabl-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.animate-nabl-float {
+  animation: nabl-float 3s ease-in-out infinite;
+}
+
+/* ─── Draw Line (section title rules) ─── */
+@keyframes draw-line {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* ─── Marquee Animations ─── */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.marquee-track-left {
+  display: flex;
+  width: fit-content;
+  animation: marquee-left 40s linear infinite;
+}
+.marquee-track-right {
+  display: flex;
+  width: fit-content;
+  animation: marquee-right 40s linear infinite;
+}
+.marquee-container:hover .marquee-track-left,
+.marquee-container:hover .marquee-track-right {
+  animation-play-state: paused;
+}
+
+/* Edge fade mask for marquee rows */
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* ─── Stat border animation ─── */
+@keyframes stat-border-grow {
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 /* Blueprint Grid Pattern */
