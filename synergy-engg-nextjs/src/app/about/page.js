@@ -86,7 +86,7 @@ export default function About() {
       <HeroSection
         title="About Synergy Engineering"
         subtitle="10+ Years of Engineering Excellence Across India. Precise solutions for the nation's most demanding sectors."
-        backgroundImage="/images/img_14.webp"
+        backgroundImage="/images/windmill.jpg"
         breadcrumbs={breadcrumbs}
       />
 

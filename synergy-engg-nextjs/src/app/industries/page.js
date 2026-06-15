@@ -49,7 +49,7 @@ export default function Industries() {
       <HeroSection
         title="Industries We Serve"
         subtitle="Delivering advanced electrical testing, grid-accredited calibration, and complete substation EPC project delivery across high-tolerance B2B sectors."
-        backgroundImage="/images/img_30.webp"
+        backgroundImage="/images/electricity tower.jpg"
         breadcrumbs={breadcrumbs}
       />
 

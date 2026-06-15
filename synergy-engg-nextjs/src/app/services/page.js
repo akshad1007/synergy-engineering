@@ -27,7 +27,7 @@ export default function Services() {
       <HeroSection
         title="Engineering Services & Solutions"
         subtitle="High-fidelity electrical testing, accredited calibration, substation EPC executions, and industrial training certified to grid standards."
-        backgroundImage="/images/img_47.webp"
+        backgroundImage="/images/solarplates_and_tower.jpg"
         breadcrumbs={breadcrumbs}
       />
 

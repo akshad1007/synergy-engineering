@@ -153,13 +153,18 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full bg-background min-h-screen">
 
-      {/* ═══════════════════════════════════════════════════════════
-          1. SPLIT HERO SECTION
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="relative min-h-[90vh] pt-24 pb-16 px-4 sm:px-8 md:px-16 bg-[#0A1628] bg-grid-pattern text-white overflow-hidden">
-        {/* Subtle background image placeholder message */}
-        <div className="absolute top-4 right-4 z-20 text-[9px] font-bold text-slate-500 uppercase tracking-widest bg-slate-900/60 px-3 py-1.5 rounded select-none pointer-events-none border border-slate-800">
-          Hero BG Image: [Substation/Transformer Yard photo goes here]
+      <section className="relative min-h-[90vh] pt-24 pb-16 px-4 sm:px-8 md:px-16 bg-[#0A1628] text-white overflow-hidden">
+        {/* Real background image with dark gradient overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/electrical_substation.jpg"
+            alt="Electrical Substation"
+            fill
+            priority
+            className="object-cover opacity-15 filter brightness-90 select-none pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/95 to-[#0A1628]/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#F8F9FA] via-transparent to-transparent opacity-10" />
         </div>
 
         {/* Animated accent blobs */}
@@ -293,7 +298,7 @@ export default function Home() {
               <Image
                 alt="Electrical testing diagnostics"
                 className="object-cover group-hover:scale-[1.05] transition-transform duration-[6000ms] ease-out"
-                src="/images/img_28.webp"
+                src="/images/industry.jpg"
                 fill
                 sizes="(max-width: 1024px) 90vw, 45vw"
                 priority
