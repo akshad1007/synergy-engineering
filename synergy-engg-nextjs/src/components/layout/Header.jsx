@@ -7,21 +7,15 @@ import Image from 'next/image';
 
 export default function Header({ onMenuToggle }) {
   const pathname = usePathname();
-  const [theme, setTheme] = useState('light');
   const [quoteCount, setQuoteCount] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Detect theme on mount
-    const storedTheme = localStorage.getItem('synergy-theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (storedTheme === 'dark' || (!storedTheme && systemDark)) {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-    } else {
-      setTheme('light');
+    // Force light mode on mount
+    try {
       document.documentElement.classList.remove('dark');
-    }
+      localStorage.removeItem('synergy-theme');
+    } catch (e) {}
 
     // Listen for quote cart changes
     const updateQuoteCount = () => {
@@ -50,18 +44,6 @@ export default function Header({ onMenuToggle }) {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('synergy-theme', 'dark');
-    } else {
-      setTheme('light');
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('synergy-theme', 'light');
-    }
-  };
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -132,16 +114,7 @@ export default function Header({ onMenuToggle }) {
         {/* Right Tools Panel */}
         <div className="flex items-center gap-4">
           
-          {/* Theme Toggle */}
-          <button
-            onClick={toggleTheme}
-            className="p-2.5 text-slate-600 dark:text-slate-400 hover:text-[#D62828] cursor-pointer rounded-full hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors flex items-center justify-center select-none"
-            aria-label="Toggle color theme"
-          >
-            <span className="material-symbols-outlined text-xl select-none">
-              {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-            </span>
-          </button>
+
 
           {/* Call-to-Action RFQ Button */}
           <Link

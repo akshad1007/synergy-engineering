@@ -38,13 +38,8 @@ export default function RootLayout({ children }) {
             __html: `
               (function() {
                 try {
-                  var storedTheme = localStorage.getItem('synergy-theme');
-                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                  if (storedTheme === 'dark' || (!storedTheme && systemDark)) {
-                    document.documentElement.classList.add('dark');
-                  } else {
-                    document.documentElement.classList.remove('dark');
-                  }
+                  document.documentElement.classList.remove('dark');
+                  localStorage.removeItem('synergy-theme');
                 } catch (e) {}
               })();
             `,
