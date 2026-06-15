@@ -157,6 +157,11 @@ export default function Home() {
           1. SPLIT HERO SECTION
           ═══════════════════════════════════════════════════════════ */}
       <section className="relative min-h-[90vh] pt-24 pb-16 px-4 sm:px-8 md:px-16 bg-[#0A1628] bg-grid-pattern text-white overflow-hidden">
+        {/* Subtle background image placeholder message */}
+        <div className="absolute top-4 right-4 z-20 text-[9px] font-bold text-slate-500 uppercase tracking-widest bg-slate-900/60 px-3 py-1.5 rounded select-none pointer-events-none border border-slate-800">
+          Hero BG Image: [Substation/Transformer Yard photo goes here]
+        </div>
+
         {/* Animated accent blobs */}
         <div className="animate-blob-drift absolute right-0 bottom-0 w-[40%] h-[60%] bg-[#D62828] opacity-[0.03] blur-[120px] pointer-events-none rounded-full" />
         <div className="animate-blob-drift absolute left-10 top-20 w-[300px] h-[300px] bg-sky-500 opacity-[0.02] blur-[100px] pointer-events-none rounded-full" style={{ animationDelay: '-3s' }} />
