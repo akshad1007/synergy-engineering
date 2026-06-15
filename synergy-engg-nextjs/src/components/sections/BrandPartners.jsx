@@ -34,95 +34,135 @@ const CUSTOMERS = [
   { name: 'Torrent Power', logo: '/logos/torrent_power.png' },
 ];
 
-function MarqueeSlider({ items, speed = '60s', reverse = false }) {
-  // Multiply list to ensure continuous wrap without visible gaps
-  const repeatCount = items.length < 10 ? 8 : 4;
-  const repeatedItems = Array(repeatCount).fill(items).flat();
-
-  return (
-    <div className="relative w-full overflow-hidden py-2 select-none">
-      {/* Mask gradients on left and right for smooth fade edges */}
-      <div className="absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
-
-      <div 
-        className="flex flex-nowrap gap-6 sm:gap-8 items-center w-max animate-ticker-scroll"
-        style={{
-          animationDuration: speed,
-          animationDirection: reverse ? 'reverse' : 'normal',
-        }}
-      >
-        {repeatedItems.map((item, index) => {
-          if (item.link) {
-            return (
-              <Link 
-                key={index} 
-                href={item.link} 
-                className="shrink-0 flex items-center justify-center h-16 w-48 sm:h-24 sm:w-60 opacity-75 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0 cursor-pointer focus:outline-none"
-              >
-                <img
-                  src={item.logo}
-                  alt={item.name}
-                  className="max-h-full max-w-full object-contain"
-                  loading="lazy"
-                />
-              </Link>
-            );
-          }
-
-          return (
-            <div 
-              key={index} 
-              className="shrink-0 flex items-center justify-center h-16 w-48 sm:h-24 sm:w-60 opacity-75 hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0"
-            >
-              <img
-                src={item.logo}
-                alt={item.name}
-                className="max-h-full max-w-full object-contain"
-                loading="lazy"
-              />
-            </div>
-          );
-        })}
+function DiamondLogo({ item }) {
+  const content = (
+    <div className="relative w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rotate-45 overflow-hidden bg-white border border-slate-200/60 shadow-[0_4px_12px_rgba(0,0,0,0.05)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.12)] hover:scale-105 hover:border-[#D62828] hover:z-20 transition-all duration-300 group flex items-center justify-center cursor-pointer">
+      <div className="-rotate-45 w-14 h-14 sm:w-20 sm:h-20 md:w-22 md:h-22 flex items-center justify-center">
+        <img
+          src={item.logo}
+          alt={item.name}
+          className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+          loading="lazy"
+        />
       </div>
     </div>
   );
+
+  if (item.link) {
+    return (
+      <Link href={item.link} className="focus:outline-none select-none">
+        {content}
+      </Link>
+    );
+  }
+
+  return <div className="select-none">{content}</div>;
 }
 
 export default function BrandPartners() {
+  // Split Associates into 3 and 2
+  const associatesRow1 = ASSOCIATES.slice(0, 3);
+  const associatesRow2 = ASSOCIATES.slice(3, 5);
+
+  // Split Customers for Desktop (5-4-5-4-2)
+  const customersDesktop = [
+    CUSTOMERS.slice(0, 5),
+    CUSTOMERS.slice(5, 9),
+    CUSTOMERS.slice(9, 14),
+    CUSTOMERS.slice(14, 18),
+    CUSTOMERS.slice(18, 20),
+  ];
+
+  // Split Customers for Mobile/Tablet (3-2-3-2-3-2-3-2)
+  const customersMobile = [
+    CUSTOMERS.slice(0, 3),
+    CUSTOMERS.slice(3, 5),
+    CUSTOMERS.slice(5, 8),
+    CUSTOMERS.slice(8, 10),
+    CUSTOMERS.slice(10, 13),
+    CUSTOMERS.slice(13, 15),
+    CUSTOMERS.slice(15, 18),
+    CUSTOMERS.slice(18, 20),
+  ];
+
   return (
-    <section className="py-12 bg-background border-b border-outline-variant/10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 space-y-12">
+    <section className="py-20 bg-background border-b border-outline-variant/10 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 space-y-24">
         
         {/* Section 1: Business Associates */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-3 text-center lg:text-left shrink-0">
-            <span className="text-[#D62828] font-bold tracking-widest text-[10px] sm:text-xs uppercase font-headline block">
-              Global Partnerships
-            </span>
-            <h2 className="font-headline font-black text-xl sm:text-2xl text-primary-container mt-1">
-              Business Associates
+        <div className="space-y-12">
+          {/* Screenshot Match Title Header */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6">
+            <div className="h-[1px] w-8 sm:w-16 bg-slate-300"></div>
+            <h2 className="font-headline font-black text-xl sm:text-2xl md:text-3xl text-primary-container tracking-wider uppercase text-center">
+              Our Business Associates
             </h2>
-            <div className="w-12 h-1 bg-[#D62828] mt-3 mx-auto lg:mx-0"></div>
+            <div className="h-[1px] w-8 sm:w-16 bg-slate-300"></div>
           </div>
-          <div className="lg:col-span-9 overflow-hidden w-full">
-            <MarqueeSlider items={ASSOCIATES} speed="80s" />
+
+          {/* Interlocking Diamond Layout */}
+          <div className="flex flex-col items-center">
+            {/* Row 1 */}
+            <div className="flex justify-center gap-x-4 sm:gap-x-6 md:gap-x-8">
+              {associatesRow1.map((item, idx) => (
+                <DiamondLogo key={'assoc-r1-' + idx} item={item} />
+              ))}
+            </div>
+            {/* Row 2 (Staggered & Pulled Up) */}
+            <div className="flex justify-center gap-x-4 sm:gap-x-6 md:gap-x-8 -mt-6 sm:-mt-8 md:-mt-10">
+              {associatesRow2.map((item, idx) => (
+                <DiamondLogo key={'assoc-r2-' + idx} item={item} />
+              ))}
+            </div>
           </div>
         </div>
 
         {/* Section 2: Our Customers */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-3 text-center lg:text-left shrink-0">
-            <span className="text-[#D62828] font-bold tracking-widest text-[10px] sm:text-xs uppercase font-headline block">
-              Proven Track Record
-            </span>
-            <h2 className="font-headline font-black text-xl sm:text-2xl text-primary-container mt-1">
-              Our Customers
+        <div className="space-y-12">
+          {/* Screenshot Match Title Header */}
+          <div className="flex items-center justify-center gap-4 sm:gap-6">
+            <div className="h-[1px] w-8 sm:w-16 bg-slate-300"></div>
+            <h2 className="font-headline font-black text-xl sm:text-2xl md:text-3xl text-primary-container tracking-wider uppercase text-center">
+              Our Valued Customers
             </h2>
-            <div className="w-12 h-1 bg-[#D62828] mt-3 mx-auto lg:mx-0"></div>
+            <div className="h-[1px] w-8 sm:w-16 bg-slate-300"></div>
           </div>
-          <div className="lg:col-span-9 overflow-hidden w-full">
-            <MarqueeSlider items={CUSTOMERS} speed="120s" reverse={true} />
+
+          {/* Desktop/Tablet Honeycomb (5-4-5-4-2) */}
+          <div className="hidden md:flex flex-col items-center">
+            {customersDesktop.map((row, rowIdx) => {
+              const isEven = rowIdx % 2 === 1;
+              return (
+                <div 
+                  key={'cust-d-row-' + rowIdx} 
+                  className={`flex justify-center gap-x-6 md:gap-x-8 ${
+                    rowIdx > 0 ? '-mt-8 md:-mt-10' : ''
+                  }`}
+                >
+                  {row.map((item, idx) => (
+                    <DiamondLogo key={`cust-d-${rowIdx}-${idx}`} item={item} />
+                  ))}
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Mobile Honeycomb (3-2-3-2-3-2-3-2) */}
+          <div className="flex md:hidden flex-col items-center">
+            {customersMobile.map((row, rowIdx) => {
+              return (
+                <div 
+                  key={'cust-m-row-' + rowIdx} 
+                  className={`flex justify-center gap-x-4 ${
+                    rowIdx > 0 ? '-mt-6' : ''
+                  }`}
+                >
+                  {row.map((item, idx) => (
+                    <DiamondLogo key={`cust-m-${rowIdx}-${idx}`} item={item} />
+                  ))}
+                </div>
+              );
+            })}
           </div>
         </div>
 
