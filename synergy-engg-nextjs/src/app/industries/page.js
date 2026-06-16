@@ -50,6 +50,7 @@ export default function Industries() {
         title="Industries We Serve"
         subtitle="Delivering advanced electrical testing, grid-accredited calibration, and complete substation EPC project delivery across high-tolerance B2B sectors."
         backgroundImage="/images/electricity tower.jpg"
+        backgroundVideo="/videos/windmill_vedio.mp4"
         breadcrumbs={breadcrumbs}
       />
 

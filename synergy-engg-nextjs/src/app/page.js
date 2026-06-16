@@ -6,12 +6,14 @@ import Image from 'next/image';
 import BrandPartners from '@/components/sections/BrandPartners';
 import ContactForm from '@/components/forms/ContactForm';
 import { blogs } from '@/data/blogs';
+import { motion } from 'framer-motion';
 import {
   FadeInView,
   StaggerContainer,
   StaggerItem,
   CountUp,
   AnimatedAccordion,
+  RevealMask,
 } from '@/components/motion/MotionWrapper';
 
 export default function Home() {
@@ -150,28 +152,76 @@ export default function Home() {
     }
   ];
 
+  const projectGallery = [
+    {
+      title: "Transmission Networks",
+      subtitle: "High-Voltage T&D Lines",
+      image: "/images/electricity tower.jpg",
+      description: "Insulation testing and online monitoring systems deployed across major high-voltage transmission grids.",
+      link: "/industries#td"
+    },
+    {
+      title: "Wind Power Farms",
+      subtitle: "Renewable Generation",
+      image: "/images/windmill.jpg",
+      description: "Diagnostic instrumentation and predictive surge testing for grid-connected wind energy platforms.",
+      link: "/industries#power-gen"
+    },
+    {
+      title: "Hydropower Dams",
+      subtitle: "Heavy Utilities",
+      image: "/images/dams.jpg",
+      description: "Providing precision three-phase working standards and DGA oil telemetry for hydroelectric plants.",
+      link: "/industries#power-gen"
+    },
+    {
+      title: "Substation Yards",
+      subtitle: "Grid Infrastructure",
+      image: "/images/electrical_substation.jpg",
+      description: "Supply and calibration of ISO/IEC 17025 standard insulation testers and transformer analyzers.",
+      link: "/industries#infrastructure"
+    },
+    {
+      title: "Industrial Plants",
+      subtitle: "Heavy Manufacturing",
+      image: "/images/factory.jpg",
+      description: "Integrated labeling, cabling accessories, and offline motor testing systems for manufacturing lines.",
+      link: "/industries#manufacturing"
+    },
+    {
+      title: "Solar Power Arrays",
+      subtitle: "Clean Energy Integration",
+      image: "/images/solar_pannel.jpg",
+      description: "Supplying earth grid testers and diagnostic systems to large scale solar photovoltaic platforms.",
+      link: "/industries#power-gen"
+    }
+  ];
+
   return (
     <div className="flex flex-col w-full bg-background min-h-screen">
 
-      <section className="relative min-h-[90vh] pt-24 pb-16 px-4 sm:px-8 md:px-16 bg-[#0A1628] text-white overflow-hidden">
-        {/* Real background image with dark gradient overlay */}
+      <section className="relative min-h-[90vh] pt-24 pb-20 px-4 sm:px-8 md:px-16 bg-[#0A1628] text-white overflow-hidden flex flex-col justify-between">
+        {/* Real background video with dark gradient overlay & image fallback */}
         <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/electrical_substation.jpg"
-            alt="Electrical Substation"
-            fill
-            priority
-            className="object-cover opacity-15 filter brightness-90 select-none pointer-events-none"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/95 to-[#0A1628]/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#F8F9FA] via-transparent to-transparent opacity-10" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster="/images/electrical_substation.jpg"
+            className="w-full h-full object-cover opacity-15 filter brightness-75 select-none pointer-events-none"
+          >
+            <source src="/videos/windmill_vedio.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628] via-[#0A1628]/95 to-[#0A1628]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent opacity-20" />
         </div>
 
         {/* Animated accent blobs */}
         <div className="animate-blob-drift absolute right-0 bottom-0 w-[40%] h-[60%] bg-[#D62828] opacity-[0.03] blur-[120px] pointer-events-none rounded-full" />
         <div className="animate-blob-drift absolute left-10 top-20 w-[300px] h-[300px] bg-sky-500 opacity-[0.02] blur-[100px] pointer-events-none rounded-full" style={{ animationDelay: '-3s' }} />
 
-        <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="max-w-7xl mx-auto w-full relative z-10 my-auto">
           {/* Top Title/Desc Split Row */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-12">
             <div className="lg:col-span-8 space-y-6">
@@ -238,8 +288,76 @@ export default function Home() {
           </StaggerContainer>
         </div>
 
+        {/* Bouncing Scroll Down Mouse Indicator */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 select-none pointer-events-none opacity-40">
+          <div className="w-5 h-8 rounded-full border border-white/60 flex justify-center pt-1.5">
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+              className="w-1 h-1 rounded-full bg-white"
+            />
+          </div>
+        </div>
+
         {/* Bottom gradient fade into next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#F8F9FA] to-transparent pointer-events-none" />
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          STATS BANNER — Overlapping Hero Bottom
+          ═══════════════════════════════════════════════════════════ */}
+      <section className="relative z-20 md:-mt-16 -mt-8 max-w-6xl mx-auto px-4 w-full">
+        <div className="bg-slate-900/90 backdrop-blur-md border border-slate-800/80 px-6 py-10 md:py-12 rounded-xl shadow-2xl relative overflow-hidden">
+          <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-[#D62828] opacity-[0.03] blur-[100px] pointer-events-none rounded-full" />
+          
+          <StaggerContainer stagger={0.1} className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 text-center">
+            
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  workspace_premium
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
+                <CountUp target={10} suffix="+" className="tabular-nums" /> Years
+              </h3>
+              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Substation Audits</p>
+            </StaggerItem>
+
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  electric_bolt
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
+                <CountUp target={87} suffix="+" className="tabular-nums" /> Models
+              </h3>
+              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Standard Products</p>
+            </StaggerItem>
+
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  lab_research
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight font-headline">ISO 17025</h3>
+              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">NABL Calibration</p>
+            </StaggerItem>
+
+            <StaggerItem className="space-y-2">
+              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
+                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  support_agent
+                </span>
+              </FadeInView>
+              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight font-headline">24/7 Care</h3>
+              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Onsite Commissioning</p>
+            </StaggerItem>
+
+          </StaggerContainer>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -294,7 +412,7 @@ export default function Home() {
           {/* Right Image Stack — slides in from right */}
           <FadeInView direction="right" delay={0.15} className="w-full lg:w-1/2 relative flex justify-center pb-8 lg:pb-0">
             <div className="absolute -top-4 -left-4 w-[90%] h-full border-2 border-slate-100 rounded-lg -z-10"></div>
-            <div className="relative rounded-lg overflow-hidden shadow-2xl w-[90%] aspect-[4/3] md:aspect-video lg:aspect-[4/3] bg-slate-100 group">
+            <RevealMask className="relative rounded-lg shadow-2xl w-[90%] aspect-[4/3] md:aspect-video lg:aspect-[4/3] bg-slate-100 group">
               <Image
                 alt="Electrical testing diagnostics"
                 className="object-cover group-hover:scale-[1.05] transition-transform duration-[6000ms] ease-out"
@@ -303,7 +421,7 @@ export default function Home() {
                 sizes="(max-width: 1024px) 90vw, 45vw"
                 priority
               />
-            </div>
+            </RevealMask>
             
             {/* NABL Float Overlay Card */}
             <div className="animate-nabl-float absolute -bottom-6 right-2 sm:bottom-6 sm:right-6 md:right-10 bg-primary-container text-white p-4 sm:p-6 rounded-lg shadow-xl max-w-[180px] sm:max-w-[240px] border border-slate-800">
@@ -358,6 +476,12 @@ export default function Home() {
                   className={`relative overflow-hidden rounded-lg border border-slate-200 group bg-white ${item.colSpan}`}
                   duration={isWide ? 0.7 : 0.5}
                 >
+                  {/* Crimson Hover Draw-Line Borders */}
+                  <div className="absolute top-0 left-0 h-[2.5px] bg-[#D62828] w-0 group-hover:w-full transition-all duration-300 z-30" />
+                  <div className="absolute top-0 right-0 w-[2.5px] bg-[#D62828] h-0 group-hover:h-full transition-all duration-300 delay-75 z-30" />
+                  <div className="absolute bottom-0 right-0 h-[2.5px] bg-[#D62828] w-0 group-hover:w-full transition-all duration-300 delay-150 z-30" />
+                  <div className="absolute bottom-0 left-0 w-[2.5px] bg-[#D62828] h-0 group-hover:h-full transition-all duration-300 delay-225 z-30" />
+
                   <div className={`relative ${isTall ? 'h-[280px] sm:h-[360px] lg:h-[500px]' : 'h-[200px] sm:h-[240px]'} w-full bg-slate-100 overflow-hidden`}>
                     <Image
                       alt={item.name}
@@ -417,8 +541,8 @@ export default function Home() {
             <div className="w-16 h-1.5 bg-[#D62828] mx-auto mt-4"></div>
           </FadeInView>
 
-          {/* Service rows */}
-          <StaggerContainer stagger={0.06} className="border-t border-slate-200 divide-y divide-slate-200">
+          {/* Desktop view: Service rows */}
+          <StaggerContainer stagger={0.06} className="hidden md:block border-t border-slate-200 divide-y divide-slate-200">
             {customServices.map((service, index) => (
               <StaggerItem
                 key={index}
@@ -462,62 +586,104 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          {/* Mobile view: Swipeable card deck */}
+          <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-none scroll-smooth">
+            {customServices.map((service, index) => (
+              <div
+                key={index}
+                className="bg-slate-50 border border-slate-200 p-6 rounded-lg min-w-[280px] snap-start shrink-0 flex flex-col justify-between"
+              >
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="font-headline font-black text-slate-300 text-2xl leading-none">{service.num}</span>
+                    <span className="material-symbols-outlined text-[#D62828] text-xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                      settings
+                    </span>
+                  </div>
+                  <h3 className="font-headline font-black text-lg text-primary-container">{service.title}</h3>
+                  <p className="text-on-surface-variant text-xs font-body leading-relaxed">{service.desc}</p>
+                </div>
+                <div className="pt-6 border-t border-slate-200 mt-6 flex justify-between items-center">
+                  <Link href={service.link} className="group/link text-xs font-bold text-primary-container hover:text-[#D62828] transition-colors uppercase font-headline tracking-wider flex items-center">
+                    Learn more
+                    <span className="material-symbols-outlined text-xs ml-1 select-none group-hover/link:translate-x-1 transition-transform duration-200">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          6. STATS BANNER — CountUp Animation
+          6. INFRASTRUCTURE & SECTOR EXPERIENCE SHOWCASE
           ═══════════════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[#0A1628] to-[#142846] text-white relative overflow-hidden border-t-4 border-b-4 border-[#D62828]">
-        <div className="absolute top-[20%] right-[-10%] w-[350px] h-[350px] bg-[#D62828] opacity-[0.04] blur-[100px] pointer-events-none rounded-full" />
-        
+      <section className="py-16 md:py-28 bg-[#0A1628] text-white relative overflow-hidden" id="showcase">
+        {/* Animated Accent Blobs */}
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#D62828] opacity-[0.02] blur-[120px] pointer-events-none rounded-full" />
+        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-sky-500 opacity-[0.01] blur-[100px] pointer-events-none rounded-full" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative z-10">
-          <StaggerContainer stagger={0.12} className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-6 text-center">
-            
-            <StaggerItem className="space-y-2">
-              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
-                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  workspace_premium
-                </span>
-              </FadeInView>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
-                <CountUp target={10} suffix="+" className="tabular-nums" /> Years
-              </h3>
-              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Substation Audits</p>
-            </StaggerItem>
+          <FadeInView className="mb-16 text-center max-w-2xl mx-auto">
+            <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
+              05 / SECTOR EXPERIENCE
+            </span>
+            <h2 className="font-headline font-black text-3xl sm:text-4xl md:text-5xl text-white mt-2">
+              Industrial & Infrastructure Gallery
+            </h2>
+            <p className="text-slate-400 font-body text-sm mt-4 leading-relaxed">
+              Our products, field calibration laboratories, and engineering teams are deployed across critical infrastructure sectors nationwide, ensuring uninterrupted grid stability.
+            </p>
+            <div className="w-16 h-1.5 bg-[#D62828] mx-auto mt-6"></div>
+          </FadeInView>
 
-            <StaggerItem className="space-y-2">
-              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
-                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  electric_bolt
-                </span>
-              </FadeInView>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">
-                <CountUp target={87} suffix="+" className="tabular-nums" /> Models
-              </h3>
-              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Standard Products</p>
-            </StaggerItem>
+          <StaggerContainer stagger={0.08} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {projectGallery.map((item, idx) => (
+              <StaggerItem
+                key={idx}
+                className="group relative overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/50 hover:border-[#D62828]/40 transition-all duration-300 flex flex-col justify-between"
+              >
+                {/* Image Reveal Mask wrapper */}
+                <div className="relative aspect-video w-full overflow-hidden bg-slate-800">
+                  <Image
+                    alt={item.title}
+                    src={item.image}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-700 select-none"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent opacity-65" />
+                  
+                  {/* Category badge */}
+                  <span className="absolute bottom-4 left-4 px-2.5 py-1 text-[9px] font-extrabold uppercase tracking-widest rounded bg-[#D62828] text-white shadow-md">
+                    {item.subtitle}
+                  </span>
+                </div>
 
-            <StaggerItem className="space-y-2">
-              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
-                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  lab_research
-                </span>
-              </FadeInView>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">ISO 17025</h3>
-              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">NABL Calibration</p>
-            </StaggerItem>
-
-            <StaggerItem className="space-y-2">
-              <FadeInView direction="none" className="inline-block" style={{ transform: 'rotate(-10deg)' }}>
-                <span className="material-symbols-outlined text-[#D62828] text-3xl sm:text-4xl select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  support_agent
-                </span>
-              </FadeInView>
-              <h3 className="font-headline font-black text-2xl sm:text-3xl md:text-4xl text-white leading-tight">24/7 Care</h3>
-              <p className="text-slate-400 text-[10px] sm:text-xs font-body font-medium uppercase tracking-wider">Onsite Commissioning</p>
-            </StaggerItem>
-
+                {/* Content Area */}
+                <div className="p-6 space-y-3 flex-grow flex flex-col justify-between">
+                  <div className="space-y-2">
+                    <h3 className="font-headline font-black text-lg text-white group-hover:text-[#D62828] transition-colors leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-400 text-xs sm:text-sm font-body leading-relaxed line-clamp-2">
+                      {item.description}
+                    </p>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-slate-800/60 mt-4">
+                    <Link
+                      href={item.link}
+                      className="group/link inline-flex items-center text-xs font-bold text-slate-300 hover:text-[#D62828] transition-colors uppercase font-headline tracking-wider"
+                    >
+                      Explore Sector Solutions
+                      <span className="material-symbols-outlined text-xs ml-1 select-none group-hover/link:translate-x-1 transition-transform duration-200">arrow_forward</span>
+                    </Link>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
           </StaggerContainer>
         </div>
       </section>
@@ -526,7 +692,7 @@ export default function Home() {
           7. QUOTE PROCESS — 3-Step Cards
           ═══════════════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28 bg-slate-50 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 relative">
           <FadeInView className="mb-16 text-center max-w-2xl mx-auto">
             <span className="text-[#D62828] font-bold tracking-widest text-xs uppercase font-headline block">
               04 / FAST RFQ SYSTEM
@@ -539,7 +705,27 @@ export default function Home() {
             </p>
           </FadeInView>
 
-          <StaggerContainer stagger={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Animated SVG Dotted Connector Line (Desktop only) */}
+          <div className="hidden md:block absolute top-[58%] left-[12%] right-[12%] z-0 select-none pointer-events-none">
+            <svg className="w-full h-2 overflow-visible" fill="none">
+              <motion.path
+                d="M 0 1 H 1200"
+                stroke="#D62828"
+                strokeWidth="2.5"
+                strokeDasharray="8, 8"
+                initial={{ strokeDashoffset: 16 }}
+                animate={{ strokeDashoffset: 0 }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 2,
+                  ease: "linear"
+                }}
+              />
+            </svg>
+          </div>
+
+          <StaggerContainer stagger={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
             {/* Step 1 */}
             <StaggerItem className="bg-white border border-slate-200 p-6 sm:p-8 rounded-lg flex flex-col justify-between hover:shadow-xl hover:border-[#D62828]/30 transition-all duration-300">
               <div className="space-y-6">
@@ -694,9 +880,16 @@ export default function Home() {
             <div className="w-16 h-1.5 bg-[#D62828] mx-auto mt-4"></div>
           </FadeInView>
 
-          <StaggerContainer stagger={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featuredBlogs.map((post) => (
-              <StaggerItem key={post.slug} className="group cursor-pointer bg-white rounded-lg overflow-hidden border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col h-full">
+          <StaggerContainer stagger={0.1} className="grid grid-cols-1 md:grid-cols-3 gap-8 md:pb-8">
+            {featuredBlogs.map((post, idx) => {
+              const isEven = idx === 1;
+              return (
+                <StaggerItem
+                  key={post.slug}
+                  className={`group cursor-pointer bg-white rounded-lg overflow-hidden border border-slate-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-full ${
+                    isEven ? 'md:translate-y-6' : ''
+                  }`}
+                >
                 <div className="relative aspect-video w-full bg-slate-100 overflow-hidden">
                   <Image
                     alt={post.title}
@@ -729,7 +922,8 @@ export default function Home() {
                   </div>
                 </div>
               </StaggerItem>
-            ))}
+              );
+            })}
           </StaggerContainer>
         </div>
       </section>

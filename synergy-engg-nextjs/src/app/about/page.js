@@ -87,6 +87,7 @@ export default function About() {
         title="About Synergy Engineering"
         subtitle="10+ Years of Engineering Excellence Across India. Precise solutions for the nation's most demanding sectors."
         backgroundImage="/images/windmill.jpg"
+        backgroundVideo="/videos/windmill_vedio.mp4"
         breadcrumbs={breadcrumbs}
       />
 

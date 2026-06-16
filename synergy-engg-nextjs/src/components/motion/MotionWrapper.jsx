@@ -189,3 +189,35 @@ export function AnimatedAccordion({ isOpen, children }) {
     </AnimatePresence>
   );
 }
+
+// ─── RevealMask ────────────────────────────────────────
+// Crop-reveals an image using inset clip-paths while scaling from 1.15 to 1.0.
+export function RevealMask({ children, delay = 0, duration = 0.8, once = true, className = "" }) {
+  return (
+    <motion.div
+      initial={{ clipPath: 'inset(100% 0 0 0)' }}
+      whileInView={{ clipPath: 'inset(0% 0 0 0)' }}
+      viewport={{ once, amount: 0.15 }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.25, 1, 0.5, 1],
+      }}
+      className={`relative overflow-hidden ${className}`}
+    >
+      <motion.div
+        initial={{ scale: 1.15 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ once, amount: 0.15 }}
+        transition={{
+          duration: duration + 0.2,
+          delay,
+          ease: [0.25, 1, 0.5, 1],
+        }}
+        className="w-full h-full relative"
+      >
+        {children}
+      </motion.div>
+    </motion.div>
+  );
+}

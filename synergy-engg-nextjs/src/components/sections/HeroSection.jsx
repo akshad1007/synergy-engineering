@@ -5,6 +5,7 @@ export default function HeroSection({
   title,
   subtitle,
   backgroundImage,
+  backgroundVideo,
   breadcrumbs = [],
   height = 'min-h-[400px]',
   ctaButtons = [],
@@ -14,10 +15,21 @@ export default function HeroSection({
 
   return (
     <section className={`relative w-full flex items-center overflow-hidden bg-primary-container ${height}`}>
-      {/* Background Image */}
+      {/* Background Image / Video */}
       <div className="absolute inset-0 z-0">
-        <div className={`absolute inset-0 bg-[#0A1628] ${isFullScreen ? 'opacity-70' : 'opacity-40'} z-10`} />
-        {backgroundImage && (
+        <div className={`absolute inset-0 bg-[#0A1628] ${isFullScreen ? 'opacity-70' : 'opacity-50'} z-10`} />
+        {backgroundVideo ? (
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            poster={backgroundImage}
+            className="w-full h-full object-cover opacity-20 filter brightness-75 select-none pointer-events-none"
+          >
+            <source src={backgroundVideo} type="video/mp4" />
+          </video>
+        ) : backgroundImage ? (
           <Image
             alt={title}
             className="w-full h-full object-cover grayscale"
@@ -25,7 +37,7 @@ export default function HeroSection({
             fill
             priority
           />
-        )}
+        ) : null}
       </div>
 
       {/* Content */}

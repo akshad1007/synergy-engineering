@@ -1,6 +1,7 @@
 import { Montserrat, Inter } from "next/font/google";
 import "./globals.css";
 import MainLayout from "../components/layout/MainLayout";
+import SmoothScroll from "../components/motion/SmoothScroll";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -35,7 +36,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col bg-background font-body text-on-background">
-        <MainLayout>{children}</MainLayout>
+        <SmoothScroll>
+          <MainLayout>{children}</MainLayout>
+        </SmoothScroll>
       </body>
     </html>
   );
