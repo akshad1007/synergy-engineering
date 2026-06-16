@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import HeroSection from '@/components/sections/HeroSection';
+import { ScrollRevealText } from '@/components/motion/MotionWrapper';
 
 export default function About() {
   const breadcrumbs = [
@@ -131,7 +132,7 @@ export default function About() {
             </div>
             
             <p className="text-on-surface-variant text-sm sm:text-base leading-relaxed font-body">
-              Synergy Engineering was founded on the principles of technical integrity and industrial innovation. Starting as a specialized engineering desk in Thane, we have evolved into a nationwide authority supplying and maintaining electrical test and measurement infrastructure.
+              <ScrollRevealText text="Synergy Engineering was founded on the principles of technical integrity and industrial innovation. Starting as a specialized engineering desk in Thane, we have evolved into a nationwide authority supplying and maintaining electrical test and measurement infrastructure." />
             </p>
 
             {/* Vertical timeline */}

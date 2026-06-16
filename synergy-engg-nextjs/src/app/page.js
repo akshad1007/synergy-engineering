@@ -14,6 +14,7 @@ import {
   CountUp,
   AnimatedAccordion,
   RevealMask,
+  ScrollRevealText,
 } from '@/components/motion/MotionWrapper';
 
 export default function Home() {
@@ -387,7 +388,7 @@ export default function Home() {
               Engineering Excellence Since Inception
             </h2>
             <p className="text-on-surface-variant text-sm sm:text-base md:text-lg leading-relaxed font-body">
-              Synergy Engineering is a premier channel distributor and service provider for high-voltage testing instruments. We bridge the gap between global engineering manufacturers and Indian power grids with NABL accredited calibration and field technicians.
+              <ScrollRevealText text="Synergy Engineering is a premier channel distributor and service provider for high-voltage testing instruments. We bridge the gap between global engineering manufacturers and Indian power grids with NABL accredited calibration and field technicians." />
             </p>
             <StaggerContainer stagger={0.12} as="ul" className="space-y-4">
               {[

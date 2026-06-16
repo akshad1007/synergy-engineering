@@ -221,3 +221,29 @@ export function RevealMask({ children, delay = 0, duration = 0.8, once = true, c
     </motion.div>
   );
 }
+
+// ─── ScrollRevealText ──────────────────────────────────
+// Splits text into words and staggers their opacity from 0.15 to 1.0 when entering viewport.
+export function ScrollRevealText({ text, className = "", delay = 0 }) {
+  const words = text.split(' ');
+  return (
+    <span className={`inline-block ${className}`}>
+      {words.map((word, idx) => (
+        <motion.span
+          key={idx}
+          className="inline-block mr-[0.25em]"
+          initial={{ opacity: 0.15, y: 2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.35,
+            delay: delay + idx * 0.025,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </span>
+  );
+}
