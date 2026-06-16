@@ -63,8 +63,8 @@ export default function Industries() {
             </span>
           </div>
           
-          <p className="text-3xl sm:text-4xl md:text-5xl font-tangerine text-slate-800 dark:text-slate-200 leading-normal tracking-wide px-4">
-            Synergy Engineering provides <strong className="font-bold text-slate-950 dark:text-white">precision-engineered solutions</strong> across a diverse global landscape. Our sector-specific expertise ensures that whether we are powering a city or advancing research, we deliver reliability that meets the highest industrial tolerances.
+          <p className="text-lg sm:text-xl md:text-2xl font-medium text-slate-800 dark:text-slate-200 leading-relaxed tracking-wide px-4 italic font-body">
+            Synergy Engineering provides <strong className="font-bold text-[#C8232A] dark:text-[#de2e2c]">precision-engineered solutions</strong> across a diverse global landscape. Our sector-specific expertise ensures that whether we are powering a city or advancing research, we deliver reliability that meets the highest industrial tolerances.
           </p>
 
           <div className="pt-2 flex flex-col items-center">

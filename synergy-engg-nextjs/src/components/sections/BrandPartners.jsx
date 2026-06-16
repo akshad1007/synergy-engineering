@@ -5,13 +5,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FadeInView } from '@/components/motion/MotionWrapper';
 
-// ─── Business Associates (5 logos) ───
+// ─── Business Associates (6 logos) ───
 const ASSOCIATES = [
-  { name: 'Megger', logo: '/logos/megger.png', link: '/products?brand=megger' },
-  { name: 'Brother', logo: '/logos/brother.png', link: '/products?brand=brother' },
-  { name: 'MTE', logo: '/logos/mte.png', link: '/products?brand=mte' },
-  { name: 'Raychem RPG', logo: '/logos/raychemrpg.png', link: '/products?brand=te' },
-  { name: 'Trisen', logo: '/logos/trisen.png', link: '/contact' },
+  { name: 'Megger', logo: '/screenshots/megger_logo.svg', link: '/products?brand=megger' },
+  { name: 'MTE / EMH', logo: '/screenshots/emh-logo-r2.png', link: '/products?brand=mte' },
+  { name: 'Brother', logo: '/screenshots/Brother-Logo.png', link: '/products?brand=brother' },
+  { name: 'TE Connectivity', logo: '/screenshots/TE_Connectivity_Logo.png', link: '/products?brand=te' },
+  { name: 'Greenlee', logo: '/screenshots/Greenlee_logo.png', link: '/products?brand=greenlee' },
+  { name: 'KL-ARC', logo: '/screenshots/kl_arc_logo.png', link: '/products?brand=kl-arc' },
 ];
 
 // ─── Customers (20 logos) ───
@@ -73,57 +74,33 @@ function SectionHeading({ title }) {
 
 export default function BrandPartners() {
   return (
-    <section className="py-20 md:py-28 bg-[#F8F9FA] overflow-hidden">
+    <section className="py-20 md:py-28 bg-[#F5F6F7] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 space-y-20 md:space-y-28">
 
         {/* ═══ SECTION 1: Business Associates — Static formal strip ═══ */}
         <div>
-          <SectionHeading title="Our Business Associates" />
+          <SectionHeading title="Our Authorized Brand Partners" />
 
           <FadeInView direction="up" delay={0.1}>
-            {/* Desktop: 5-col grid with dividers */}
-            <div className="hidden sm:grid grid-cols-5 border border-slate-200 rounded-lg bg-white shadow-sm divide-x divide-slate-200">
+            {/* Desktop & Mobile: Grid layout with hover lifts and color reveals */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border border-slate-200/80 rounded-lg bg-white shadow-md divide-x divide-y divide-slate-100 dark:divide-slate-800">
               {ASSOCIATES.map((item, idx) => {
                 const inner = (
-                  <div className="flex items-center justify-center py-8 md:py-10 px-4 group transition-all duration-300 hover:bg-slate-50">
+                  <div className="flex items-center justify-center py-8 md:py-10 px-6 group transition-all duration-500 hover:bg-slate-50 hover:-translate-y-1 hover:shadow-lg rounded-lg h-full">
                     <img
                       src={item.logo}
                       alt={item.name}
-                      className="max-h-10 md:max-h-12 lg:max-h-14 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                      className="max-h-8 md:max-h-10 lg:max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-105"
                       loading="lazy"
                     />
                   </div>
                 );
                 return item.link ? (
-                  <Link key={idx} href={item.link} className="focus:outline-none">
+                  <Link key={idx} href={item.link} className="focus:outline-none block h-full">
                     {inner}
                   </Link>
                 ) : (
-                  <div key={idx}>{inner}</div>
-                );
-              })}
-            </div>
-
-            {/* Mobile: 2-col grid, last logo spans 2 cols */}
-            <div className="grid grid-cols-2 sm:hidden border border-slate-200 rounded-lg bg-white shadow-sm divide-x divide-y divide-slate-200">
-              {ASSOCIATES.map((item, idx) => {
-                const isLast = idx === ASSOCIATES.length - 1;
-                const inner = (
-                  <div className={`flex items-center justify-center py-7 px-4 group transition-all duration-300 hover:bg-slate-50 ${isLast ? 'col-span-2' : ''}`}>
-                    <img
-                      src={item.logo}
-                      alt={item.name}
-                      className="max-h-10 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                );
-                return item.link ? (
-                  <Link key={idx} href={item.link} className={`focus:outline-none ${isLast ? 'col-span-2' : ''}`}>
-                    {inner}
-                  </Link>
-                ) : (
-                  <div key={idx} className={isLast ? 'col-span-2' : ''}>{inner}</div>
+                  <div key={idx} className="h-full">{inner}</div>
                 );
               })}
             </div>

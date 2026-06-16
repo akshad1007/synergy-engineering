@@ -10,6 +10,7 @@ export default function ContactForm() {
     email: '',
     phone: '',
     reason: '',
+    industry: '',
     message: ''
   });
   
@@ -45,6 +46,7 @@ export default function ContactForm() {
           email: '',
           phone: '',
           reason: '',
+          industry: '',
           message: ''
         });
       } else {
@@ -138,26 +140,51 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label" htmlFor="reason">
-            Reason for Inquiry
-          </label>
-          <select
-            className="w-full bg-surface-container-low border-none rounded-md px-4 py-3 min-h-[44px] focus:ring-2 focus:ring-secondary text-on-surface font-body"
-            id="reason"
-            name="reason"
-            required
-            value={formData.reason}
-            onChange={handleChange}
-          >
-            <option value="" disabled>Select an option</option>
-            <option value="Quote Request">Quote Request</option>
-            <option value="Product Inquiry">Product Inquiry</option>
-            <option value="Service Inquiry">Service Inquiry</option>
-            <option value="Calibration">Calibration</option>
-            <option value="Technical Support">Technical Support</option>
-            <option value="General">General</option>
-          </select>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label" htmlFor="reason">
+              Reason for Inquiry
+            </label>
+            <select
+              className="w-full bg-surface-container-low border-none rounded-md px-4 py-3 min-h-[44px] focus:ring-2 focus:ring-secondary text-on-surface font-body"
+              id="reason"
+              name="reason"
+              required
+              value={formData.reason}
+              onChange={handleChange}
+            >
+              <option value="" disabled>Select an option</option>
+              <option value="Quote Request">Quote Request</option>
+              <option value="Product Inquiry">Product Inquiry</option>
+              <option value="Service Inquiry">Service Inquiry</option>
+              <option value="Calibration">Calibration</option>
+              <option value="Technical Support">Technical Support</option>
+              <option value="General">General</option>
+            </select>
+          </div>
+
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-widest text-on-surface-variant font-label" htmlFor="industry">
+              Application / Industry
+            </label>
+            <select
+              className="w-full bg-surface-container-low border-none rounded-md px-4 py-3 min-h-[44px] focus:ring-2 focus:ring-secondary text-on-surface font-body"
+              id="industry"
+              name="industry"
+              required
+              value={formData.industry}
+              onChange={handleChange}
+            >
+              <option value="" disabled>Select industry</option>
+              <option value="Power Generation">Power Generation (Hydro/Solar/Thermal)</option>
+              <option value="Transmission & Distribution">Transmission & Distribution (Grid Utilities)</option>
+              <option value="Oil & Gas">Oil & Gas (Refineries/Pipelines)</option>
+              <option value="Heavy Manufacturing">Heavy Manufacturing & Process Plants</option>
+              <option value="Railways & Metro">Railways & Metro Transit</option>
+              <option value="Defence & Aerospace">Defence & Aerospace Labs</option>
+              <option value="Other">Other Application</option>
+            </select>
+          </div>
         </div>
 
         <div className="space-y-2">
@@ -177,14 +204,11 @@ export default function ContactForm() {
         </div>
 
         <button
-          className="w-full md:w-auto bg-secondary text-white px-10 py-4 rounded-md font-headline font-extrabold text-sm hover:opacity-90 transition-all flex items-center justify-center gap-2 group active:scale-95 min-h-[48px] disabled:opacity-50"
+          className="w-full md:w-auto bg-[#C8232A] hover:bg-[#D62828] text-white px-10 py-4 rounded-md font-headline font-extrabold text-sm transition-all flex items-center justify-center gap-2 group active:scale-95 min-h-[48px] disabled:opacity-50 cursor-pointer"
           type="submit"
           disabled={isSubmitting}
         >
-          {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
-          <span className="material-symbols-outlined transition-transform group-hover:translate-x-1">
-            arrow_forward
-          </span>
+          {isSubmitting ? 'SENDING RFQ...' : 'SEND RFQ REQUEST →'}
         </button>
       </form>
 

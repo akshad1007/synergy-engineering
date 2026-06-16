@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Synergy Engineering | Electrical Testing & Measurement Solutions",
-  description: "PAN-India authorized distributor of electrical testing & measurement solutions. ISO 9001:2015 | NABL-Accredited | Since 2016.",
+  title: "Synergy Engineering | Megger & MTE Authorized Distributor | Thane",
+  description: "NABL accredited electrical testing equipment supplier in Maharashtra. Authorized channel partner for Megger, MTE, Greenlee & TE Connectivity. Insulation testers, motor winding analyzers, cable fault locators. RFQ in 2 hours.",
 };
 
 export default function RootLayout({ children }) {

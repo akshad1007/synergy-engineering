@@ -6,6 +6,7 @@ import Header from './Header';
 import MobileMenu from './MobileMenu';
 import Footer from './Footer';
 import WhatsAppButton from './WhatsAppButton';
+import StickyMobileCTA from './StickyMobileCTA';
 
 export default function MainLayout({ children }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export default function MainLayout({ children }) {
   }
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen pb-[56px] sm:pb-0">
       <Header onMenuToggle={toggleMenu} />
       <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
       
@@ -32,6 +33,7 @@ export default function MainLayout({ children }) {
 
       <Footer />
       <WhatsAppButton />
-    </>
+      <StickyMobileCTA />
+    </div>
   );
 }

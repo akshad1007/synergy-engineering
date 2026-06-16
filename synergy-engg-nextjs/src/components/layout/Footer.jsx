@@ -19,7 +19,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full bg-[#101c2e] dark:bg-[#060F1A] text-slate-300">
+    <footer className="w-full bg-[#0A1628] dark:bg-[#060E1A] text-slate-300">
       
       {/* 1. Newsletter Subscription Panel (Footer Option 2 Top Block) */}
       <section className="w-full py-10 px-4 sm:px-8 md:px-16 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
@@ -46,11 +46,11 @@ export default function Footer() {
                   placeholder="Enter your corporate email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-grow px-4 py-3 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 rounded text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:border-[#D62828] transition-colors"
+                  className="flex-grow px-4 py-3 bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-850 rounded text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none focus:border-[#C8232A] transition-colors"
                 />
                 <button
                   type="submit"
-                  className="px-6 py-3 bg-[#D62828] text-white hover:bg-[#de2e2c] font-headline font-bold text-xs uppercase tracking-widest rounded transition-colors active:scale-95 shadow-md shadow-[#D62828]/10 cursor-pointer flex items-center justify-center gap-2"
+                  className="px-6 py-3 bg-[#C8232A] text-white hover:bg-[#de2e2c] font-headline font-bold text-xs uppercase tracking-widest rounded transition-colors active:scale-95 shadow-md shadow-[#C8232A]/10 cursor-pointer flex items-center justify-center gap-2"
                 >
                   Subscribe
                   <span className="material-symbols-outlined text-sm select-none">arrow_forward</span>
@@ -86,7 +86,7 @@ export default function Footer() {
                 href="https://linkedin.com/company/synergy-engineering"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-slate-700 hover:border-[#D62828] hover:bg-[#D62828] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 select-none cursor-pointer"
+                className="w-9 h-9 rounded-full border border-slate-700 hover:border-[#C8232A] hover:bg-[#C8232A] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 select-none cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <span className="material-symbols-outlined text-lg">social_leaderboard</span>
@@ -95,14 +95,14 @@ export default function Footer() {
                 href="https://synergy-engg.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full border border-slate-700 hover:border-[#D62828] hover:bg-[#D62828] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 select-none cursor-pointer"
+                className="w-9 h-9 rounded-full border border-slate-700 hover:border-[#C8232A] hover:bg-[#C8232A] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 select-none cursor-pointer"
                 aria-label="Website"
               >
                 <span className="material-symbols-outlined text-lg">language</span>
               </a>
               <a
                 href="mailto:info@synergy-engg.com"
-                className="w-9 h-9 rounded-full border border-slate-700 hover:border-[#D62828] hover:bg-[#D62828] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 select-none cursor-pointer"
+                className="w-9 h-9 rounded-full border border-slate-700 hover:border-[#C8232A] hover:bg-[#C8232A] hover:text-white text-slate-400 flex items-center justify-center transition-all duration-300 select-none cursor-pointer"
                 aria-label="Email"
               >
                 <span className="material-symbols-outlined text-lg">mail</span>
@@ -112,7 +112,7 @@ export default function Footer() {
 
           {/* Column 2: Quick Links (lg:col-span-2) */}
           <div className="lg:col-span-2 lg:pl-4">
-            <h4 className="font-headline font-black text-xs uppercase tracking-widest text-[#D62828] mb-6">
+            <h4 className="font-headline font-black text-xs uppercase tracking-widest text-[#C8232A] mb-6">
               Navigation
             </h4>
             <ul className="space-y-3.5 text-xs sm:text-sm font-body">
@@ -151,7 +151,7 @@ export default function Footer() {
 
           {/* Column 3: Global Partners (lg:col-span-2) */}
           <div className="lg:col-span-2">
-            <h4 className="font-headline font-black text-xs uppercase tracking-widest text-[#D62828] mb-6">
+            <h4 className="font-headline font-black text-xs uppercase tracking-widest text-[#C8232A] mb-6">
               Brands
             </h4>
             <ul className="space-y-3.5 text-xs sm:text-sm font-body">
@@ -191,12 +191,12 @@ export default function Footer() {
           {/* Column 4: Contact & Stamp Map (lg:col-span-4) */}
           <div className="lg:col-span-4 space-y-6">
             <div className="space-y-4">
-              <h4 className="font-headline font-black text-xs uppercase tracking-widest text-[#D62828]">
+              <h4 className="font-headline font-black text-xs uppercase tracking-widest text-[#C8232A]">
                 Contact Info
               </h4>
               <ul className="space-y-3 text-xs sm:text-sm font-body">
                 <li className="flex items-start gap-2.5 text-slate-400">
-                  <span className="material-symbols-outlined text-[#D62828] text-base select-none mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span className="material-symbols-outlined text-[#C8232A] text-base select-none mt-0.5" style={{ fontVariationSettings: "'FILL' 1" }}>
                     location_on
                   </span>
                   <span className="leading-relaxed">
@@ -204,13 +204,13 @@ export default function Footer() {
                   </span>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">
-                  <span className="material-symbols-outlined text-[#D62828] text-base select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span className="material-symbols-outlined text-[#C8232A] text-base select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
                     call
                   </span>
                   <a href="tel:+919970341477" className="hover:text-white transition-colors">+91 99703 41477</a>
                 </li>
                 <li className="flex items-center gap-2.5 text-slate-400">
-                  <span className="material-symbols-outlined text-[#D62828] text-base select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
+                  <span className="material-symbols-outlined text-[#C8232A] text-base select-none" style={{ fontVariationSettings: "'FILL' 1" }}>
                     mail
                   </span>
                   <a href="mailto:info@synergy-engg.com" className="hover:text-white transition-colors">info@synergy-engg.com</a>
@@ -223,10 +223,10 @@ export default function Footer() {
               href="https://maps.google.com/?q=Bhumi+World+Industrial+Park+Thane+Mumbai+Nashik+Highway"
               target="_blank"
               rel="noopener noreferrer"
-              className="block p-4 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-[#D62828]/30 transition-all duration-300 group cursor-pointer"
+              className="block p-4 rounded-xl bg-slate-900/60 hover:bg-slate-900 border border-slate-800 hover:border-[#C8232A]/30 transition-all duration-300 group cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-[#D62828]/10 text-[#D62828] flex items-center justify-center group-hover:bg-[#D62828] group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 rounded-lg bg-[#C8232A]/10 text-[#C8232A] flex items-center justify-center group-hover:bg-[#C8232A] group-hover:text-white transition-all duration-300">
                   <span className="material-symbols-outlined select-none text-xl">map</span>
                 </div>
                 <div>
@@ -241,17 +241,30 @@ export default function Footer() {
       </section>
 
       {/* 3. Bottom Copyright & Policy Bar */}
-      <section className="w-full py-6 px-4 sm:px-8 md:px-16 bg-[#09111c] dark:bg-[#040A12] border-t border-slate-800/40 text-slate-500 text-xs font-body">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-          <div className="flex gap-4 font-headline font-bold uppercase tracking-wider text-[10px]">
-            <Link href="/contact" className="hover:text-slate-350 transition-colors">Privacy Policy</Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-slate-350 transition-colors">Terms of Service</Link>
-            <span>•</span>
-            <Link href="/contact" className="hover:text-slate-350 transition-colors">Service SLA</Link>
+      <section className="w-full py-8 px-4 sm:px-8 md:px-16 bg-[#060E1A] border-t border-slate-850 text-slate-500 text-xs font-body">
+        <div className="max-w-7xl mx-auto space-y-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
+            <div className="flex flex-wrap justify-center sm:justify-start gap-4 font-headline font-bold uppercase tracking-wider text-[10px]">
+              <Link href="/contact" className="hover:text-slate-350 transition-colors">Privacy Policy</Link>
+              <span>•</span>
+              <Link href="/contact" className="hover:text-slate-350 transition-colors">Terms of Service</Link>
+              <span>•</span>
+              <Link href="/contact" className="hover:text-slate-350 transition-colors">Service SLA</Link>
+            </div>
+            <div className="text-slate-400 font-headline font-bold uppercase tracking-wider text-[10px]">
+              &copy; {currentYear} Synergy Engineering. All rights reserved.
+            </div>
           </div>
-          <div>
-            &copy; {currentYear} Synergy Engineering. All rights reserved.
+          
+          <div className="pt-4 border-t border-slate-800/40 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] uppercase tracking-wider font-mono text-slate-650 dark:text-slate-500">
+            <div className="flex flex-wrap justify-center md:justify-start gap-x-6 gap-y-2">
+              <span>GSTIN: <strong className="text-slate-400">27AAYFS8858P1ZS</strong></span>
+              <span>CIN: <strong className="text-slate-400">U51909MH2016PTC288112</strong></span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C9A84C]"></span>
+              <span>NABL ISO/IEC 17025:2017 Accredited Laboratory</span>
+            </div>
           </div>
         </div>
       </section>

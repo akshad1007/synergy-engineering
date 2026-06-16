@@ -1,42 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&family=Explora&family=Imperial+Script&display=swap");
 
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f7f9fc;
-  --foreground: #191c1e;
+  --background: #F5F6F7;
+  --foreground: #1A2332;
 }
 
 @theme {
   --color-primary: #000000;
-  --color-secondary: #D62828;
+  --color-secondary: #C8232A;
   --color-secondary-container: #de2e2c;
   --color-tertiary: #000000;
   --color-primary-container: #101c2e;
   --color-on-primary: #ffffff;
   --color-on-secondary: #ffffff;
   --color-on-primary-container: #79849b;
-  --color-surface: #f7f9fc;
+  --color-surface: #F5F6F7;
   --color-surface-container: #eceef1;
   --color-surface-container-low: #f2f4f7;
   --color-surface-container-high: #e6e8eb;
   --color-surface-container-highest: #e0e3e6;
   --color-surface-container-lowest: #ffffff;
-  --color-on-surface: #191c1e;
-  --color-on-surface-variant: #45474c;
+  --color-on-surface: #1A2332;
+  --color-on-surface-variant: #4A5568;
   --color-outline: #75777d;
   --color-outline-variant: #c5c6cd;
   --color-error: #ba1a1a;
-  --color-background: #f7f9fc;
-  --color-dark-bg: #0A1628;
+  --color-background: #F5F6F7;
+  --color-dark-bg: #060E1A;
   --color-whatsapp: #25D366;
+
+  /* Premium Design System Upgrade Color Tokens */
+  --color-crimson-primary: #C8232A;
+  --color-crimson-glow: #D62828;
+  --color-crimson-muted: #8B1A1A;
+  --color-slate-900: #060E1A;
+  --color-slate-800: #0A1628;
+  --color-slate-700: #142846;
+  --color-slate-600: #1E3A5F;
+  --color-warm-white: #F5F6F7;
+  --color-pure-white: #FFFFFF;
+  --color-text-primary: #1A2332;
+  --color-text-secondary: #4A5568;
+  --color-text-muted: #718096;
+  --color-accent-gold: #C9A84C;
 
   --font-headline: var(--font-montserrat), sans-serif;
   --font-body: var(--font-inter), sans-serif;
   --font-label: var(--font-inter), sans-serif;
+  --font-display: var(--font-montserrat), sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   --radius-default: 0.125rem;
   --radius-lg: 0.25rem;
@@ -252,16 +268,7 @@ html {
   transition: transform 0.3s ease;
 }
 
-/* Script Font Utilities */
-.font-tangerine {
-  font-family: 'Tangerine', cursive;
-}
-.font-explora {
-  font-family: 'Explora', cursive;
-}
-.font-imperial {
-  font-family: 'Imperial Script', cursive;
-}
+/* Script Font Utilities Removed */
 
 /* Hide scrollbar for Chrome, Safari, Opera and Firefox */
 .scrollbar-none::-webkit-scrollbar {
@@ -271,3 +278,60 @@ html {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* Custom Magnetic Cursor */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #C8232A;
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+  }
+  .custom-cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid rgba(200, 35, 42, 0.4);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.08s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
+  }
+  .custom-cursor-hover .custom-cursor-dot {
+    width: 4px;
+    height: 4px;
+    background-color: transparent;
+  }
+  .custom-cursor-hover .custom-cursor-ring {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(200, 35, 42, 0.08);
+    border-color: #C8232A;
+  }
+}
+
+/* Page Loader sequence styles */
+.loader-bar-animation {
+  height: 3px;
+  background-color: #C8232A;
+  animation: loadProgress 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* Font styles overrides */
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
