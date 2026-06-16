@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import BrandPartners from '@/components/sections/BrandPartners';
@@ -20,6 +20,11 @@ export default function Home() {
   // Get first 3 blogs for the homepage
   const featuredBlogs = blogs.slice(0, 3);
   const [openFaq, setOpenFaq] = useState(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
 
   const toggleFaq = (index) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -208,6 +213,8 @@ export default function Home() {
             loop
             muted
             playsInline
+            webkit-playsinline="true"
+            preload="none"
             poster="/images/electrical_substation.jpg"
             className="w-full h-full object-cover opacity-15 filter brightness-75 select-none pointer-events-none"
           >
@@ -268,7 +275,7 @@ export default function Home() {
           </div>
 
           {/* Bottom Hero Cards Row */}
-          <StaggerContainer stagger={0.1} delay={0.3} className="flex overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:overflow-visible lg:snap-none border-t border-slate-800 scrollbar-thin">
+          <StaggerContainer stagger={0.1} delay={0.3} className="flex overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-4 sm:grid sm:grid-cols-2 lg:grid-cols-4 lg:overflow-visible lg:snap-none border-t border-slate-800 scrollbar-none">
             {[
               { title: 'Megger Instruments', desc: 'High-voltage automatic testing, diagnostics, and insulation monitoring systems.', link: '/products?brand=megger' },
               { title: 'MTE AG Standards', desc: 'Precision three-phase calibration standard meters and power quality systems.', link: '/products?brand=mte' },
@@ -706,24 +713,26 @@ export default function Home() {
           </FadeInView>
 
           {/* Animated SVG Dotted Connector Line (Desktop only) */}
-          <div className="hidden md:block absolute top-[58%] left-[12%] right-[12%] z-0 select-none pointer-events-none">
-            <svg className="w-full h-2 overflow-visible" fill="none">
-              <motion.path
-                d="M 0 1 H 1200"
-                stroke="#D62828"
-                strokeWidth="2.5"
-                strokeDasharray="8, 8"
-                initial={{ strokeDashoffset: 16 }}
-                animate={{ strokeDashoffset: 0 }}
-                transition={{
-                  repeat: Infinity,
-                  repeatType: "loop",
-                  duration: 2,
-                  ease: "linear"
-                }}
-              />
-            </svg>
-          </div>
+          {isDesktop && (
+            <div className="absolute top-[58%] left-[12%] right-[12%] z-0 select-none pointer-events-none">
+              <svg className="w-full h-2 overflow-visible" fill="none">
+                <motion.path
+                  d="M 0 1 H 1200"
+                  stroke="#D62828"
+                  strokeWidth="2.5"
+                  strokeDasharray="8, 8"
+                  initial={{ strokeDashoffset: 16 }}
+                  animate={{ strokeDashoffset: 0 }}
+                  transition={{
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 2,
+                    ease: "linear"
+                  }}
+                />
+              </svg>
+            </div>
+          )}
 
           <StaggerContainer stagger={0.12} className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
             {/* Step 1 */}

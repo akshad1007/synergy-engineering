@@ -1,9 +1,13 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 
 export default function SmoothScroll({ children }) {
+  const pathname = usePathname();
+  const lenisRef = useRef(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -13,6 +17,13 @@ export default function SmoothScroll({ children }) {
       smoothWheel: true,
       wheelMultiplier: 1,
       smoothTouch: false,
+    });
+    lenisRef.current = lenis;
+
+    // Sync Lenis scroll events to trigger standard window scroll events.
+    // This solves conflicts with framer-motion whileInView which relies on native scroll events.
+    lenis.on('scroll', () => {
+      window.dispatchEvent(new Event('scroll'));
     });
 
     let rafId;
@@ -33,9 +44,17 @@ export default function SmoothScroll({ children }) {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
       window.removeEventListener('popstate', handleScrollToTop);
     };
   }, []);
+
+  // Handle route change scroll-to-top for Next.js App Router
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    }
+  }, [pathname]);
 
   return <>{children}</>;
 }

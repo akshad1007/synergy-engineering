@@ -24,6 +24,8 @@ export default function HeroSection({
             loop
             muted
             playsInline
+            webkit-playsinline="true"
+            preload="none"
             poster={backgroundImage}
             className="w-full h-full object-cover opacity-20 filter brightness-75 select-none pointer-events-none"
           >
